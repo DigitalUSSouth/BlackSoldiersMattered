@@ -3,17 +3,12 @@ require_once ('header.php');
 
  ?>
 
-    <main class="container">
-
     <!-- Content -->
-    <div class="jumbotron" id="pagecontainer">
-      
+    <div id="page-container">
+      <h1>This is a test map</h1>
+      <div id="mapid"></div>
     </div>
-    
-    </main>
 
-    
-    <!-- /container -->
 
 <?php 
 require_once 'footer.php';

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -22,7 +23,7 @@
     <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
 
     <!-- Custom styles for this template -->
-    <link href="css/style.css" rel="stylesheet">
+    <link href="css/bsm.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -31,16 +32,21 @@
     <![endif]-->
 
     <!-- Carousel -->
-    <script src="js/jquery/1.12.0/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="js/jquery/1.12.0/jquery.min.js"><\/script>')</script>
-	<script src="js/angular.min.js" type="text/javascript"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"><\/script>')</script>
     <script src="js/pullup.js" type="text/javascript"></script>
+    
+    
+    <!-- leaflet -->
+    <script src="leaflet/leaflet.js"></script>
+    
+    <link rel="stylesheet" href="leaflet/leaflet.css" />
+    <script src="js/bsm.js"></script>
+    
   </head>
 
-  <body onLoad="loadMinJQuery();">
-	<noscript>
-	JavaScript needs to be enabled in order to access this page.
-	</noscript>
+  <body>
+
     <!-- Fixed navbar -->
     <nav class="navbar navbar-default navbar-fixed-top">
       <div class="container">
@@ -52,9 +58,9 @@
           </div>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
+          <ul class="nav navbar-nav navbar-right">
             <li></li>
-            <li><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Home</a></li>
+            <li class="active"><a href="#">Home</a></li>
             <!-- Interactive Maps -->
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Interactive Maps <span class="caret"></span></a>
@@ -71,19 +77,17 @@
               <ul class="dropdown-menu">
                 <li><a href="#">How</a></li>
                 <li role="separator" class="divider"></li>
-				<li id="whereSubMenu">
-					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Where</a>
-					<ul class="dropdown-menu submenu">
-					<li><a href="#" id="livedLink">Lived</a></li>
-					<li><a href="#">Served</a></li>
-					</ul>
-				</li>
+                <li class="dropdown-header">Where</li>
+                <li><a href="#">Lived</a></li>
+                <li><a href="#">Served</a></li>
               </ul>
             </li>
 
-            <li><a href="#" id="search" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Search</a></li>
-            <li><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Contact</a></li>
+            <li><a href="#about">Search</a></li>
+            <li><a href="#contact">Contact</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
     </nav>
+
+    <div class="container">
