@@ -1,6 +1,7 @@
 # TODO
 
 1. What is the timeline for the 'Soldier's Journey' Map?
+(We don't need specific dates for testing.)
 2. What are we pulling for map coordinates?
 	- geoJSON objects
 	- approximate locations (polygons)
