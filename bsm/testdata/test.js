@@ -55,3 +55,5 @@ var soldier3 = {
     ]
   },
 };
+
+var soldiers = [soldier1, soldier2, soldier3];

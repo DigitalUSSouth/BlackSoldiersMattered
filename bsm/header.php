@@ -38,10 +38,17 @@
     
     
     <!-- leaflet -->
-    <script src="leaflet/leaflet.js"></script>
+  <!--  <script src="leaflet/leaflet.js"></script> -->
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
+ <script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
+   <!-- <link rel="stylesheet" href="leaflet/leaflet.css" /> 
+    <script src="js/bsm.js"></script> -->
+
+<link rel="import" href="html/bsm.html">
+
+ 
+
     
-    <link rel="stylesheet" href="leaflet/leaflet.css" />
-    <script src="js/bsm.js"></script>
     
   </head>
 

@@ -29,7 +29,67 @@ function initmap() {
 	}
 
 	map.on('click', onMapClick);
-	
+//----------------------------------------------------------------------------
+/*	   // Get start/end times
+    var startTime = new Date(soldiers[0].properties.time[0]);
+    var endTime = new Date(soldiers[0].properties.time[soldiers[0].properties.time.length - 1]);
+
+    // Create a DataSet with data
+    var timelineData = new vis.DataSet([{ start: startTime, end: endTime, content: 'Demo GPS Tracks' }]);
+
+    // Set timeline options
+    var timelineOptions = {
+      "width":  "100%",
+      "height": "120px",
+      "style": "box",
+      "axisOnTop": true,
+      "showCustomTime":true
+    };
+    
+    // Setup timeline
+    var timeline = new vis.Timeline(document.getElementById('timeline'), timelineData, timelineOptions);
+        
+    // Set custom time marker (blue)
+    timeline.setCustomTime(startTime);
+	   // Playback options
+    var playbackOptions = {
+        playControl: true,
+        dateControl: true,
+        sliderControl: true  
+   
+    };
+ // Initialize playback
+    var playback = new L.Playback(map, null, onPlaybackTimeChange, playbackOptions);
+playback.setData(soldiers); 
+ timeline.on('timechange', onCustomTimeChange);    
+
+    // A callback so timeline is set after changing playback time
+    function onPlaybackTimeChange (ms) {
+        timeline.setCustomTime(new Date(ms));
+    };
+    
+    // 
+    function onCustomTimeChange(properties) {
+        if (!playback.isPlaying()) {
+            playback.setCursor(properties.time.getTime());
+        }        
+    }    */
+
+
+
+ // =====================================================
+    // =============== Playback ============================
+    // =====================================================
+    
+    // Playback options
+    var playbackOptions = {
+        playControl: true,
+        dateControl: true,
+        sliderControl: true     
+    };
+        
+    // Initialize playback
+    var playback = new L.Playback(map, soldiers, null, playbackOptions);    
 	
 }
 
