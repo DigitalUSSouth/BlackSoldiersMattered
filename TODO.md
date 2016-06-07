@@ -7,4 +7,7 @@
 	- approximate locations (polygons)
 	- GPS coordinates 
 
-
+3. Source files to add in the repo (which are currently outsourced online)
+	- leaflet 	
+	- vis.min
+	- jquery (probably already have this)
