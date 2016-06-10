@@ -73,7 +73,8 @@ playback.setData(soldiers);
         if (!playback.isPlaying()) {
             playback.setCursor(properties.time.getTime());
         }        
-    }    */
+    }    
+*/
 
 
 

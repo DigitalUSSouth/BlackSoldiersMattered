@@ -44,7 +44,7 @@
    <!-- <link rel="stylesheet" href="leaflet/leaflet.css" /> 
     <script src="js/bsm.js"></script> -->
 
-<link rel="import" href="html/bsm.html">
+<link rel="import" href="html/bsm1.html">
 
  
 
