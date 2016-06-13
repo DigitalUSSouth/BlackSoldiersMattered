@@ -31,24 +31,21 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-    <!-- Carousel -->
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"><\/script>')</script>
-
+    <?php 
+    /*
+     * jquery is being loaded here instead of the footer because leaflet is stupid
+     * and won't work unless it's already loaded in the head.
+     * TODO: make this conditional for only pages that have maps, otherwise load in footer
+     * */
+    ?>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')</script>
     
-    
-    <!-- leaflet -->
-  <!--  <script src="leaflet/leaflet.js"></script> -->
-    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
- <script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
-   <!-- <link rel="stylesheet" href="leaflet/leaflet.css" /> 
-    <script src="js/bsm.js"></script> -->
-
-<link rel="import" href="html/bsm1.html">
-
- 
-
-    
+    <!-- leaflet 
+    will add cdn links later - to avoid caching issues-->
+    <script src="leaflet/leaflet.js"></script>
+    <link rel="stylesheet" href="leaflet/leaflet.css" /> 
+    <script src="js/bsm-map1.js"></script>
     
   </head>
 

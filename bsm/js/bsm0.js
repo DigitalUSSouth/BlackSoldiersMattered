@@ -27,7 +27,8 @@ function initmap() {
 	        .setContent("You clicked the map at " + e.latlng.toString())
 	        .openOn(map);
 	}
-
+	
+	alert ('map init done')
 	map.on('click', onMapClick);
 //----------------------------------------------------------------------------
 /*	   // Get start/end times

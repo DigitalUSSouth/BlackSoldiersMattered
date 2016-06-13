@@ -11,3 +11,8 @@
 	- leaflet 	
 	- vis.min
 	- jquery (probably already have this)
+
+4. Add conditional js/jquery to header/footer to map pages to
+improve load times
+
+5. Create new test data

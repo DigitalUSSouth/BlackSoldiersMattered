@@ -7,15 +7,21 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')</script>
     <script src="js/bootstrap.min.js"></script>
 
-    <!--Slick Carousel-->
-    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <!--Slick -->
+    <?php //do we realy need slick?? ?>
     <script type="text/javascript" src="slick/slick.min.js"></script>
     
+    <?php /*
+    TODO: make loading of leaflet stuff conditional only for pages that use map
+    */?>
+    <!-- leaflet test data -->
+    <script src="testdata/demo-tracks.js"></script>
+    <script src="testdata/test.js"></script>
+    <!-- leaflet playback module -->
+    <?php //TODO: update to minified js when debugging is done?>
+    <script src="leaflet/LeafletPlayback/LeafletPlayback.js"></script>
     
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
