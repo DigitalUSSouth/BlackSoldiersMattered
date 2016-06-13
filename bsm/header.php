@@ -48,6 +48,7 @@
     
     <!-- conditional loading of javascript for maps, to avoid conflicts -->
     <?php if($title=='index-1'):?><script src="js/bsm-map1.js"></script><?php endif;?>
+    <?php if($title=='index-2'):?><script src="js/bsm-map2.js"></script><?php endif;?>
     <?php if($title=='index-3'):?><script src="js/bsm-map3.js"></script><?php endif;?>
     
   </head>
