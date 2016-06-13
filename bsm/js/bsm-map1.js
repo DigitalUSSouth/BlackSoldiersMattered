@@ -53,11 +53,11 @@ function initmap() {
     	tickLen : 1000,
         playControl: true,
         dateControl: true,
-        sliderControl: true     
+        sliderControl: true
     };
-        
+
     // Initialize playback
-    var playback = new L.Playback(map1, demoTracks, null, playbackOptions);
+    var playback = new L.Playback(map1, soldiers, null, playbackOptions);
     
     //debug:
     console.log(playback);

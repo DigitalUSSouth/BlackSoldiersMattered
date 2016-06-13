@@ -1,12 +1,12 @@
 <?php
-$title = 'index-1';
+$title = 'index-3';
 
 require_once ('header.php');
 ?>
     <!-- Content -->
     <div id="page-container">
-      <h1>This is test map <strong>1</strong></h1>
-      <div id="testmap1"></div>
+      <h1>This is test map <strong>3</strong></h1>
+      <div id="testmap3"></div>
     </div>
 <?php 
 require_once ('footer.php');

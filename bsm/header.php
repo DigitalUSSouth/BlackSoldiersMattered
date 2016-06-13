@@ -44,8 +44,11 @@
     <!-- leaflet 
     will add cdn links later - to avoid caching issues-->
     <script src="leaflet/leaflet.js"></script>
-    <link rel="stylesheet" href="leaflet/leaflet.css" /> 
-    <script src="js/bsm-map1.js"></script>
+    <link rel="stylesheet" href="leaflet/leaflet.css" />
+    
+    <!-- conditional loading of javascript for maps, to avoid conflicts -->
+    <?php if($title=='index-1'):?><script src="js/bsm-map1.js"></script><?php endif;?>
+    <?php if($title=='index-3'):?><script src="js/bsm-map3.js"></script><?php endif;?>
     
   </head>
 
