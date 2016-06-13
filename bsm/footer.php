@@ -12,7 +12,9 @@
     <!--Slick -->
     <?php //do we realy need slick?? ?>
     <script type="text/javascript" src="slick/slick.min.js"></script>
-    
+     <!-- Vis Timeline -->
+   <script src="../bsm/vis/node_modules/vis/dist/vis.js"></script>
+   <link href="../bsm/vis/node_modules/vis/dist/vis.css" rel="stylesheet"       type="text/css" />
     <?php /*
     TODO: make loading of leaflet stuff conditional only for pages that use map
     */?>
