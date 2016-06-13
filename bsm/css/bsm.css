@@ -182,3 +182,16 @@ h1 {
 /* map styles */
 
 #testmap1 { height: 380px; }
+
+#testmap2 { height: 400px; }
+
+/* vis timeline for map2 style */
+ #timeline { 
+        height: 100%;
+	width: 100%; 
+        position: center;
+        left: 0;
+        right: 0;
+        bottom: 0;
+
+}
