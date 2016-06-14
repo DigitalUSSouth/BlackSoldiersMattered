@@ -9,12 +9,15 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="js/bootstrap.min.js"></script>
 
-    <!--Slick -->
-    <?php //do we realy need slick?? ?>
-    <script type="text/javascript" src="slick/slick.min.js"></script>
-     <!-- Vis Timeline -->
-   <script src="../bsm/vis/node_modules/vis/dist/vis.js"></script>
-   <link href="../bsm/vis/node_modules/vis/dist/vis.css" rel="stylesheet"       type="text/css" />
+    <!--Slick --
+    <?php //do we realy need slick??
+	//I don't think so. ?>
+    <script type="text/javascript" src="slick/slick.min.js"></script> -->
+    
+   <!-- Vis Timeline -->
+   <script src="vis/vis.js"></script>
+   <link href="vis/vis.css" rel="stylesheet"       type="text/css" />
+
     <?php /*
     TODO: make loading of leaflet stuff conditional only for pages that use map
     */?>
