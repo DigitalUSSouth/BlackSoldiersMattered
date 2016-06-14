@@ -17,3 +17,4 @@ improve load times
 
 5. Create new test data
 6. Add clickable marker (not the map)
+7. I have creted my own mapbox ID for now, need to create a generic(project) one.
