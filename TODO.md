@@ -16,3 +16,4 @@
 improve load times
 
 5. Create new test data
+6. Add clickable marker (not the map)
