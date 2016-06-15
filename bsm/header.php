@@ -41,15 +41,26 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')</script>
     
-    <!-- leaflet 
-    will add cdn links later - to avoid caching issues-->
+    <?php if ($title=='index-4'):?>
+    <!-- for hexbin map -->
+    <script src='https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.js'></script>
+    <link href='https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.css' rel='stylesheet' />
+    <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <script src="../bsm/d3/hexbin.js"></script>
+    <script src="../bsm/d3/simple_statistics.js"></script>
+    <?php else:?>
+    <!-- leaflet
+    will add cdn links later - to avoid caching issues -->
     <script src="leaflet/leaflet.js"></script>
     <link rel="stylesheet" href="leaflet/leaflet.css" />
+    <?php endif;?>
+    
     
     <!-- conditional loading of javascript for maps, to avoid conflicts -->
     <?php if($title=='index-1'):?><script src="js/bsm-map1.js"></script><?php endif;?>
     <?php if($title=='index-2'):?><script src="js/bsm-map2.js"></script><?php endif;?>
     <?php if($title=='index-3'):?><script src="js/bsm-map3.js"></script><?php endif;?>
+    <?php if($title=='index-4'):?><script src="js/bsm-map4.js"></script><?php endif;?> 
     
   </head>
 
