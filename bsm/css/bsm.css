@@ -195,24 +195,3 @@ h1 {
         bottom: 0;
 
 }
-
-/* style for map4 hexbin map */
-
-
- #mapContainer {
-        margin: 100px;
-        background-color: #333;
-        width: 80%;
-        height: 600px;
-      }
-      #tooltip {
-        opacity: .9;
-        background: #333;
-        padding: 5px;
-        border: 1px solid lightgrey;
-        border-radius: 5px;
-        position: absolute;
-        z-index: 10;
-        visibility: hidden;
-        pointer-events: none;
-      }

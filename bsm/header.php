@@ -25,21 +25,12 @@
     <!-- Custom styles for this template -->
     <link href="css/bsm.css" rel="stylesheet">
 
-<!-- for hexbin map -->
-    <script src='https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.js'></script>
-    <link href='https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.css' rel='stylesheet' />
-    <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
-    <script src="../bsm/d3/hexbin.js"></script>
-    <script src="../bsm/d3/simple_statistics.js"></script>
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-<!-- leaflet 
-    will add cdn links later - to avoid caching issues 
-    <script src="leaflet/leaflet.js"></script>
-    <link rel="stylesheet" href="leaflet/leaflet.css" /> -->
+
     <?php 
     /*
      * jquery is being loaded here instead of the footer because leaflet is stupid
@@ -51,15 +42,14 @@
     <script>window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')</script>
     
     <!-- leaflet 
-    will add cdn links later - to avoid caching issues 
+    will add cdn links later - to avoid caching issues-->
     <script src="leaflet/leaflet.js"></script>
-    <link rel="stylesheet" href="leaflet/leaflet.css" /> -->
+    <link rel="stylesheet" href="leaflet/leaflet.css" />
     
     <!-- conditional loading of javascript for maps, to avoid conflicts -->
     <?php if($title=='index-1'):?><script src="js/bsm-map1.js"></script><?php endif;?>
     <?php if($title=='index-2'):?><script src="js/bsm-map2.js"></script><?php endif;?>
     <?php if($title=='index-3'):?><script src="js/bsm-map3.js"></script><?php endif;?>
-    <?php if($title=='index-4'):?><script src="js/bsm-map4.js"></script><?php endif;?> 
     
   </head>
 
