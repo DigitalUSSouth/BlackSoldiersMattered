@@ -1,4 +1,6 @@
-//**********************************************************************************
+//     <!-- map tutotial by delimited.io -->
+
+	//**********************************************************************************
       //********  LEAFLET HEXBIN LAYER CLASS *********************************************
       //**********************************************************************************
       L.HexbinLayer = L.Class.extend({
@@ -96,21 +98,22 @@
       //**********************************************************************************
       //********  IMPORT DATA AND REFORMAT ***********************************************
       //**********************************************************************************
-      d3.csv('testdata/coffee.csv', function (error, coffee) {
+   
+ d3.csv('testdata/camps.csv', function (error, coffee) {
 
         function reformat (array) {
           var data = [];
           array.map(function (d){
             data.push({
               properties: {
-                group: +d.group,
-                city: d.city,
-                state: d.state,
-                store: d.storenumber
+                group: +d.Group,
+              //  city: d.city,
+          //      state: d.state,
+           //     store: d.storenumber
               }, 
               type: "Feature", 
               geometry: {
-                coordinates:[+d.longitude,+d.latitude], 
+                coordinates:[+d.Longitude,+d.Latitude], 
                 type:"Point"
               }
             });
@@ -126,12 +129,14 @@
        L.mapbox.accessToken = 'pk.eyJ1IjoidGhlY3J5cHRpeCIsImEiOiJjaXBmb2ZhaWswMDBmdnFtamM1OWY2ajY1In0.EZ6bbL_Yc-oX8ZLykZzmFg';
         // PLEASE DO NOT USE MY MAP ID :)  YOU CAN GET YOUR OWN FOR FREE AT MAPBOX.COM
         var leafletMap = L.mapbox.map('mapContainer', 'thecryptix.0danm18l')
-            .setView([40.7, -73.8], 11);
+            .setView(new L.LatLng(39.57182, -97.60254),4);
 
         //**********************************************************************************
         //********  ADD HEXBIN LAYER TO MAP AND DEFINE HEXBIN STYLE FUNCTION ***************
         //**********************************************************************************
-        var hexLayer = L.hexbinLayer(geoData, { 
+        
+  var hexLayer = L.hexbinLayer(geoData, {
+ 
                           style: hexbinStyle,
                           mouse: makePie
                         }).addTo(leafletMap);
@@ -151,9 +156,13 @@
         //**********************************************************************************
         //********  PIE CHART ROLL-OVER ****************************************************
         //**********************************************************************************
-        function makePie (data) {
+ //window.alert("no bug");      
+ function makePie (data) {
 
-          d3.select("#tooltip").selectAll(".arc").remove()
+// Need to alter this function to display text in tooltips..
+
+
+    /*      d3.select("#tooltip").selectAll(".arc").remove()
           d3.select("#tooltip").selectAll(".pie").remove()
 
           var arc = d3.svg.arc()
@@ -181,5 +190,6 @@
                   .attr("transform", function(d) { return "translate(" + arc.centroid(d) + ")"; })
                   .style("text-anchor", "middle")
                   .text(function (d) { return d.value === 0 ? "" : d.value; });
-        }
+*/      
+  }
       });
