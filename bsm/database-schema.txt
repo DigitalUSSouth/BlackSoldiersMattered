@@ -1,0 +1,79 @@
+/*
+*  Database tables for Black Soldiers Mattered Project
+*/
+
+
+CREATE TABLE soldiers (
+  id int(11) NOT NULL AUTO_INCREMENT,
+  first_name varchar(255),
+  last_name varchar(255),
+  residence_county varchar(255),
+  residence_city varchar(255),
+  entrance_status varchar(255),
+  induction_place varchar(255),
+  induction_date varchar(255), /* should we use mysql's date type? */
+  birth_place varchar(255),
+  age varchar(255),
+  birth_date varchar(255), /* date type? */
+  initial_unit varchar(255),
+  initial_unit_company varchar(255),
+  initial_unit_transfer_out_date varchar(255), /* date type? */
+  last_unit varchar(255),
+  last_unit_company varchar(255),
+  last_unit_transfer_out_date varchar(255), /* date type? */
+  discharge_date varchar(255), /* date type?*/
+  service_date_start varchar(255), /* date type?*/
+  service_date_end varchar(255), /* date type?*/
+  wounded varchar(255),
+  death_date varchar(255), /* date type?*/
+  death_cause varchar(255),
+  death_notified varchar(255),
+  PRIMARY KEY (id)
+);
+
+
+/* additional_transfer_units:
+*  This table contains any transfer units other than initial and last
+*/
+CREATE TABLE additional_transfer_units (
+  id int(11) NOT NULL AUTO_INCREMENT,
+  soldier_id int(11),
+  unit_order int(11), /* describes the unit progression order */
+  unit_name varchar(255),
+  company_name varchar(255),
+  transfer_out_date varchar(255) /* date type? */
+);
+
+/* ranks
+*  This table contains rank information for all soldiers
+*/
+CREATE TABLE ranks (
+  id int(11) NOT NULL AUTO_INCREMENT,
+  soldier_id int(11),
+  rank_order int(11), /* describes rank progression order */
+  rank varchar(255),
+  rank_date varchar(255) /* date type? */
+);
+
+/* engagements
+*  This table contains engagement information
+*/
+CREATE TABLE engagements (
+  id int(11) NOT NULL AUTO_INCREMENT,
+  soldier_id int(11),
+  engagement varchar(255)
+);
+
+
+/* other tables */
+
+/* camps
+*  This table contains information about camps
+*/
+CREATE TABLE camps (
+  id int(11) NOT NULL AUTO_INCREMENT,
+  name varchar(255),
+  place varchar(255),
+  type varchar(255)
+);
+
