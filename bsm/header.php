@@ -42,7 +42,9 @@
     <script>window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')</script>
     
     <?php if ($title=='index-4'):?>
-    <!-- for hexbin map -->
+    <!-- for hexbin map 
+    TODO: add local copy of these files in case cdn goes down
+    -->
     <script src='https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.js'></script>
     <link href='https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.css' rel='stylesheet' />
     <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
@@ -55,11 +57,20 @@
     <link rel="stylesheet" href="leaflet/leaflet.css" />
     <?php endif;?>
     
-    
     <!-- conditional loading of javascript for maps, to avoid conflicts -->
     <?php if($title=='index-1'):?><script src="js/bsm-map1.js"></script><?php endif;?>
     <?php if($title=='index-2'):?><script src="js/bsm-map2.js"></script><?php endif;?>
-    <?php if($title=='index-3'):?><script src="js/bsm-map3.js"></script><?php endif;?>
+    <?php if($title=='index-3'):?>
+    <script src="js/bsm-map3.js"></script>
+    <script src="leaflet/marker-cluster/MarkerCluster.js"></script>
+    <script src="leaflet/marker-cluster/MarkerClusterGroup.js"></script>
+    <script src="leaflet/marker-cluster/DistanceGrid.js"></script>
+    <script src="leaflet/marker-cluster/MarkerCluster.QuickHull.js"></script>
+    <script src="leaflet/marker-cluster/MarkerCluster.Spiderfier.js"></script>
+    <script src="leaflet/marker-cluster/MarkerClusterGroup.Refresh.js"></script>
+    <script src="leaflet/marker-cluster/MarkerOpacity.js"></script>
+    
+    <?php endif;?>
     <?php if($title=='index-4'):?><script src="js/bsm-map4.js"></script><?php endif;?> 
     
   </head>

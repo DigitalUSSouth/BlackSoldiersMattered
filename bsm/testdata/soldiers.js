@@ -1,4 +1,5 @@
-var soldier1 = {
+[
+{
   "type": "Feature",
   "geometry": {
     "type": "MultiPoint",
@@ -15,9 +16,8 @@ var soldier1 = {
       510000
     ]
   }
-};
-
-var soldier2 = {
+},
+{
   "type": "Feature",
   "geometry": {
     "type": "MultiPoint",
@@ -34,10 +34,8 @@ var soldier2 = {
       510000
     ]
   }
-};
-
-
-var soldier3 = {
+},
+{
   "type": "Feature",
   "geometry": {
     "type": "MultiPoint",
@@ -54,9 +52,8 @@ var soldier3 = {
       505000
     ]
   }
-};
-
-var soldier4 = {
+},
+{
   "type": "Feature",
   "geometry": {
     "type": "MultiPoint",
@@ -73,9 +70,8 @@ var soldier4 = {
       510000
     ]
   }
-};
-
-var soldier5 = {
+},
+{
   "type": "Feature",
   "geometry": {
     "type": "MultiPoint",
@@ -92,10 +88,8 @@ var soldier5 = {
       510000
     ]
   }
-};
-
-
-var soldier6 = {
+},
+{
   "type": "Feature",
   "geometry": {
     "type": "MultiPoint",
@@ -112,9 +106,8 @@ var soldier6 = {
       505000
     ]
   }
-};
-
-var soldier7 = {
+},
+{
   "type": "Feature",
   "geometry": {
     "type": "MultiPoint",
@@ -131,9 +124,8 @@ var soldier7 = {
       510000
     ]
   }
-};
-
-var soldier8 = {
+},
+{
   "type": "Feature",
   "geometry": {
     "type": "MultiPoint",
@@ -150,10 +142,8 @@ var soldier8 = {
       510000
     ]
   }
-};
-
-
-var soldier9 = {
+},
+{
   "type": "Feature",
   "geometry": {
     "type": "MultiPoint",
@@ -170,9 +160,8 @@ var soldier9 = {
       505000
     ]
   }
-};
-
-var soldier10 = {
+},
+{
   "type": "Feature",
   "geometry": {
     "type": "MultiPoint",
@@ -189,9 +178,8 @@ var soldier10 = {
       510000
     ]
   }
-};
-
-var soldier11 = {
+},
+{
   "type": "Feature",
   "geometry": {
     "type": "MultiPoint",
@@ -208,10 +196,8 @@ var soldier11 = {
       510000
     ]
   }
-};
-
-
-var soldier12 = {
+},
+{
   "type": "Feature",
   "geometry": {
     "type": "MultiPoint",
@@ -228,85 +214,5 @@ var soldier12 = {
       505000
     ]
   }
-};
-
-var soldiers = [soldier1 , soldier2, soldier3,
-                soldier4 , soldier5, soldier6,
-                soldier7 , soldier8, soldier9,
-                soldier10 , soldier11, soldier12];
-
-
-var initialMarkers = [
-                      {
-                          "latlng": [
-                              34.88593,
-                              -79.05762
-                          ]
-                      },
-                      {
-                          "latlng": [
-                              34.88593,
-                              -78.05762
-                          ]
-                      },
-                      {
-                          "latlng": [
-                              35.38905,
-                              -76.86035
-                          ]
-                      },
-                      {
-                          "latlng": [
-                              34.88593,
-                              -78.05762
-                          ]
-                      },
-                      {
-                          "latlng": [
-                              34.88593,
-                              -80.05762
-                          ]
-                      },
-                      {
-                          "latlng": [
-                              35.38905,
-                              -91.86035
-                          ]
-                      },
-                      {
-                          "latlng": [
-                              30.88593,
-                              -89.05762
-                          ]
-                      },
-                      {
-                          "latlng": [
-                              40.88593,
-                              -79.05762
-                          ]
-                      },
-                      {
-                          "latlng": [
-                              31.38905,
-                              -86.86035
-                          ]
-                      },
-                      {
-                          "latlng": [
-                              34.88593,
-                              -80.05762
-                          ]
-                      },
-                      {
-                          "latlng": [
-                              34.88593,
-                              -80.05762
-                          ]
-                      },
-                      {
-                          "latlng": [
-                              42.38905,
-                              -76.86035
-                          ]
-                      }
-                  ];
+}
+]
