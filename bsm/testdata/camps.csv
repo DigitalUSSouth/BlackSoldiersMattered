@@ -1,0 +1,34 @@
+campnames,City,State,Type,Latitude,Longitude,Street,City,State,County,Zip,Country,group
+ Camp Devens,Ayer,MA,National Army,42.566573,-71.575135,,Ayer,MA,Middlesex County,1432,US,0
+ Camp Upton,Yaphank Long Island,NY,National Army,35.249844,-85.125725,Yaphank Rd,Soddy-Daisy,TN,Hamilton County,37379,US,0
+ Camp Dix,Wrightstown,NJ,National Army,40.0751,-74.608402,,Wrightstown,NJ,Burlington County,8562,US,0
+ Camp Meade,Annapolis Junction,MD,National Army,39.125563,-76.785436,,Annapolis Junction,MD,Howard County,20701,US,0
+ Camp Lee,Petersburg,VA,National Army,37.209159,-77.497484,,Petersburg,VA,Petersburg city,23803,US,0
+ Camp Jackson,Columbia,SC,National Army,33.987454,-81.024864,,Columbia,SC,Richland County,29201,US,0
+ Camp Gordon,Atlanta,GA,National Army,33.844371,-84.47405,,Atlanta,GA,Fulton County,30301,US,0
+ Camp Sherman,Chillicothe,OH,National Army,39.337384,-82.991332,,Chillicothe,OH,Ross County,45601,US,0
+ Camp Taylor,Louisville,KY,National Army,38.188962,-85.676819,,Louisville,KY,Jefferson County,40201,US,0
+ Camp Custer,Battle Creek,MI,National Army,42.303041,-85.13044,,Battle Creek,MI,Calhoun County,49014,US,0
+ Camp Grant,Rockford,IL,National Army,42.33342,-89.157198,,Rockford,IL,Winnebago County,61101,US,0
+ Camp Pike,Little Rock,AR,National Army,34.746905,-92.280049,,Little Rock,AR,Pulaski County,72201,US,0
+ Camp Dodge,Des Moines,IA,National Army,41.672687,-93.572173,,Des Moines,IA,Polk County,50301,US,0
+ Camp Funston,Fort Riley,KS,National Army,39.113738,-96.837821,,Fort Riley,KS,Geary County,66442,US,0
+ Camp Travis,Fort Sam Houston,TX,National Army,29.713022,-95.228282,Frd,Houston,TX,Harris County,77012,US,0
+ Camp Lewis,American Lake,WA,National Army,36.661662,-119.37477,E American Ave,Reedley,CA,Fresno County,93654,US,0
+ Camp Greene,Charlotte,NC,Regular Army (National Guard),35.26002,-80.804151,,Charlotte,NC,Mecklenburg County,28201,US,1
+ Camp Wadsworth,Spartanburg,SC,Regular Army (National Guard),34.934028,-82.010697,,Spartanburg,SC,Spartanburg County,29301,US,1
+ Camp Hancock,Augusta,GA,Regular Army (National Guard),33.456687,-81.969184,,Augusta,GA,Richmond County,30901,US,1
+ Camp McClellan,Anniston,AL,Regular Army (National Guard),33.64916,-85.879642,,Anniston,AL,Calhoun County,36201,US,1
+ Camp Sevier,Greenville,SC,Regular Army (National Guard),34.848567,-82.402871,,Greenville,SC,Greenville County,29601,US,1
+ Camp Wheeler,Macon,GA,Regular Army (National Guard),32.804382,-83.617554,,Macon,GA,Bibb County,31201,US,1
+ Camp MacArthur,Waco,TX,Regular Army (National Guard),31.434703,-99.281824,,,TX,,,US,1
+ Camp Logan,Houston,TX,Regular Army (National Guard),29.813142,-95.309789,,Houston,TX,Harris County,77001,US,1
+ Camp Cody,Deming,NM,Regular Army (National Guard),32.079682,-107.683073,,Deming,NM,Luna County,88030,US,1
+ Camp Doniphan,Fort Sill,OK,Regular Army (National Guard),34.663978,-98.437482,,Fort Sill,OK,Comanche County,73503,US,1
+ Camp Bowie,Fort Worth,TX,Regular Army (National Guard),32.771419,-97.291484,,Fort Worth,TX,Tarrant County,76101,US,1
+ Camp Sheridan,Montgomery,AL,Regular Army (National Guard),32.356988,-86.257817,,Montgomery,AL,Montgomery County,36101,US,1
+ Camp Shelby,Hattiesburg,MS,Regular Army (National Guard),31.245138,-89.28071,,Hattiesburg,MS,Forrest County,39401,US,1
+ Camp Beauregard,Alexandria,LA,Regular Army (National Guard),31.274156,-92.467107,,Alexandria,LA,Rapides Parish,71301,US,1
+ Camp Kearny,Linda Vista,CA,Regular Army (National Guard),33.19784,-117.248203,,Vista,CA,San Diego County,92083,US,1
+ Camp Fremont,Palo Alto,CA,Regular Army (National Guard),37.444122,-122.149915,,Palo Alto,CA,Santa Clara County,94301,US,1
+ Camp Mills,"Garden City, Long Island",NY,Regular Army (National Guard),30.6781,-94.899732,Garden City,Livingston,TX,Polk County,77351,US,1
