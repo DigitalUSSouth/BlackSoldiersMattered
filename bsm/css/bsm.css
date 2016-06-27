@@ -208,13 +208,15 @@ h1 {
         height: 600px;
       }
       #tooltip {
-        opacity: .9;
+        opacity: 0.9;
+	filter: alpha(opacity=90); /* For IE8 and earlier */
         background: #333;
         padding: 5px;
         border: 1px solid lightgrey;
-        border-radius: 5px;
+        border-radius: 15px;
         position: absolute;
         z-index: 10;
         visibility: hidden;
         pointer-events: none;
+	color: red;
       }
