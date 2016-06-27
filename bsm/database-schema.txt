@@ -13,8 +13,10 @@ CREATE TABLE soldiers (
   induction_place varchar(255),
   induction_date varchar(255), /* should we use mysql's date type? */
   birth_place varchar(255),
-  age varchar(255),
+  age varchar(255), /*we can calculate this from birthdate -Sid */
   birth_date varchar(255), /* date type? */
+ 
+ /* We don't need to define initial and last units of we can just put everything in a seperate Units table -Sid*/
   initial_unit varchar(255),
   initial_unit_company varchar(255),
   initial_unit_transfer_out_date varchar(255), /* date type? */
@@ -24,6 +26,8 @@ CREATE TABLE soldiers (
   discharge_date varchar(255), /* date type?*/
   service_date_start varchar(255), /* date type?*/
   service_date_end varchar(255), /* date type?*/
+  
+  /* Seperate this into a new Casualty table because here it would result in a lot of empty columns -Sid*/
   wounded varchar(255),
   death_date varchar(255), /* date type?*/
   death_cause varchar(255),
@@ -35,6 +39,8 @@ CREATE TABLE soldiers (
 /* additional_transfer_units:
 *  This table contains any transfer units other than initial and last
 */
+
+/* This can be a unanimous Units table -Sid */
 CREATE TABLE additional_transfer_units (
   id int(11) NOT NULL AUTO_INCREMENT,
   soldier_id int(11),
@@ -76,4 +82,5 @@ CREATE TABLE camps (
   place varchar(255),
   type varchar(255)
 );
+
 
