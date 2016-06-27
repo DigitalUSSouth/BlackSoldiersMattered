@@ -55,21 +55,24 @@
 
           var path = hexagons.enter().append("path").attr("class", "hexagon");
           this.config.style.call(this, path);
-
+//-------------------------------------------------------------------
           that = this;
+	cname = data.cname;
           hexagons
             .attr("d", function(d) { return that.layout.hexagon(that.rscale(d.length)); })
             .attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; })
             .on("mouseover", function (d) { 
               var s=0, k=0;
+		
               d.map(function(e){
                 if (e.length === 3) e[2].group === 1 ? ++k : ++s;
               });
               that.config.mouse.call(this, [s,k]);
               d3.select("#tooltip")
                 .style("visibility", "visible")
-                .style("top", function () { return (d3.event.pageY - 130)+"px"})
-                .style("left", function () { return (d3.event.pageX - 130)+"px";})
+                .style("top", function () { return (d3.event.pageY - 30)+"px"})
+                .style("left", function () { return (d3.event.pageX - 30)+"px";})
+		.text(function() {return "cname";}) //need to add a function to pull camp names from data
             })
             .on("mouseout", function (d) { d3.select("#tooltip").style("visibility", "hidden") });
         },
@@ -106,7 +109,8 @@
           array.map(function (d){
             data.push({
               properties: {
-                group: +d.Group,
+                group: +d.group,
+		cname: d["campnames"],
               //  city: d.city,
           //      state: d.state,
            //     store: d.storenumber
@@ -121,6 +125,7 @@
           return data;
         }
         var geoData = { type: "FeatureCollection", features: reformat(coffee) };
+
         //**********************************************************************************
         //********  CREATE LEAFLET MAP *****************************************************
         //**********************************************************************************
@@ -138,7 +143,7 @@
   var hexLayer = L.hexbinLayer(geoData, {
  
                           style: hexbinStyle,
-                          mouse: makePie
+                          mouse: inBoxPop
                         }).addTo(leafletMap);
 
         function hexbinStyle(hexagons) {
@@ -157,15 +162,17 @@
         //********  PIE CHART ROLL-OVER ****************************************************
         //**********************************************************************************
  //window.alert("no bug");      
- function makePie (data) {
+ function inBoxPop (data) {
+//document.getElementById("tooltip").innerHTML = 5 + 6;
 
 // Need to alter this function to display text in tooltips..
 
-
-    /*      d3.select("#tooltip").selectAll(".arc").remove()
+/*
+         d3.select("#tooltip").selectAll(".arc").remove()
           d3.select("#tooltip").selectAll(".pie").remove()
 
-          var arc = d3.svg.arc()
+
+           var arc = d3.svg.arc()
               .outerRadius(45)
               .innerRadius(10);
 
@@ -182,14 +189,15 @@
                     .enter().append("g")
                       .attr("class", "arc");
 
-              g.append("path")
+
+             g.append("path")
                 .attr("d", arc)
-                .style("fill", function(d, i) { return i === 1 ? "#FFA500":"#00FF00"; });
+                .style("fill", function(d, i) { return i === 1 ? "#FFA500":"#00FF00"; }); 
 
               g.append("text")
                   .attr("transform", function(d) { return "translate(" + arc.centroid(d) + ")"; })
                   .style("text-anchor", "middle")
                   .text(function (d) { return d.value === 0 ? "" : d.value; });
-*/      
-  }
+     */
+  } 
       });
