@@ -16,7 +16,7 @@ CREATE TABLE soldiers (
   age varchar(255), /*we can calculate this from birthdate -Sid */
   birth_date varchar(255), /* date type? */
  
- /* We don't need to define initial and last units of we can just put everything in a seperate Units table -Sid*/
+ /* We don't need to define initial and last units if we can just put everything in a seperate Units table -Sid*/
   initial_unit varchar(255),
   initial_unit_company varchar(255),
   initial_unit_transfer_out_date varchar(255), /* date type? */
