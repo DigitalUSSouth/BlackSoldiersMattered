@@ -1,0 +1,29 @@
+/**
+* This file describes the json schema for this project
+*
+* file: soldiers.json
+* will holdd an array of soldier objects
+*/
+
+/* soldier object */
+{
+	"id": "",
+	"first_name" : "value",
+	"last_name" : "value",
+	"residence_county" : "value",
+	"residence_city" : "value",
+	"entrance_status" : "value",
+	"induction_place" : "value",
+	"induction_date" : "value", /* ISO 8601 date format */
+	"birth_place" : "value",
+	"age" : "value", /*we can calculate this from birthdate -Sid */
+	"birth_date" : "value", /* ISO 8601 date format */
+	"unit_progression" : [/*unit progression stuff goes here*/],
+	"discharge_date" : "value", /* ISO 8601 date format */
+	"service_date_start" : "value", /* ISO 8601 date format */
+	"service_date_end" : "value", /* ISO 8601 date format */
+	"wounded" : "value",
+	"death_date" : "value", /* ISO 8601 date format */
+	"death_cause" : "value",
+	"death_notified" : "value"
+}
