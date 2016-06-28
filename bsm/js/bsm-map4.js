@@ -102,7 +102,7 @@
       //********  IMPORT DATA AND REFORMAT ***********************************************
       //**********************************************************************************
    
- d3.csv('testdata/camps.csv', function (error, coffee) {
+ d3.csv(ROOT_FOLDER+'testdata/camps.csv', function (error, coffee) {
 
         function reformat (array) {
           var data = [];

@@ -1,11 +1,11 @@
 <?php
-$title = 'index-4';
+$title = 'map-4';
 
-require_once ('header.php');
+require_once ('../header.php');
 ?>
     <!-- Content -->
     <div id="page-container">
-      <h1>This is test map <strong>4</strong></h1>
+      <h1>Map 4: hexbin</h1>
       <div id="mapContainer"></div>
     <div id="tooltip">
       <svg width="100px" height="0px"></svg>
@@ -15,5 +15,5 @@ require_once ('header.php');
     </div>
 
 <?php 
-require_once ('footer.php');
+require_once ('../footer.php');
 ?>
