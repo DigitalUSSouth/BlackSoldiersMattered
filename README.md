@@ -5,6 +5,7 @@
 - [] canvas animation 
 - [] Normalize the database -> update json object schema, json-schema.json
 - [] fix navbar in header to display properly in narrow viewports
+- [] add shell script to server for deployment
 
 ##Sid
 - fixed the text not showing up in bsm-4 map.
