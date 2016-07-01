@@ -9,6 +9,8 @@ $(document).ready( function() {
 
 
 var map3;
+var markers = [];
+var heat; //this is the heatmap layer
 
 /**
  * function initmap() 
@@ -40,12 +42,12 @@ function initmap() {
 	//alert ('map init done')
 	//map3.on('click', onMapClick);
 	
-	var markers = [];
+	
 	
 	initialMarkers.forEach(function (marker){
 		markers.push(marker.latlng);
 	});
-	var heat = L.heatLayer(
+	heat = L.heatLayer(
 			markers,
 			{
 				radius: 25,
@@ -53,5 +55,51 @@ function initmap() {
 			}
 			).addTo(map3);
 	
-	//console.log(markers);
+	var nextPrevControl = L.Control.extend({
+	    options: {
+	        position: 'bottomleft'
+	    },
+
+	    onAdd: function (map) {
+	        // create the control container with a particular class name
+	        var container = L.DomUtil.create('div', 'next-prev-control');
+
+	        $(container).html('<button class="btn btn-primary disabled" id="prev-button">&lt;Prev ' +
+	        		'</button>' +
+	        		'<button class="btn btn-primary" id="next-button"> Next &gt;' +
+	        		'</button>');
+	        
+	        
+
+	        return container;
+	    }
+	});
+	
+	newControl = new nextPrevControl();
+	newControl.addTo(map3);
+	//add listeners, etc.
+    
+    $("#prev-button").click(function (e){
+    	markers = [];
+    	initialMarkers.forEach(function (marker){
+    		markers.push(marker.latlng);
+    	});
+    	heat.setLatLngs(markers);
+    	$("#prev-button").addClass("disabled");
+    	$("#next-button").removeClass("disabled");
+    });
+	
+	/* I hate nested callback functions... */
+	
+    $("#next-button").click(function (e){
+    	markers = [];
+    	secondMarkers.forEach(function (marker){
+    		markers.push(marker.latlng);
+    	});
+    	heat.setLatLngs(markers);
+    	$("#prev-button").removeClass("disabled");
+    	$("#next-button").addClass("disabled");
+    });
+    
+	//console.log(MyControl);
 }
