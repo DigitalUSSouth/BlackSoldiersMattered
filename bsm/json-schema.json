@@ -28,7 +28,7 @@ each soldier will be in its own json file: soldierid.json
 			/* etc. */ 
 		],
 	"engagements" : [
-			"engagement 1", /* does this mean camps or battles? */
+			"engagement 1", /* does this mean camps or battles? -Sid */
 			"engagement 2"
 			/* etc. */ 
 		],
@@ -59,6 +59,6 @@ units.json will contain an array of unit objects
 	"id" : "",
 	"service_location" : "value",
 	"type" :  "value",
-	"location" : ["camp","date"],
+	"location" : ["camp","date"], /*does this "camp" pull the whole subsequent camp record from above? -Sid */
 	"location" : ""
 }
