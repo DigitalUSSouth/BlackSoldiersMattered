@@ -1,0 +1,11 @@
+
+#!/bin/bash
+
+clear
+
+
+
+
+
+
+exit
