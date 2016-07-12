@@ -85,7 +85,8 @@ function initmap() {
     		markers.push(marker.latlng);
     	});
     	heat.setLatLngs(markers);
-    	$(".next-prev-control button").toggleClass("disabled");
+    	$("#prev-button").addClass("disabled");
+    	$("#next-button").removeClass("disabled");
     });
 	
 	/* I hate nested callback functions... */
@@ -96,7 +97,8 @@ function initmap() {
     		markers.push(marker.latlng);
     	});
     	heat.setLatLngs(markers);
-    	$(".next-prev-control button").toggleClass("disabled");
+    	$("#prev-button").removeClass("disabled");
+    	$("#next-button").addClass("disabled");
     });
     
 	//console.log(MyControl);

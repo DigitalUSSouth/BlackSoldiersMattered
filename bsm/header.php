@@ -17,7 +17,7 @@ require_once 'config.php';
     <link href="<?php print ROOT_FOLDER;?>css/bootstrap.min.css" rel="stylesheet">
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <link href="<?php print ROOT_FOLDER;?>css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+    <link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 
     <!-- Carousel Slider CSS -->
     <link rel="stylesheet" type="text/css" href="<?php print ROOT_FOLDER;?>slick/slick.css"/>

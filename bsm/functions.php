@@ -49,39 +49,42 @@ function importRandomSample(){
 		
 		$soldier = array(
 				"id"=> $fields[0],
-				"first_name" => $fields[1],
-				"last_name" => $fields[2],
-				"residence_county" => $fields[3],
-				"residence_city" => $fields[4],
-				"entrance_status" => $fields[5],
-				"induction_place" => $fields[6],
-				"induction_date" => $fields[7], /* TODO: convert to ISO 8601 date format */
-				"birth_place" => $fields[8],
-				"age" => $fields[9], /* TODO: normalize format*/
-				"birth_date" => $fields[10], /* ISO 8601 date format */
-				"unit_progression" => [
-						/* TODO: add stuff for units*/
-				],
-				"rank_progression" => [
-					/* TODO: add stuff for ranks*/
-				],
-				"engagements" => [
-					/* TODO: add stuff for engagements*/
-				],
-				"discharge_date" => $fields[28], /* TODO:  convert all these dates to ISO 8601 date format */
-				"service_date_start" => $fields[29],
-				"service_date_end" => $fields[30],
-				"wounded" => $fields[32],
-				"death_date" => $fields[33],
-				"death_cause" => $fields[34],
-				"death_notified" => $fields[35]
+	"first_name" => $fields[1],
+	"last_name" => $fields[2],
+	"residence_county" => $fields[3],
+	"residence_city" => $fields[4],
+	"entrance_status" => $fields[5],
+	"induction_place" => $fields[6],
+	"induction_date" => $fields[7], /* TODO: convert to ISO 8601 date format */
+	"birth_place" => $fields[],
+	"age" => $fields[], /*we can calculate this from birthdate -Sid 
+			We can calculate age for some but the problem is that
+			we don't have birthdate for every soldiers, but we do
+			have their age - Adrian*/
+	"birth_date" => $fields[], /* ISO 8601 date format */
+	"unit_progression" => [
+			["unit 1"=> "company a", "1917-4-3"], /* does this connect to the unit ID downstairs? -Sid  -- yup!*/
+			["unit 2"=> "company b", "1918-1-3"]
+			/* etc. */ 
+		],
+	"rank_progression" => [
+			"rank 1" => "1917-4-3",
+			"rank 2" => "1918-1-3"
+			/* etc. */ 
+		],
+	"engagements" => [
+			"engagement 1", /* does this mean camps or battles? -Sid --Battles, per the 'engagements' column on the soldiers spreadsheet - Adrian*/
+			"engagement 2"
+			/* etc. */ 
+		],
+	"discharge_date" => $fields[], /* ISO 8601 date format */
+	"service_date_start" => $fields[], /* ISO 8601 date format */
+	"service_date_end" => $fields[], /* ISO 8601 date format */
+	"wounded" => $fields[],
+	"death_date" => $fields[], /* ISO 8601 date format */
+	"death_cause" => $fields[],
+	"death_notified" => $fields[]
 		);
-		
-		$jsonSoldier = json_encode($soldier,JSON_PRETTY_PRINT);
-		
-		file_put_contents('data/'.$soldier['id'].'.json',$jsonSoldier);
-		
-		print $jsonSoldier;
 		
 		
 	}
