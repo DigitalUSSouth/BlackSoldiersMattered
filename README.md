@@ -14,8 +14,7 @@
 - added Normalization suggestion comments to the Database Schema first draft
  
 ##Adrian
-- 6-27: added first draft of json schema for soldier object, json-schema.json
-- 6-28: added static heatmap
+- in-progress: conversiont script for random sample spreadsheet
 
 
 
