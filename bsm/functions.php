@@ -46,6 +46,8 @@ function importRandomSample(){
 		print $line.'<br>';
 		
 		$fields = explode("\t",$line);
+
+		$units = createUnitsObject(array_splice($fields,12,15));
 		
 		$soldier = array(
 				"id"=> $fields[0],
@@ -55,13 +57,11 @@ function importRandomSample(){
 				"residence_city" => $fields[4],
 				"entrance_status" => $fields[5],
 				"induction_place" => $fields[6],
-				"induction_date" => $fields[7], /* TODO: convert to ISO 8601 date format */
+				"induction_date" => formatDate($fields[7]), /* TODO: test if formatting function works, add try-catch*/
 				"birth_place" => $fields[8],
-				"age" => $fields[9], /* TODO: normalize format*/
+				"age" => $fields[11], /* TODO: check if this works*/
 				"birth_date" => $fields[10], /* ISO 8601 date format */
-				"unit_progression" => [
-						/* TODO: add stuff for units*/
-				],
+				"unit_progression" => $units,
 				"rank_progression" => [
 					/* TODO: add stuff for ranks*/
 				],
@@ -89,3 +89,104 @@ function importRandomSample(){
 	
 	
 }
+
+/**
+ * function to format the date from M^/D^/YY to YYYY-MM-DD
+ * @param {string} excel-formatted date string 
+ * @return {string} ISO 8601 string if successful or exception on failure
+ */
+function formatDate($input){
+	if (!is_string($input)){
+		throw new Exception('Input date must be a string: '.$input);
+	}
+	$parts = explode('/',$input);
+
+	if (sizeof($parts) != 3) {
+		throw new Exception('Invalid date format. Incorrect number of parts. - '.$input);
+	}
+
+	$month = $parts[0];
+	$day = $parts[1];
+	$year = $parts[2];
+
+	//pad month and day with zeroes if needed
+	$month = sprintf('%02d', (int)$month);
+	$day = sprintf('%02d', (int)$day);
+
+	//add leading '19' to year
+	$year = '19'.$year;
+
+	//create final return string
+	return $year.'-'.$month.'-'.$day;
+}
+
+/**
+ * creates a units object for a soldier
+ * @param {array} array of strings containing unit details
+ * @return {string} Unit object to be inserted into a soldier, exception on failure
+ */
+ function createUnitsObject($unitsFields){
+	 if (sizeof($unitFields != 15)){
+		throw new Exception('Invalid input for createUnitsObject function.');
+	}
+
+	 $units = array();
+
+	 //initial unit
+	 $unit[] = $unitFields[1];//unit name
+	 $unit[] = $unitFields[0];//company
+	 $unit[] = $unitFields[2];//transfer date
+
+	 $units[] = $unit;
+
+	 //second unit
+	 $unit = array();
+	 $unit[] = $unitFields[4];
+	 $unit[] = $unitFields[3];
+	 $unit[] = '';//TODO: parse date out from unit name	
+	 
+	 if ($unit[0] != '' )$units[] = $unit;
+
+	 //third unit
+	 $unit = array();
+	 $unit[] = $unitFields[6];
+	 $unit[] = $unitFields[5];
+	 $unit[] = '';//TODO: parse date out from unit name	
+	 
+	 if ($unit[0] != '' )$units[] = $unit; //only add if it's not empty
+	 
+	 //fourth unit
+	 $unit = array();
+	 $unit[] = $unitFields[8];
+	 $unit[] = $unitFields[7];
+	 $unit[] = '';//TODO: parse date out from unit name	
+	 
+	 if ($unit[0] != '' )$units[] = $unit;
+
+	 //fifth unit
+	 $unit = array();
+	 $unit[] = $unitFields[10];
+	 $unit[] = $unitFields[9];
+	 $unit[] = '';//TODO: parse date out from unit name	
+	 
+	 if ($unit[0] != '' )$units[] = $unit;
+
+	 //sixth unit
+	 $unit = array();
+	 $unit[] = $unitFields[12];
+	 $unit[] = $unitFields[11];
+	 $unit[] = '';//TODO: parse date out from unit name	
+	 
+	 if ($unit[0] != '' )$units[] = $unit;
+
+	 //last unit
+	 $unit = array();
+	 $unit[] = $unitFields[14];
+	 $unit[] = $unitFields[13];
+	 $unit[] = '';//TODO: parse date out from unit name	
+	 
+	 if ($unit[0] != '' )$units[] = $unit;
+
+	 return $units;
+
+ }

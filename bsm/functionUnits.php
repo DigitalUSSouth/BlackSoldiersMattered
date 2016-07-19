@@ -54,10 +54,10 @@ function importUnits(){
 				"location" => [
 					/* TODO: add ["camp","date"] array for location */
 				],
-				"port_embarkation" => $fields[7]
-				"responsibilities" => $fields[10]
-				"unusual_experiences" => $fields[11]
-				"demobilized" => $fields[12]
+				"port_embarkation" => $fields[7],
+				"responsibilities" => $fields[10],
+				"unusual_experiences" => $fields[11],
+				"demobilized" => $fields[12],
 				"companies" => $fields[15]
 
 				
