@@ -1,0 +1,2382 @@
+/*
+ * HTML5 Boilerplate
+ *
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ *
+ * Detailed information about this CSS: h5bp.com/css
+ *
+ * ==|== normalize ==========================================================
+ */
+/* http://compass-style.org/reference/compass/ */
+/* make sure $useIEFilters is set*/
+/* slize functions */
+/* =============================================================================
+	HTML5 display definitions
+	========================================================================== */
+/* line 6, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_normalize.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section {
+  display: block;
+}
+
+/* line 7, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_normalize.scss */
+audio, canvas, video {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+}
+
+/* line 8, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_normalize.scss */
+audio:not([controls]) {
+  display: none;
+}
+
+/* line 9, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_normalize.scss */
+[hidden] {
+  display: none;
+}
+
+/* =============================================================================
+	Base
+	========================================================================== */
+/*
+ * 1. Correct text resizing oddly in IE6/7 when body font-size is set using em units
+ * 2. Prevent iOS text size adjust on device orientation change, without disabling user zoom: h5bp.com/g
+ */
+/* line 21, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_normalize.scss */
+html {
+  font-size: 100%;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+/* line 23, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_normalize.scss */
+html, button, input, select, textarea {
+  font-family: sans-serif;
+  color: #222;
+}
+
+/* line 25, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_normalize.scss */
+body {
+  margin: 0;
+  font-size: 1em;
+  line-height: 1.4;
+}
+
+/*
+ * Remove text-shadow in selection highlight: h5bp.com/i
+ * These selection declarations have to be separate
+ * Also: hot pink! (or customize the background color to match your design)
+ */
+/* =============================================================================
+	Links
+	========================================================================== */
+/* line 41, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_normalize.scss */
+a {
+  color: #00e;
+}
+
+/* line 42, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_normalize.scss */
+a:visited {
+  color: #551a8b;
+}
+
+/* line 43, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_normalize.scss */
+a:hover {
+  color: #06e;
+}
+
+/* line 44, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_normalize.scss */
+a:focus {
+  outline: thin dotted;
+}
+
+/* Improve readability when focused and hovered in all browsers: h5bp.com/h */
+/* line 47, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_normalize.scss */
+a:hover, a:active {
+  outline: 0;
+}
+
+/* =============================================================================
+	Typography
+	========================================================================== */
+/* line 54, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_normalize.scss */
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+
+/* line 56, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_normalize.scss */
+b, strong {
+  font-weight: bold;
+}
+
+/* line 58, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_normalize.scss */
+blockquote {
+  margin: 1em 40px;
+}
+
+/* line 60, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_normalize.scss */
+dfn {
+  font-style: italic;
+}
+
+/* line 62, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_normalize.scss */
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+/* line 64, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_normalize.scss */
+ins {
+  background: #ff9;
+  color: #000;
+  text-decoration: none;
+}
+
+/* line 66, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_normalize.scss */
+mark {
+  background: #ff0;
+  color: #000;
+  font-style: italic;
+  font-weight: bold;
+}
+
+/* Redeclare monospace font family: h5bp.com/j */
+/* line 69, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_normalize.scss */
+pre, code, kbd, samp {
+  font-family: monospace, serif;
+  _font-family: 'courier new', monospace;
+  font-size: 1em;
+}
+
+/* Improve readability of pre-formatted text in all browsers */
+/* line 72, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_normalize.scss */
+pre {
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+/* line 74, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_normalize.scss */
+q {
+  quotes: none;
+}
+
+/* line 75, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_normalize.scss */
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+/* line 77, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_normalize.scss */
+small {
+  font-size: 85%;
+}
+
+/* Position subscript and superscript content without affecting line-height: h5bp.com/k */
+/* line 80, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_normalize.scss */
+sub, sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+/* line 81, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_normalize.scss */
+sup {
+  top: -0.5em;
+}
+
+/* line 82, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_normalize.scss */
+sub {
+  bottom: -0.25em;
+}
+
+/* =============================================================================
+	Lists
+	========================================================================== */
+/* line 89, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_normalize.scss */
+ul, ol {
+  margin: 1em 0;
+  padding: 0 0 0 40px;
+}
+
+/* line 90, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_normalize.scss */
+dd {
+  margin: 0 0 0 40px;
+}
+
+/* line 91, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_normalize.scss */
+nav ul, nav ol {
+  list-style: none;
+  list-style-image: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* =============================================================================
+	Embedded content
+	========================================================================== */
+/*
+ * 1. Improve image quality when scaled in IE7: h5bp.com/d
+ * 2. Remove the gap between images and borders on image containers: h5bp.com/i/440
+ */
+/* line 103, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_normalize.scss */
+img {
+  border: 0;
+  -ms-interpolation-mode: bicubic;
+  vertical-align: middle;
+}
+
+/*
+ * Correct overflow not hidden in IE9
+ */
+/* line 109, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_normalize.scss */
+svg:not(:root) {
+  overflow: hidden;
+}
+
+/* =============================================================================
+	Figures
+	========================================================================== */
+/* line 116, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_normalize.scss */
+figure {
+  margin: 0;
+}
+
+/* =============================================================================
+	Forms
+	========================================================================== */
+/* line 123, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_normalize.scss */
+form {
+  margin: 0;
+}
+
+/* line 124, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_normalize.scss */
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/* Indicate that 'label' will shift focus to the associated form element */
+/* line 127, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_normalize.scss */
+label {
+  cursor: pointer;
+}
+
+/*
+ * 1. Correct color not inheriting in IE6/7/8/9
+ * 2. Correct alignment displayed oddly in IE6/7
+ */
+/* line 134, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_normalize.scss */
+legend {
+  border: 0;
+  *margin-left: -7px;
+  padding: 0;
+  white-space: normal;
+}
+
+/*
+ * 1. Correct font-size not inheriting in all browsers
+ * 2. Remove margins in FF3/4 S5 Chrome
+ * 3. Define consistent vertical alignment display in all browsers
+ */
+/* line 142, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_normalize.scss */
+button, input, select, textarea {
+  font-size: 100%;
+  margin: 0;
+  vertical-align: baseline;
+  *vertical-align: middle;
+}
+
+/*
+ * 1. Define line-height as normal to match FF3/4 (set using !important in the UA stylesheet)
+ */
+/* line 148, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_normalize.scss */
+button, input {
+  line-height: normal;
+}
+
+/*
+ * 1. Display hand cursor for clickable form elements
+ * 2. Allow styling of clickable form elements in iOS
+ * 3. Correct inner spacing displayed oddly in IE7 (doesn't effect IE6)
+ */
+/* line 156, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_normalize.scss */
+button, input[type="button"], input[type="reset"], input[type="submit"] {
+  cursor: pointer;
+  -webkit-appearance: button;
+  *overflow: visible;
+}
+
+/*
+ * Re-set default cursor for disabled elements
+ */
+/* line 162, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_normalize.scss */
+button[disabled], input[disabled] {
+  cursor: default;
+}
+
+/*
+ * Consistent box sizing and appearance
+ */
+/* line 168, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_normalize.scss */
+input[type="checkbox"], input[type="radio"] {
+  box-sizing: border-box;
+  padding: 0;
+  *width: 13px;
+  *height: 13px;
+}
+
+/* line 169, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_normalize.scss */
+input[type="search"] {
+  -webkit-appearance: textfield;
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+/* line 170, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_normalize.scss */
+input[type="search"]::-webkit-search-decoration, input[type="search"]::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+}
+
+/*
+ * Remove inner padding and border in FF3/4: h5bp.com/l
+ */
+/* line 176, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_normalize.scss */
+button::-moz-focus-inner, input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+/*
+ * 1. Remove default vertical scrollbar in IE6/7/8/9
+ * 2. Allow only vertical resizing
+ */
+/* line 183, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_normalize.scss */
+textarea {
+  overflow: auto;
+  vertical-align: top;
+  resize: vertical;
+}
+
+/* Colors for form validity */
+/* line 187, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_normalize.scss */
+input:invalid, textarea:invalid {
+  background-color: #f0dddd;
+}
+
+/* =============================================================================
+	Tables
+	========================================================================== */
+/* line 194, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_normalize.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 195, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_normalize.scss */
+td {
+  vertical-align: top;
+}
+
+/* =============================================================================
+	Chrome Frame Prompt
+	========================================================================== */
+/* line 202, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_normalize.scss */
+.chromeframe {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: black;
+  padding: 0.2em 0;
+}
+
+/* ==|== primary styles =====================================================
+	 Author: Hinderling & Volkart Frontend 
+	 ========================================================================== */
+/* line 23, ../sass/style.scss */
+body {
+  font-family: "UniversCondensed-Regular", "Univers-Condensed", "UniversCondensed", sans;
+  font-size: 18px;
+  line-height: 1;
+  background-color: #003;
+}
+
+/* line 32, ../sass/style.scss */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  font-weight: inherit;
+  line-height: inherit;
+}
+
+/* line 37, ../sass/style.scss */
+h1, h2, h3, h4, h5, h6, p, div, ul, li {
+  margin: 0;
+  padding: 0;
+}
+
+/* line 38, ../sass/style.scss */
+video {
+  display: block;
+}
+
+/* line 40, ../sass/style.scss */
+.invisible {
+  display: none;
+}
+
+/* line 1, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_intro.scss */
+#page-loading {
+  opacity: 0.4;
+  -webkit-animation: loadingfull 1.5s ease-in-out infinite;
+  -moz-animation: loadingfull 1.5s ease-in-out infinite;
+  -ms-animation: loadingfull 1.5s ease-in-out infinite;
+  -o-animation: loadingfull 1.5s ease-in-out infinite;
+  animation: loadingfull 1.5s ease-in-out infinite;
+}
+
+/* line 6, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_intro.scss */
+#page-loading.loading-map {
+  opacity: 0.2;
+  -webkit-animation: loadingmap 1.5s ease-in-out infinite;
+  -moz-animation: loadingmap 1.5s ease-in-out infinite;
+  -ms-animation: loadingmap 1.5s ease-in-out infinite;
+  -o-animation: loadingmap 1.5s ease-in-out infinite;
+  animation: loadingmap 1.5s ease-in-out infinite;
+}
+
+/* line 11, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_intro.scss */
+#page-loading.loaded {
+  -webkit-animation: none;
+  -moz-animation: none;
+  -ms-animation: none;
+  -o-animation: none;
+  animation: none;
+}
+
+@-moz-keyframes loadingfull {
+  /* line 16, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_intro.scss */
+  0%, 100% {
+    opacity: 0.4;
+  }
+
+  /* line 19, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_intro.scss */
+  50% {
+    opacity: 0.2;
+  }
+}
+
+@-webkit-keyframes loadingfull {
+  /* line 16, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_intro.scss */
+  0%, 100% {
+    opacity: 0.4;
+  }
+
+  /* line 19, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_intro.scss */
+  50% {
+    opacity: 0.2;
+  }
+}
+
+@-o-keyframes loadingfull {
+  /* line 16, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_intro.scss */
+  0%, 100% {
+    opacity: 0.4;
+  }
+
+  /* line 19, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_intro.scss */
+  50% {
+    opacity: 0.2;
+  }
+}
+
+@-ms-keyframes loadingfull {
+  /* line 16, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_intro.scss */
+  0%, 100% {
+    opacity: 0.4;
+  }
+
+  /* line 19, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_intro.scss */
+  50% {
+    opacity: 0.2;
+  }
+}
+
+@keyframes loadingfull {
+  /* line 16, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_intro.scss */
+  0%, 100% {
+    opacity: 0.4;
+  }
+
+  /* line 19, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_intro.scss */
+  50% {
+    opacity: 0.2;
+  }
+}
+
+@-moz-keyframes loadingmap {
+  /* line 25, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_intro.scss */
+  0%, 100% {
+    opacity: 0.1;
+  }
+
+  /* line 28, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_intro.scss */
+  50% {
+    opacity: 0.3;
+  }
+}
+
+@-webkit-keyframes loadingmap {
+  /* line 25, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_intro.scss */
+  0%, 100% {
+    opacity: 0.1;
+  }
+
+  /* line 28, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_intro.scss */
+  50% {
+    opacity: 0.3;
+  }
+}
+
+@-o-keyframes loadingmap {
+  /* line 25, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_intro.scss */
+  0%, 100% {
+    opacity: 0.1;
+  }
+
+  /* line 28, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_intro.scss */
+  50% {
+    opacity: 0.3;
+  }
+}
+
+@-ms-keyframes loadingmap {
+  /* line 25, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_intro.scss */
+  0%, 100% {
+    opacity: 0.1;
+  }
+
+  /* line 28, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_intro.scss */
+  50% {
+    opacity: 0.3;
+  }
+}
+
+@keyframes loadingmap {
+  /* line 25, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_intro.scss */
+  0%, 100% {
+    opacity: 0.1;
+  }
+
+  /* line 28, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_intro.scss */
+  50% {
+    opacity: 0.3;
+  }
+}
+
+/* line 34, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_intro.scss */
+#petergyslin {
+  position: fixed;
+  z-index: 3;
+  top: 17px;
+  right: 23px;
+}
+/* line 40, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_intro.scss */
+#petergyslin .playback {
+  background-image: url(../img/graphics/peter-gysling.png);
+  background-repeat: no-repeat;
+  width: 80px;
+  padding-top: 80px;
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
+  /* line 40, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_intro.scss */
+  #petergyslin .playback {
+    background-image: url(../img/graphics/peter-gysling@2x.png);
+    background-size: 80px 80px;
+  }
+}
+/* line 44, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_intro.scss */
+#petergyslin .playback .play, #petergyslin .playback .stop {
+  position: relative;
+  display: block;
+  width: 80px;
+  background-color: white;
+  font-family: "UniversCondensed-Regular";
+  font-size: 15px;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 2px 0px 2px 10px;
+  margin-top: -11px;
+  -moz-transform: rotate(-10deg) skew(-10deg) scale(1, 1.2);
+  -o-transform: rotate(-10deg) skew(-10deg) scale(1, 1.2);
+  -ms-transform: rotate(-10deg) skew(-10deg) scale(1, 1.2);
+  -webkit-transform: rotate(-10deg) skew(-10deg) scale(1, 1.2);
+  transform: rotate(-10deg) skew(-10deg) scale(1, 1.2);
+}
+/* line 57, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_intro.scss */
+#petergyslin .playback .play:after, #petergyslin .playback .stop:after {
+  content: '';
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  left: 3px;
+  top: -6px;
+  background-repeat: no-repeat;
+  background-image: url(../img/icons/gysling-play.png);
+  background-position: 0px center;
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
+  /* line 57, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_intro.scss */
+  #petergyslin .playback .play:after, #petergyslin .playback .stop:after {
+    background-image: url(../img/icons/gysling-play@2x.png);
+    background-size: 90px 30px;
+  }
+}
+/* line 68, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_intro.scss */
+#petergyslin .playback .stop {
+  display: none;
+}
+/* line 69, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_intro.scss */
+#petergyslin .playback .stop:after {
+  background-repeat: no-repeat;
+  background-image: url(../img/icons/gysling-pause.png);
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
+  /* line 69, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_intro.scss */
+  #petergyslin .playback .stop:after {
+    background-image: url(../img/icons/gysling-pause@2x.png);
+    background-size: 90px 30px;
+  }
+}
+/* line 73, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_intro.scss */
+#petergyslin .message, #petergyslin .intro {
+  position: absolute;
+}
+/* line 76, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_intro.scss */
+#petergyslin .message {
+  display: none;
+  background-color: #eee;
+  font-size: 16px;
+  z-index: 3;
+  top: 5px;
+  right: 85px;
+  width: 18em;
+  padding: 10px 4px 11px 40px;
+  border-radius: 4px;
+}
+/* line 86, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_intro.scss */
+#petergyslin .message > .start {
+  display: block;
+  margin-top: 1ex;
+  font-size: 14px;
+  text-transform: uppercase;
+  cursor: pointer;
+  color: #6a9668;
+}
+/* line 93, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_intro.scss */
+#petergyslin .message > .start:hover {
+  color: #465c46;
+}
+/* line 97, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_intro.scss */
+#petergyslin .message > .close {
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 30px;
+  height: 100%;
+  border-right: 1px solid #ddd;
+  background-repeat: no-repeat;
+  background-image: url(../img/icons/tooltip-close.png);
+  background-position: 0px center;
+}
+/* line 101, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_intro.scss */
+#petergyslin .message > .close > .label {
+  display: none;
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
+  /* line 97, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_intro.scss */
+  #petergyslin .message > .close {
+    background-image: url(../img/icons/tooltip-close@2x.png);
+    background-size: 90px 30px;
+  }
+}
+/* line 106, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_intro.scss */
+#petergyslin .message > .close:hover {
+  background-position: -60px center;
+}
+/* line 110, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_intro.scss */
+#petergyslin .message:after {
+  width: 0px;
+  height: 0;
+  content: '';
+  display: block;
+  border: 8px solid transparent;
+  border-left-color: #eee;
+  position: absolute;
+  right: -16px;
+  top: 13px;
+}
+/* line 120, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_intro.scss */
+#petergyslin .intro {
+  display: block;
+  top: 15px;
+  right: 95px;
+  color: white;
+  text-decoration: underline;
+  text-transform: uppercase;
+  text-align: right;
+  font-size: 14px;
+  line-height: 1.3;
+  width: 10em;
+}
+/* line 134, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_intro.scss */
+#petergyslin.playing .playback .stop {
+  display: block;
+}
+/* line 135, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_intro.scss */
+#petergyslin.playing .playback .play {
+  display: none;
+}
+/* line 138, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_intro.scss */
+#petergyslin .interactive {
+  cursor: pointer;
+}
+/* line 141, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_intro.scss */
+#petergyslin .interactive:hover .intro {
+  color: #ff6666;
+}
+/* line 142, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_intro.scss */
+#petergyslin .interactive:hover .play, #petergyslin .interactive:hover .stop {
+  background-color: #ddd;
+}
+
+@-moz-keyframes scroll-intro-animation {
+  /* line 151, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_intro.scss */
+  0%, 100% {
+    -moz-transform: translateY(0);
+    -o-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  /* line 154, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_intro.scss */
+  90% {
+    -moz-transform: translateY(3px);
+    -o-transform: translateY(3px);
+    -ms-transform: translateY(3px);
+    -webkit-transform: translateY(3px);
+    transform: translateY(3px);
+  }
+}
+
+@-webkit-keyframes scroll-intro-animation {
+  /* line 151, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_intro.scss */
+  0%, 100% {
+    -moz-transform: translateY(0);
+    -o-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  /* line 154, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_intro.scss */
+  90% {
+    -moz-transform: translateY(3px);
+    -o-transform: translateY(3px);
+    -ms-transform: translateY(3px);
+    -webkit-transform: translateY(3px);
+    transform: translateY(3px);
+  }
+}
+
+@-o-keyframes scroll-intro-animation {
+  /* line 151, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_intro.scss */
+  0%, 100% {
+    -moz-transform: translateY(0);
+    -o-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  /* line 154, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_intro.scss */
+  90% {
+    -moz-transform: translateY(3px);
+    -o-transform: translateY(3px);
+    -ms-transform: translateY(3px);
+    -webkit-transform: translateY(3px);
+    transform: translateY(3px);
+  }
+}
+
+@-ms-keyframes scroll-intro-animation {
+  /* line 151, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_intro.scss */
+  0%, 100% {
+    -moz-transform: translateY(0);
+    -o-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  /* line 154, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_intro.scss */
+  90% {
+    -moz-transform: translateY(3px);
+    -o-transform: translateY(3px);
+    -ms-transform: translateY(3px);
+    -webkit-transform: translateY(3px);
+    transform: translateY(3px);
+  }
+}
+
+@keyframes scroll-intro-animation {
+  /* line 151, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_intro.scss */
+  0%, 100% {
+    -moz-transform: translateY(0);
+    -o-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  /* line 154, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_intro.scss */
+  90% {
+    -moz-transform: translateY(3px);
+    -o-transform: translateY(3px);
+    -ms-transform: translateY(3px);
+    -webkit-transform: translateY(3px);
+    transform: translateY(3px);
+  }
+}
+
+/* line 160, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_intro.scss */
+#intro-page {
+  position: fixed;
+  z-index: 1;
+  top: 10%;
+  left: 5%;
+  color: white;
+}
+/* line 168, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_intro.scss */
+#intro-page .protagonisten {
+  display: none;
+}
+/* line 170, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_intro.scss */
+#intro-page h1 {
+  font-size: 44px;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  margin-left: 40px;
+  letter-spacing: -1px;
+}
+/* line 177, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_intro.scss */
+#intro-page .text {
+  margin-left: 40px;
+  font-family: "URWGaramond-Regular", serif;
+  line-height: 1.4;
+  width: 60%;
+}
+
+/* line 187, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_intro.scss */
+.scroll-intro {
+  position: fixed;
+  z-index: 1;
+  display: block;
+  bottom: 40px;
+  right: 40px;
+  text-decoration: none;
+  padding-right: 40px;
+  -webkit-transition: -webkit-transform 300ms ease-out;
+  -moz-transition: -moz-transform 300ms ease-out;
+  -ms-transition: -ms-transform 300ms ease-out;
+  -o-transition: -o-transform 300ms ease-out;
+  transition: transform 300ms ease-out;
+}
+/* line 196, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_intro.scss */
+.scroll-intro > .label {
+  display: block;
+  color: white;
+  font-size: 16px;
+  text-transform: uppercase;
+  padding-bottom: 2px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+}
+/* line 204, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_intro.scss */
+.scroll-intro > .icon {
+  display: block;
+  position: absolute;
+  top: -24px;
+  right: 0px;
+  width: 24px;
+  height: 53px;
+  background-image: url(../img/graphics/scrollmouse.png);
+  background-repeat: no-repeat;
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
+  /* line 204, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_intro.scss */
+  .scroll-intro > .icon {
+    background-image: url(../img/graphics/scrollmouse@2x.png);
+    background-size: 24px 53px;
+  }
+}
+/* line 212, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_intro.scss */
+.scroll-intro > .icon > .scroll {
+  display: block;
+  width: 4px;
+  height: 9px;
+  background-color: #ff6666;
+  border-radius: 2px;
+  position: absolute;
+  top: 24px;
+  left: 10px;
+  -webkit-animation: scroll-intro-animation 1s infinite;
+  -moz-animation: scroll-intro-animation 1s infinite;
+  -ms-animation: scroll-intro-animation 1s infinite;
+  -o-animation: scroll-intro-animation 1s infinite;
+  animation: scroll-intro-animation 1s infinite;
+}
+
+/* line 227, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_intro.scss */
+.social-buttons {
+  display: block;
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+  margin-left: 40px;
+}
+
+/* line 228, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_intro.scss */
+.social-buttons > li {
+  display: block;
+  margin: 0;
+  margin-right: 8px;
+  display: -moz-inline-stack;
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  vertical-align: top;
+}
+
+/* line 229, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_intro.scss */
+.social-buttons .socialite {
+  display: block;
+  position: relative;
+  background: url("../img/graphics/social-sprite-horizontal.png") 0 0 no-repeat;
+}
+
+/* line 230, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_intro.scss */
+.social-buttons .socialite-loaded {
+  background: none !important;
+}
+
+/* line 232, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_intro.scss */
+.social-buttons .twitter-share {
+  width: 90px;
+  height: 20px;
+  background-position: 0 0;
+}
+
+/* line 233, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_intro.scss */
+.social-buttons .facebook-like {
+  width: 95px;
+  height: 20px;
+  background-position: -99px 0;
+}
+
+/* line 234, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_intro.scss */
+.social-buttons .vhidden {
+  display: none;
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  /* line 239, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_intro.scss */
+  .scroll-intro {
+    position: absolute;
+  }
+}
+@media only screen and (max-width: 600px) {
+  /* line 245, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_intro.scss */
+  #intro-page .text {
+    width: 90%;
+  }
+
+  /* line 249, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_intro.scss */
+  body > header {
+    padding-left: 20px;
+  }
+}
+/* line 57, ../sass/style.scss */
+#main-text {
+  width: 50%;
+  position: relative;
+  z-index: 4;
+  -webkit-transition: left 350ms ease-out;
+  -moz-transition: left 350ms ease-out;
+  -ms-transition: left 350ms ease-out;
+  -o-transition: left 350ms ease-out;
+  transition: left 350ms ease-out;
+}
+
+/* line 66, ../sass/style.scss */
+body > header .main-navigation .zoom-button {
+  display: inline-block;
+}
+
+/* line 70, ../sass/style.scss */
+.main-navigation, #logo-link {
+  z-index: 3;
+  position: fixed;
+  display: block;
+  left: 0%;
+  margin-left: 30px;
+  -webkit-transition: left 350ms ease-out;
+  -moz-transition: left 350ms ease-out;
+  -ms-transition: left 350ms ease-out;
+  -o-transition: left 350ms ease-out;
+  transition: left 350ms ease-out;
+}
+
+/* line 78, ../sass/style.scss */
+.main-navigation {
+  top: 30px;
+  margin-left: 28px;
+}
+
+/* line 82, ../sass/style.scss */
+#logo-link {
+  bottom: 30px;
+}
+
+/* ==|== media queries ======================================================
+	 EXAMPLE Media Query for Responsive Design.
+	 This example overrides the primary ('mobile first') styles
+	 Modify as content requires.
+	 ========================================================================== */
+/* Style adjustments for viewports that meet the condition */
+/* line 20, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_text-column.scss */
+.report em {
+  font-style: normal;
+}
+
+/* line 26, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_text-column.scss */
+#logo-link {
+  display: -moz-inline-stack;
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  vertical-align: top;
+  width: 49px;
+  height: 32px;
+  margin-top: -3px;
+  margin-right: 10px;
+  background-image: url(../img/graphics/srf-logo.gif);
+  background-repeat: no-repeat;
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
+  /* line 26, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_text-column.scss */
+  #logo-link {
+    background-image: url(../img/graphics/srf-logo@2x.gif);
+    background-size: 49px 32px;
+  }
+}
+/* line 33, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_text-column.scss */
+#logo-link > .label {
+  display: none;
+}
+
+/* line 37, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_text-column.scss */
+.main-navigation {
+  display: inline;
+  font-size: 16px;
+}
+/* line 40, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_text-column.scss */
+.main-navigation h2 {
+  display: none;
+}
+/* line 43, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_text-column.scss */
+.main-navigation .info-button, .main-navigation .home-button, .main-navigation .audio-button, .main-navigation .zoom-button {
+  border: 1px solid white;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  -ms-border-radius: 30px;
+  -o-border-radius: 30px;
+  border-radius: 30px;
+  color: white;
+  text-decoration: none;
+  padding: 5px 14px;
+  text-transform: uppercase;
+  height: 28px;
+  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0.2);
+  display: -moz-inline-stack;
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  vertical-align: top;
+  margin-right: 4px;
+  background-position: -31px center;
+}
+/* line 11, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_text-column.scss */
+.main-navigation .info-button:hover, .main-navigation .home-button:hover, .main-navigation .audio-button:hover, .main-navigation .zoom-button:hover {
+  background-color: white;
+  color: black;
+}
+/* line 49, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_text-column.scss */
+.main-navigation .info-button > .label, .main-navigation .home-button > .label, .main-navigation .audio-button > .label, .main-navigation .zoom-button > .label {
+  display: none;
+}
+/* line 52, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_text-column.scss */
+.main-navigation .info-button:hover, .main-navigation .home-button:hover, .main-navigation .audio-button:hover, .main-navigation .zoom-button:hover {
+  background-position: -1px center;
+}
+/* line 56, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_text-column.scss */
+.main-navigation .info-button {
+  background-repeat: no-repeat;
+  background-image: url(../img/icons/info.png);
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
+  /* line 56, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_text-column.scss */
+  .main-navigation .info-button {
+    background-image: url(../img/icons/info@2x.png);
+    background-size: 90px 30px;
+  }
+}
+/* line 59, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_text-column.scss */
+.main-navigation .home-button {
+  background-repeat: no-repeat;
+  background-image: url(../img/icons/home.png);
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
+  /* line 59, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_text-column.scss */
+  .main-navigation .home-button {
+    background-image: url(../img/icons/home@2x.png);
+    background-size: 90px 30px;
+  }
+}
+/* line 62, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_text-column.scss */
+.main-navigation .zoom-button {
+  display: none;
+  background-repeat: no-repeat;
+  background-image: url(../img/icons/zoom-out.png);
+  margin-right: 12px;
+  cursor: pointer;
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
+  /* line 62, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_text-column.scss */
+  .main-navigation .zoom-button {
+    background-image: url(../img/icons/zoom-out@2x.png);
+    background-size: 90px 30px;
+  }
+}
+/* line 67, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_text-column.scss */
+.main-navigation .zoom-button.active {
+  background-repeat: no-repeat;
+  background-image: url(../img/icons/zoom-in.png);
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
+  /* line 67, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_text-column.scss */
+  .main-navigation .zoom-button.active {
+    background-image: url(../img/icons/zoom-in@2x.png);
+    background-size: 90px 30px;
+  }
+}
+/* line 71, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_text-column.scss */
+.main-navigation .audio-button {
+  background-repeat: no-repeat;
+  background-image: url(../img/icons/sound-on.png);
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
+  /* line 71, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_text-column.scss */
+  .main-navigation .audio-button {
+    background-image: url(../img/icons/sound-on@2x.png);
+    background-size: 90px 30px;
+  }
+}
+/* line 74, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_text-column.scss */
+.main-navigation .audio-button.off {
+  background-repeat: no-repeat;
+  background-image: url(../img/icons/sound-off.png);
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
+  /* line 74, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_text-column.scss */
+  .main-navigation .audio-button.off {
+    background-image: url(../img/icons/sound-off@2x.png);
+    background-size: 90px 30px;
+  }
+}
+/* line 77, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_text-column.scss */
+.main-navigation ul ul {
+  display: none;
+}
+/* line 80, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_text-column.scss */
+.main-navigation li > a {
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+/* line 85, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_text-column.scss */
+.main-navigation .content-navigation {
+  display: -moz-inline-stack;
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  vertical-align: top;
+  position: relative;
+  width: 9.8em;
+  margin-right: 12px;
+}
+/* line 90, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_text-column.scss */
+.main-navigation .content-navigation > .selected {
+  border: 1px solid white;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  -ms-border-radius: 30px;
+  -o-border-radius: 30px;
+  border-radius: 30px;
+  color: white;
+  text-decoration: none;
+  padding: 5px 14px;
+  text-transform: uppercase;
+  height: 28px;
+  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0.2);
+  display: -moz-inline-stack;
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  vertical-align: top;
+  cursor: pointer;
+  position: relative;
+  padding-right: 22px;
+  width: 100%;
+}
+/* line 11, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_text-column.scss */
+.main-navigation .content-navigation > .selected:hover {
+  background-color: white;
+  color: black;
+}
+/* line 97, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_text-column.scss */
+.main-navigation .content-navigation > .selected:after {
+  position: absolute;
+  content: '';
+  display: block;
+  right: 0;
+  top: 0;
+  width: 28px;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-image: url(../img/icons/drop-down.png);
+  background-position: -30px center;
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
+  /* line 97, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_text-column.scss */
+  .main-navigation .content-navigation > .selected:after {
+    background-image: url(../img/icons/drop-down@2x.png);
+    background-size: 90px 30px;
+  }
+}
+/* line 109, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_text-column.scss */
+.main-navigation .content-navigation > ul {
+  display: none;
+  position: absolute;
+  top: 36px;
+  left: 0;
+  background-color: black;
+  padding: 12px;
+  width: 100%;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+}
+/* line 117, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_text-column.scss */
+.main-navigation .content-navigation > ul a {
+  display: block;
+  padding: 3px 0px;
+}
+/* line 120, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_text-column.scss */
+.main-navigation .content-navigation > ul a:hover {
+  color: #ff6666;
+}
+/* line 124, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_text-column.scss */
+.main-navigation .content-navigation > ul:after {
+  content: '';
+  display: block;
+  border: 7px solid transparent;
+  border-bottom-color: black;
+  position: absolute;
+  left: 12px;
+  top: -14px;
+}
+/* line 133, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_text-column.scss */
+.main-navigation .content-navigation > ul:before {
+  content: '';
+  display: block;
+  z-index: -1;
+  position: absolute;
+  top: -36px;
+  left: -10px;
+  bottom: -10px;
+  right: -10px;
+  background-color: transparent;
+}
+/* line 145, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_text-column.scss */
+.main-navigation .content-navigation.open > .selected {
+  background-color: white;
+  color: black;
+}
+/* line 147, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_text-column.scss */
+.main-navigation .content-navigation.open > .selected:after {
+  background-position: 0px center;
+}
+/* line 151, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_text-column.scss */
+.main-navigation .content-navigation.open > ul {
+  display: block;
+}
+
+/* line 160, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_text-column.scss */
+.main-content {
+  background-color: #fefaed;
+  font-family: "URWGaramond-Regular", "Garamond Pro", Garamond, serif;
+  text-align: center;
+}
+/* line 165, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_text-column.scss */
+.main-content .country {
+  border-top: 1px solid #e4e1d5;
+  overflow: hidden;
+}
+/* line 169, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_text-column.scss */
+.main-content .country > h1 {
+  display: block;
+  text-transform: uppercase;
+  font-family: "Bodoni", "BodoniClassico", serif;
+  font-size: 14px;
+  margin-top: 30px;
+  margin-bottom: 50px;
+}
+/* line 176, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_text-column.scss */
+.main-content .country > h1:before {
+  content: 'â€“ ';
+}
+/* line 177, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_text-column.scss */
+.main-content .country > h1:after {
+  content: ' â€“';
+}
+/* line 179, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_text-column.scss */
+.main-content .country .country-intro {
+  display: block;
+  margin: 0 30px;
+  padding: 10px;
+  text-decoration: none;
+}
+/* line 184, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_text-column.scss */
+.main-content .country .country-intro .title {
+  font-family: "UniversCondensed-Regular", "Univers-Condensed", "UniversCondensed", sans;
+  text-transform: uppercase;
+  font-size: 100%;
+  color: #ff6666;
+  margin: 0;
+}
+/* line 191, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_text-column.scss */
+.main-content .country .country-intro audio {
+  margin-top: 1em;
+  width: 100%;
+}
+/* line 197, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_text-column.scss */
+.main-content .country .country-intro.audio-link:after {
+  content: '';
+  display: inline-block;
+  width: 45px;
+  height: 45px;
+  background-repeat: no-repeat;
+  background-image: url(../img/icons/video-play.png);
+  background-position: -52px center;
+  border: 3px solid #ff6666;
+  border-radius: 25px;
+  margin-top: 15px;
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
+  /* line 197, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_text-column.scss */
+  .main-content .country .country-intro.audio-link:after {
+    background-image: url(../img/icons/video-play@2x.png);
+    background-size: 90px 30px;
+  }
+}
+/* line 208, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_text-column.scss */
+.main-content .country .country-intro.audio-link:hover h2 {
+  color: black;
+}
+
+/* line 214, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_text-column.scss */
+.report + .report > header {
+  border-top: 1px solid #e4e1d5;
+}
+
+/* line 217, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_text-column.scss */
+.report {
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+/* line 223, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_text-column.scss */
+.report header {
+  font-family: "Bodoni", "BodoniClassico", serif;
+  font-weight: normal;
+  text-transform: uppercase;
+  margin-bottom: 70px;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 80px;
+  margin-left: -10px;
+  margin-right: -10px;
+}
+/* line 234, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_text-column.scss */
+.report header h1 {
+  font-family: "Bodoni-Bold", "BodoniClassico-Bold", serif;
+  font-size: 50px;
+  line-height: 1;
+  margin-top: 10px;
+}
+/* line 240, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_text-column.scss */
+.report header h2 {
+  font-size: 20px;
+  display: inline-block;
+  border-bottom: 2px solid;
+  line-height: 1;
+}
+/* line 247, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_text-column.scss */
+.report h3 {
+  font-family: "Bodoni-Bold", "BodoniClassico-Bold", serif;
+  font-size: 1.05em;
+  margin-bottom: 0.25em;
+  padding-left: 2em;
+  padding-right: 2em;
+}
+/* line 254, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_text-column.scss */
+.report * + h3 {
+  margin-top: 1em;
+}
+/* line 257, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_text-column.scss */
+.report .media + .text {
+  margin-top: 40px;
+}
+/* line 260, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_text-column.scss */
+.report .text {
+  line-height: 1.3;
+  padding-left: 2em;
+  padding-right: 2em;
+}
+/* line 264, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_text-column.scss */
+.report .text p {
+  margin-bottom: 1em;
+}
+/* line 267, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_text-column.scss */
+.report .text em, .report .text blockquote {
+  font-family: "Bodoni-Bold", "BodoniClassico-Bold", serif;
+  font-style: normal;
+  font-size: 120%;
+  line-height: 1.2;
+}
+/* line 274, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_text-column.scss */
+.report .text:last-child {
+  margin-bottom: 40px;
+}
+/* line 277, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_text-column.scss */
+.report .media {
+  margin-bottom: 0;
+}
+/* line 279, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_text-column.scss */
+.report .media > h3 {
+  display: none;
+}
+/* line 281, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_text-column.scss */
+.report .text + .media {
+  margin-top: 2em;
+}
+/* line 284, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_text-column.scss */
+.report figure {
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+/* line 286, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_text-column.scss */
+.report figure > figcaption {
+  display: none;
+}
+/* line 290, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_text-column.scss */
+.report a.video-link > figure {
+  position: relative;
+  background-color: black;
+}
+/* line 293, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_text-column.scss */
+.report a.video-link > figure:after, .report a.video-link > figure:before, .report a.video-link > figure > .icon {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  pointer-events: none;
+  content: '';
+  display: block;
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+}
+/* line 303, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_text-column.scss */
+.report a.video-link > figure:after {
+  width: 66px;
+  height: 66px;
+  margin-left: -33px;
+  margin-top: -33px;
+  border-radius: 50px;
+  border: 4px solid white;
+}
+/* line 311, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_text-column.scss */
+.report a.video-link > figure:before, .report a.video-link > figure > .icon {
+  width: 30px;
+  height: 30px;
+  margin-left: -15px;
+  margin-top: -15px;
+  background-repeat: no-repeat;
+  background-image: url(../img/icons/video-play.png);
+  background-position: -30px center;
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
+  /* line 311, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_text-column.scss */
+  .report a.video-link > figure:before, .report a.video-link > figure > .icon {
+    background-image: url(../img/icons/video-play@2x.png);
+    background-size: 90px 30px;
+  }
+}
+/* line 319, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_text-column.scss */
+.report a.video-link > figure > .icon > i {
+  display: none;
+}
+/* line 322, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_text-column.scss */
+.report a.panorama {
+  text-decoration: none;
+}
+/* line 324, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_text-column.scss */
+.report a.panorama > figure {
+  position: relative;
+  background-color: black;
+}
+/* line 327, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_text-column.scss */
+.report a.panorama > figure:after, .report a.panorama > figure > .icon {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  text-decoration: none;
+  pointer-events: none;
+  font-family: "UniversCondensed-Regular", "Univers-Condensed", "UniversCondensed", sans;
+  font-size: 26px;
+  text-align: center;
+  line-height: 1;
+  padding-top: 15px;
+  content: '';
+  display: block;
+  position: absolute;
+  z-index: 1;
+  color: white;
+  top: 50%;
+  left: 50%;
+  width: 66px;
+  height: 66px;
+  margin-left: -33px;
+  margin-top: -33px;
+  border-radius: 50px;
+  border: 4px solid white;
+  content: '360Â°';
+}
+/* line 350, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_text-column.scss */
+.report a.panorama > figure:after > i, .report a.panorama > figure > .icon > i {
+  font-style: normal;
+}
+/* line 352, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_text-column.scss */
+.report a.panorama > figure > .icon {
+  border: none;
+}
+/* line 357, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_text-column.scss */
+.report a.panorama:hover > img {
+  opacity: 1;
+}
+/* line 362, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_text-column.scss */
+.report img, .report video {
+  width: 100%;
+}
+/* line 365, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_text-column.scss */
+.report .thumbnails {
+  margin-right: -10px;
+  text-align: left;
+  font-size: 0.000000001px;
+}
+/* line 369, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_text-column.scss */
+.report .thumbnails li {
+  display: -moz-inline-stack;
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  vertical-align: top;
+  width: 25%;
+  padding-right: 10px;
+}
+/* line 376, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_text-column.scss */
+.report .social > h3 {
+  display: none;
+}
+/* line 378, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_text-column.scss */
+.report .twitter {
+  background-image: url(../img/graphics/twitter-header.png);
+  background-repeat: no-repeat;
+  background-position: center 40px;
+  -webkit-font-smoothing: antialiased;
+  padding-top: 70px;
+  padding-bottom: 3em;
+  color: #8A7A6D;
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
+  /* line 378, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_text-column.scss */
+  .report .twitter {
+    background-image: url(../img/graphics/twitter-header@2x.png);
+    background-size: 197 16;
+  }
+}
+/* line 385, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_text-column.scss */
+.report .twitter > h3 {
+  display: none;
+}
+/* line 386, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_text-column.scss */
+.report .twitter a {
+  color: inherit;
+  text-decoration: none;
+}
+/* line 389, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_text-column.scss */
+.report .twitter a:hover {
+  color: #ff6666;
+}
+/* line 393, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_text-column.scss */
+.report .twitter .message {
+  font-size: 160%;
+  line-height: 1.2;
+  padding-bottom: 1ex;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+/* line 400, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_text-column.scss */
+.report .twitter footer {
+  font-family: "Bodoni-Bold", "BodoniClassico-Bold", serif;
+}
+/* line 402, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_text-column.scss */
+.report .twitter footer > cite {
+  font-style: normal;
+}
+
+/* line 408, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_text-column.scss */
+.no-touch .report a > figure > img {
+  -webkit-transition: -webkit-transform 400ms ease-out;
+  -moz-transition: -moz-transform 400ms ease-out;
+  -ms-transition: -ms-transform 400ms ease-out;
+  -o-transition: -o-transform 400ms ease-out;
+  transition: transform 400ms ease-out;
+  -moz-transform: translateZ(0px);
+  -o-transform: translateZ(0px);
+  -ms-transform: translateZ(0px);
+  -webkit-transform: translateZ(0px);
+  transform: translateZ(0px);
+}
+/* line 411, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_text-column.scss */
+.no-touch .report a > figure > img:hover {
+  -webkit-transition: -webkit-transform 400ms ease-out;
+  -moz-transition: -moz-transform 400ms ease-out;
+  -ms-transition: -ms-transform 400ms ease-out;
+  -o-transition: -o-transform 400ms ease-out;
+  transition: transform 400ms ease-out;
+  -moz-transform: translateZ(0px) scale3d(1.015, 1.015, 1);
+  -o-transform: translateZ(0px) scale3d(1.015, 1.015, 1);
+  -ms-transform: translateZ(0px) scale3d(1.015, 1.015, 1);
+  -webkit-transform: translateZ(0px) scale3d(1.015, 1.015, 1);
+  transform: translateZ(0px) scale3d(1.015, 1.015, 1);
+}
+
+/* line 416, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_text-column.scss */
+.no-touch .report .thumbnails a > figure > img:hover {
+  -moz-transform: translateZ(0px) scale3d(1.1, 1.1, 1);
+  -o-transform: translateZ(0px) scale3d(1.1, 1.1, 1);
+  -ms-transform: translateZ(0px) scale3d(1.1, 1.1, 1);
+  -webkit-transform: translateZ(0px) scale3d(1.1, 1.1, 1);
+  transform: translateZ(0px) scale3d(1.1, 1.1, 1);
+}
+
+@media only screen and (max-width: 600px) {
+  /* line 424, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_text-column.scss */
+  .report header h1 {
+    font-size: 40px;
+  }
+}
+@media only screen and (max-width: 470px) {
+  /* line 431, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_text-column.scss */
+  .scroll-intro {
+    display: none;
+  }
+
+  /* line 434, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_text-column.scss */
+  .report header h1 {
+    font-size: 30px;
+    line-height: 1.2;
+  }
+  /* line 438, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_text-column.scss */
+  .report header h2 {
+    font-size: 18px;
+  }
+  /* line 442, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_text-column.scss */
+  .report .social .message {
+    font-size: 24px;
+  }
+
+  /* line 446, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_text-column.scss */
+  .main-content .country .country-intro .title {
+    font-size: 14px;
+  }
+}
+/* line 4, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_lightbox.scss */
+.lightbox {
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10000;
+  background-color: black;
+}
+/* line 13, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_lightbox.scss */
+.lightbox > .content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* line 22, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_lightbox.scss */
+.photo-lightbox > .close, .photo-lightbox > .prev, .photo-lightbox > .next, .pano-lightbox > .close, .pano-lightbox > .prev, .pano-lightbox > .next {
+  position: absolute;
+}
+/* line 25, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_lightbox.scss */
+.photo-lightbox > .figure, .pano-lightbox > .figure {
+  position: absolute;
+  z-index: 10;
+  overflow: hidden;
+  top: 60px;
+  left: 60px;
+  bottom: 60px;
+  right: 60px;
+  -webkit-transition: -webkit-transform 250ms ease-out;
+  -moz-transition: -moz-transform 250ms ease-out;
+  -ms-transition: -ms-transform 250ms ease-out;
+  -o-transition: -o-transform 250ms ease-out;
+  transition: transform 250ms ease-out;
+}
+/* line 33, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_lightbox.scss */
+.photo-lightbox > .caption, .pano-lightbox > .caption {
+  position: absolute;
+  left: 0;
+  bottom: 20px;
+  width: 100%;
+  text-align: center;
+  font-family: "URWGaramond-Regular", serif;
+  color: #ff6666;
+}
+/* line 43, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_lightbox.scss */
+.photo-lightbox .close, .pano-lightbox .close {
+  border: 50px solid black;
+  border-bottom-color: transparent;
+  border-right-color: transparent;
+  left: 0;
+  top: 0;
+  cursor: pointer;
+  z-index: 15;
+}
+/* line 44, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_lightbox.scss */
+.photo-lightbox .close > .label, .pano-lightbox .close > .label {
+  display: none;
+}
+/* line 51, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_lightbox.scss */
+.photo-lightbox .close:after, .pano-lightbox .close:after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  top: -35px;
+  left: -35px;
+  background-repeat: no-repeat;
+  background-image: url(../img/icons/lightbox-close.png);
+  background-position: -60px center;
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
+  /* line 51, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_lightbox.scss */
+  .photo-lightbox .close:after, .pano-lightbox .close:after {
+    background-image: url(../img/icons/lightbox-close@2x.png);
+    background-size: 90px 30px;
+  }
+}
+/* line 59, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_lightbox.scss */
+.photo-lightbox .close:hover, .pano-lightbox .close:hover {
+  border-top-color: #ff6666;
+  border-left-color: #ff6666;
+}
+/* line 62, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_lightbox.scss */
+.photo-lightbox .close:hover:after, .pano-lightbox .close:hover:after {
+  background-position: -30px center;
+}
+/* line 66, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_lightbox.scss */
+.photo-lightbox .prev, .photo-lightbox .next, .pano-lightbox .prev, .pano-lightbox .next {
+  top: 50%;
+  margin-top: -65px;
+  border: 70px solid transparent;
+  cursor: pointer;
+  z-index: 15;
+}
+/* line 71, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_lightbox.scss */
+.photo-lightbox .prev > .label, .photo-lightbox .next > .label, .pano-lightbox .prev > .label, .pano-lightbox .next > .label {
+  display: none;
+}
+/* line 72, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_lightbox.scss */
+.photo-lightbox .prev:after, .photo-lightbox .next:after, .pano-lightbox .prev:after, .pano-lightbox .next:after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  top: -15px;
+  background-position: -60px center;
+}
+/* line 79, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_lightbox.scss */
+.photo-lightbox .prev:hover:after, .photo-lightbox .next:hover:after, .pano-lightbox .prev:hover:after, .pano-lightbox .next:hover:after {
+  background-position: -30px center;
+}
+/* line 84, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_lightbox.scss */
+.photo-lightbox .prev, .pano-lightbox .prev {
+  left: 0;
+}
+/* line 87, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_lightbox.scss */
+.photo-lightbox .prev:after, .pano-lightbox .prev:after {
+  background-repeat: no-repeat;
+  background-image: url(../img/icons/lightbox-prev.png);
+  left: -55px;
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
+  /* line 87, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_lightbox.scss */
+  .photo-lightbox .prev:after, .pano-lightbox .prev:after {
+    background-image: url(../img/icons/lightbox-prev@2x.png);
+    background-size: 90px 30px;
+  }
+}
+/* line 95, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_lightbox.scss */
+.photo-lightbox .next, .pano-lightbox .next {
+  right: 0;
+}
+/* line 98, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_lightbox.scss */
+.photo-lightbox .next:after, .pano-lightbox .next:after {
+  background-repeat: no-repeat;
+  background-image: url(../img/icons/lightbox-next.png);
+  left: 25px;
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
+  /* line 98, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_lightbox.scss */
+  .photo-lightbox .next:after, .pano-lightbox .next:after {
+    background-image: url(../img/icons/lightbox-next@2x.png);
+    background-size: 90px 30px;
+  }
+}
+/* line 106, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_lightbox.scss */
+.photo-lightbox .loader, .pano-lightbox .loader {
+  display: block;
+  position: absolute;
+  z-index: 15;
+  width: 30px;
+  height: 30px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  top: 50%;
+  left: 50%;
+  margin-top: -15px;
+  margin-left: -15px;
+  opacity: 0;
+  -webkit-transition: none;
+  -moz-transition: none;
+  -ms-transition: none;
+  -o-transition: none;
+  transition: none;
+}
+
+/* line 121, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_lightbox.scss */
+.lt-ie8 .lightbox .prev, .lt-ie8 .lightbox .next, .lt-ie8 .lightbox .close {
+  border-width: 10px;
+}
+/* line 123, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_lightbox.scss */
+.lt-ie8 .lightbox .prev .label, .lt-ie8 .lightbox .next .label, .lt-ie8 .lightbox .close .label {
+  display: block;
+  color: #ff6666;
+}
+
+/* line 129, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_lightbox.scss */
+.lightbox.loading .loader {
+  background-image: url(../img/graphics/loader.gif);
+  -webkit-transition: opacity 2000ms linear 0ms;
+  -moz-transition: opacity 2000ms linear 0ms;
+  -ms-transition: opacity 2000ms linear 0ms;
+  -o-transition: opacity 2000ms linear 0ms;
+  transition: opacity 2000ms linear 0ms;
+  opacity: 1;
+}
+
+/* line 137, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_lightbox.scss */
+.pano-lightbox > .figure {
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  cursor: move;
+  overflow: hidden;
+  -webkit-transition: none;
+  -moz-transition: none;
+  -ms-transition: none;
+  -o-transition: none;
+  transition: none;
+}
+
+/* line 1, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_map.scss */
+#map-wrap {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+}
+
+/* line 7, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_map.scss */
+#map-container {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 50%;
+  height: 100%;
+}
+/* line 12, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_map.scss */
+#map-container > #map {
+  -webkit-transition: -webkit-transform 1000ms ease-in-out;
+  -moz-transition: -moz-transform 1000ms ease-in-out;
+  -ms-transition: -ms-transform 1000ms ease-in-out;
+  -o-transition: -o-transform 1000ms ease-in-out;
+  transition: transform 1000ms ease-in-out;
+}
+
+/* line 16, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_map.scss */
+#map {
+  width: 100%;
+  height: 100%;
+}
+
+/* line 25, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_map.scss */
+#color-overlay {
+  position: absolute;
+  top: -51%;
+  left: -151%;
+  width: 252%;
+  height: 102%;
+  background-color: #000033;
+  -moz-transform: translateZ(-9501px);
+  -o-transform: translateZ(-9501px);
+  -ms-transform: translateZ(-9501px);
+  -webkit-transform: translateZ(-9501px);
+  transform: translateZ(-9501px);
+  -webkit-transition: opacity 3000ms linear;
+  -moz-transition: opacity 3000ms linear;
+  -ms-transition: opacity 3000ms linear;
+  -o-transition: opacity 3000ms linear;
+  transition: opacity 3000ms linear;
+}
+
+/* line 34, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_map.scss */
+#map-copyright {
+  position: absolute;
+  bottom: 2px;
+  right: 2px;
+  font-size: 60%;
+  text-transform: uppercase;
+}
+
+/* line 43, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_map.scss */
+.marker {
+  font-size: 18px;
+  color: white;
+  text-decoration: none;
+}
+
+/* line 48, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_map.scss */
+.marker:visited {
+  color: white;
+}
+
+/* line 51, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_map.scss */
+.marker:hover {
+  color: #f66;
+}
+
+/* line 54, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_map.scss */
+.marker > .text {
+  display: block;
+  font-family: "UniversCondensed-Regular";
+  font-weight: bold;
+  position: absolute;
+  text-transform: uppercase;
+  text-shadow: 0px 1px 8px black, 0px 1px 15px black;
+  left: 1em;
+  top: -2em;
+  line-height: 1.4;
+  -webkit-transform-origin: 0 0 50%;
+  -moz-transform-origin: 0 0 50%;
+  -ms-transform-origin: 0 0 50%;
+  -o-transform-origin: 0 0 50%;
+  transform-origin: 0 0 50%;
+  -moz-transform: rotate(-10deg) skew(-10deg) scale(1, 1.2);
+  -o-transform: rotate(-10deg) skew(-10deg) scale(1, 1.2);
+  -ms-transform: rotate(-10deg) skew(-10deg) scale(1, 1.2);
+  -webkit-transform: rotate(-10deg) skew(-10deg) scale(1, 1.2);
+  transform: rotate(-10deg) skew(-10deg) scale(1, 1.2);
+}
+
+/* line 67, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_map.scss */
+.marker .line {
+  border-bottom: 2px solid white;
+  -webkit-transition: border-color 80ms linear;
+}
+
+/* line 71, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_map.scss */
+.marker:hover .line {
+  border-color: #f66;
+}
+
+/* line 74, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_map.scss */
+.marker .icon {
+  width: 17px;
+  height: 29px;
+  display: block;
+  bottom: -5px;
+  left: -8px;
+  background-image: url(../img/graphics/location-marker.png);
+  background-repeat: no-repeat;
+  position: absolute;
+}
+
+/* line 85, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_map.scss */
+.marker-country {
+  font-size: 20px;
+}
+
+/* line 88, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_map.scss */
+.marker-country > .text {
+  text-align: center;
+  width: 15ex;
+  left: -7.5ex;
+  top: auto;
+  bottom: 32px;
+}
+
+/* line 95, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_map.scss */
+.marker-country.country-down > .text {
+  text-align: center;
+  width: 15ex;
+  left: -7.5ex;
+  top: 5px;
+  bottom: auto;
+}
+
+/* line 105, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_map.scss */
+#route-stats {
+  position: fixed;
+  z-index: 1;
+  color: white;
+  bottom: 30px;
+  right: 30px;
+  opacity: 0;
+  display: none;
+}
+/* line 114, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_map.scss */
+#route-stats > li {
+  display: -moz-inline-stack;
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  vertical-align: top;
+  position: relative;
+  padding-left: 50px;
+  margin-left: 10px;
+}
+/* line 120, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_map.scss */
+#route-stats .value {
+  display: inline;
+  font-size: 30px;
+  margin-right: 2px;
+}
+/* line 125, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_map.scss */
+#route-stats .unit {
+  font-size: 14px;
+  vertical-align: 3px;
+}
+/* line 129, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_map.scss */
+#route-stats .canvas {
+  position: absolute;
+  bottom: -5px;
+  left: 0px;
+  width: 42px;
+  height: 42px;
+}
+/* line 136, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_map.scss */
+#route-stats .flyover {
+  position: absolute;
+  bottom: 45px;
+  width: 260px;
+  left: -109px;
+  text-align: center;
+  overflow: hidden;
+  height: 0;
+  opacity: 0;
+  -moz-transform: translate(0px, 10px);
+  -o-transform: translate(0px, 10px);
+  -ms-transform: translate(0px, 10px);
+  -webkit-transform: translate(0px, 10px);
+  transform: translate(0px, 10px);
+  -webkit-transition: none;
+  -moz-transition: none;
+  -ms-transition: none;
+  -o-transition: none;
+  transition: none;
+}
+/* line 147, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_map.scss */
+#route-stats .flyover > p {
+  display: -moz-inline-stack;
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  vertical-align: top;
+  position: relative;
+  text-align: left;
+  background-color: #fefaed;
+  color: black;
+  border-radius: 4px;
+  padding: 8px 10px;
+  font-size: 16px;
+  line-height: 1.2;
+  margin-bottom: 6px;
+}
+/* line 158, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_map.scss */
+#route-stats .flyover > p:after {
+  display: block;
+  position: absolute;
+  border: 6px solid transparent;
+  border-top-color: #fefaed;
+  content: '';
+  left: 50%;
+  bottom: -12px;
+  margin-left: -6px;
+}
+/* line 171, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_map.scss */
+#route-stats > li:hover .flyover {
+  height: auto;
+  opacity: 1;
+  -moz-transform: translate(0px, 0px);
+  -o-transform: translate(0px, 0px);
+  -ms-transform: translate(0px, 0px);
+  -webkit-transform: translate(0px, 0px);
+  transform: translate(0px, 0px);
+  -webkit-transition: opacity 500ms, -webkit-transform 400ms;
+  -moz-transition: opacity 500ms, -moz-transform 400ms;
+  -ms-transition: opacity 500ms, -ms-transform 400ms;
+  -o-transition: opacity 500ms, -o-transform 400ms;
+  transition: opacity 500ms, transform 400ms;
+}
+
+@media only screen and (max-width: 1024px) {
+  /* line 182, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_map.scss */
+  .marker, .marker-country {
+    font-size: 16px;
+  }
+}
+/* ==|== non-semantic helper classes ========================================
+   Please define your styles before this section.
+   ========================================================================== */
+/* For image replacement */
+/* line 6, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_helpers.scss */
+.ir {
+  display: block;
+  border: 0;
+  text-indent: -999em;
+  overflow: hidden;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  text-align: left;
+  direction: ltr;
+  *line-height: 0;
+}
+
+/* line 7, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_helpers.scss */
+.ir br {
+  display: none;
+}
+
+/* Hide from both screenreaders and browsers: h5bp.com/u */
+/* line 10, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_helpers.scss */
+.hidden {
+  display: none !important;
+  visibility: hidden;
+}
+
+/* Hide only visually, but have it available for screenreaders: h5bp.com/v */
+/* line 13, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_helpers.scss */
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+/* Extends the .visuallyhidden class to allow the element to be focusable when navigated to via the keyboard: h5bp.com/p */
+/* line 16, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_helpers.scss */
+.visuallyhidden.focusable:active, .visuallyhidden.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
+}
+
+/* Hide visually and from screenreaders, but maintain layout */
+/* line 19, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_helpers.scss */
+.invisible {
+  visibility: hidden;
+}
+
+/* Contain floats: h5bp.com/q */
+/* line 22, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_helpers.scss */
+.clearfix:before, .clearfix:after {
+  content: "";
+  display: table;
+}
+
+/* line 23, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_helpers.scss */
+.clearfix:after {
+  clear: both;
+}
+
+/* line 24, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_helpers.scss */
+.clearfix {
+  *zoom: 1;
+}
+
+/* ==|== print styles =======================================================
+	 Print styles.
+	 Inlined to avoid required HTTP connection: h5bp.com/r
+	 ========================================================================== */
+@media print {
+  /* line 8, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_print.scss */
+  * {
+    background: transparent !important;
+    color: black !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+    filter: none !important;
+    -ms-filter: none !important;
+  }
+
+  /* Black prints faster: h5bp.com/s */
+  /* line 9, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_print.scss */
+  a, a:visited {
+    text-decoration: underline;
+  }
+
+  /* line 10, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_print.scss */
+  a[href]:after {
+    content: " (" attr(href) ")";
+  }
+
+  /* line 11, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_print.scss */
+  abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+
+  /* line 12, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_print.scss */
+  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after {
+    content: "";
+  }
+
+  /* Don't show links for images, or javascript/internal links */
+  /* line 13, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_print.scss */
+  pre, blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+
+  /* line 14, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_print.scss */
+  thead {
+    display: table-header-group;
+  }
+
+  /* h5bp.com/t */
+  /* line 15, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_print.scss */
+  tr, img {
+    page-break-inside: avoid;
+  }
+
+  /* line 16, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_print.scss */
+  img {
+    max-width: 100% !important;
+  }
+
+  @page {
+    margin: 0.5cm;
+}
+
+  /* line 18, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_print.scss */
+  p, h2, h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  /* line 19, /Volumes/Home/Users/sev/HV/SF-Seidenstrasse/seidenstrasse-frontend/sass/_print.scss */
+  h2, h3 {
+    page-break-after: avoid;
+  }
+}
+/* line 104, ../sass/style.scss */
+.main-content .audio {
+  display: none;
+}
+/* line 108, ../sass/style.scss */
+.main-content .country > h1 {
+  display: none;
+}
+/* line 111, ../sass/style.scss */
+.main-content .country .country-intro {
+  display: none;
+}
