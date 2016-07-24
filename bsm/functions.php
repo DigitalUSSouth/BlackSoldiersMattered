@@ -47,8 +47,15 @@ function importRandomSample(){
 		
 		$fields = explode("\t",$line);
 
-		$units = createUnitsObject(array_splice($fields,12,15));
-		
+		try {
+			$units = createUnitsObject(array_splice($fields,12,15));
+		}
+		catch (Exception $e) {
+			print '<h1 class="text-danger text-center">Unable to parse date: '.$e->getMessage().' - '.$fields[0].'</h1>';
+			//TODO: email admin to inform that solr is down
+			//die();
+		}
+
 		$soldier = array(
 				"id"=> $fields[0],
 				"first_name" => $fields[1],
@@ -125,8 +132,8 @@ function formatDate($input){
  * @param {array} array of strings containing unit details
  * @return {string} Unit object to be inserted into a soldier, exception on failure
  */
- function createUnitsObject($unitsFields){
-	 if (sizeof($unitFields != 15)){
+ function createUnitsObject($unitFields){
+	 if (sizeof($unitFields) != 15){
 		throw new Exception('Invalid input for createUnitsObject function.');
 	}
 
