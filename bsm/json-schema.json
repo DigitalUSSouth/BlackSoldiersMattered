@@ -68,6 +68,7 @@ units.json will contain an array of unit objects
 	/* todo: figure out 'where unit served' columns */
 	"responsibilities" : "text",
 	"unusual_experiences" : "text",
-	"demobilized" : ["place","date"],
+	"demobilized_date" : "date",
+	"demobilized_place" : "place",
 	"companies" : ["A","B","C" /* etc...*/]
 }

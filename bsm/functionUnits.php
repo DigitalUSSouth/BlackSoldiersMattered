@@ -31,6 +31,9 @@ function importUnits(){
 	}
 
  $counter=0;
+ $units = array();
+
+ try{
 	while($line = $file->fgets()){
 		//discard first 4 lines
 		//TODO: move this outside of loop for performance
@@ -43,35 +46,60 @@ function importUnits(){
 		$line = preg_replace('/\\t"/',"\t", $line);
 		//echo $line.'<br>';
 		$line = preg_replace('/"\\t/',"\t", $line);
-		print $line.'<br>';
+		//print $line.'<br>';
 		
 		$fields = explode("\t",$line);
+
+		foreach($fields as &$field){
+			$field = trim($field);
+		}
+
+		//check if empty
+		//TODO: add prior check to make sure it's an array before accessing $fields[0]
+		$name = $fields[0];
+		if ($name=='') continue;
 		
+		$camps = array();
+		$initialCamp = array(
+			"id" => $fields[5],
+			"date" => $fields[6]//TODO: parse into date object
+		);
+		$camps[] = $initialCamp;
+		$secondCamp = array(
+			"id" => $fields[8],
+			"date" => $fields[9]//TODO: parse into date object
+		);
+		$camps[] = $secondCamp;
+
 		$unit = array(
-				"id" => $fields[0],
+				"id" => $name,
 				"service_location" => $fields[1],
 				"type" => $fields[2],
 				"location" => [
-					/* TODO: add ["camp","date"] array for location */
+					
 				],
-				"port_embarkation" => $fields[7],
-				"responsibilities" => $fields[10],
-				"unusual_experiences" => $fields[11],
-				"demobilized" => $fields[12],
+				"port_embarkation" => $fields[10],
+				"responsibilities" => $fields[14],
+				"unusual_experiences" => $fields[15],
+				"demobilized_date" => $fields[16],//TODO: parse into date object
+				"demobilized_place" => $fields[17],
 				"companies" => $fields[15]
 
 				
 		);
 		
-		$jsonUnit = json_encode($unit,JSON_UNESCAPED_SLASHES);
-		
-		file_put_contents('data/'.$unit['id'].'.json',$jsonUnit);
-		
-		print $jsonUnit;
+		$units[$name]  = $unit;
 		
 		
+	  }
+    }
+	catch (Exception $error){
+		echo '<div class="jumbotron"><h2 class="text-danger">Error parsing units file  -- Results may not be correct</h2><p>'.$error->getMessage().' -- line: '.$counter.'</p></div>';
 	}
-	
+
+	$jsonUnits = json_encode($units,JSON_UNESCAPED_SLASHES|JSON_PRETTY_PRINT); //remove JSON_PRETTY_PRINT in production
+	print $jsonUnits;
+	file_put_contents('data/units.json',$jsonUnits);
 	
 	
 }

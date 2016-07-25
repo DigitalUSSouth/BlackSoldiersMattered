@@ -197,3 +197,75 @@ function formatDate($input){
 	 return $units;
 
  }
+
+
+
+/**
+ * Import tab-delimited file for Camps and
+ * create camps.json file
+ */
+function importCamps(){
+	ini_set("auto_detect_line_endings", true);
+	$file = NULL;
+	
+	try {
+		$file = new SplFileObject("uploads/camps.txt");
+	}
+	catch (Exception $error){
+		echo '<div class="jumbotron"><h1 class="text-danger">Unable to open uploaded file. Please try again.</h1><p>'.$error->getMessage().'</p></div>';
+		return;
+	}
+
+ $counter=0;
+ $camps = array();
+ try{
+	while($line = $file->fgets()){
+		//discard first 3 lines
+		//TODO: move this outside of loop for performance
+		if ($counter++ < 3) {/*echo $line;*/continue;}
+		
+		//read every other line until the end of file
+		//excel will add double quotes around cells that contain commas
+		//remove double quotes if they are at the edge of a cell
+		//echo $line.'<br>';
+		$line = preg_replace('/\\t"/',"\t", $line);
+		//echo $line.'<br>';
+		$line = preg_replace('/"\\t/',"\t", $line);
+		//print $line.'<br>';
+		
+		$fields = explode("\t",$line);
+
+		foreach($fields as &$field){
+			$field = trim($field);
+		}
+
+
+		//check if empty
+		//TODO: add prior check to make sure it's an array before accessing $fields[0]
+		$name = $fields[0];
+		if ($name=='') continue;
+		
+		$camp = array(
+				"id" => $name,
+				"place" => $fields[1],
+				"type" => $fields[2]
+
+				
+		);
+
+		$camps[$name]  = $camp;
+		
+		//debug:
+		//print $jsonCamp;	
+		
+	  }
+    }
+	catch (Exception $error){
+		echo '<div class="jumbotron"><h2 class="text-danger">Error parsing camps file  -- Results may not be correct</h2><p>'.$error->getMessage().' -- line: '.$counter.'</p></div>';
+	}
+
+	$jsonCamps = json_encode($camps,JSON_UNESCAPED_SLASHES|JSON_PRETTY_PRINT); //remove JSON_PRETTY_PRINT in production
+	print $jsonCamps;
+	file_put_contents('data/camps.json',$jsonCamps);
+	
+}
