@@ -59,8 +59,14 @@ units.json will contain an array of unit objects
 	"service_location" : "value",
 	"type" :  "value",
 	"location" : [
-		["camp","date"], 
-		["camp","date"]
+		{
+			"id" :" camp",
+			"date" : "yyyy-mm-dd"
+		}, 
+		{
+			"id" :" camp",
+			"date" : "yyyy-mm-dd"
+		}
 			/*does this "camp" pull the whole subsequent camp record from above? -Sid 
 			I think so, we will probably need that in order to get the locations and type of camp - Adrian*/
 	],
