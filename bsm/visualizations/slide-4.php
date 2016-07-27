@@ -9,10 +9,13 @@ require ('../visualizationFunctions.php');
     <div class="row" id="page-container">
       <div class="visualization-container">
         <script>
-          var domesticUnitsPieData = <?php print getDomesticUnitsPieData(); ?>;
+          var domesticUnitsPieData = <?php print getUnitsPieData('Domestic'); ?>;
+          var overseasUnitsPieData = <?php print getUnitsPieData('France'); ?>;
         </script>
         <div id="myPie">
-          </div>
+        </div>
+        <div id="myPie2">
+        </div>
       </div>
       
     </div>

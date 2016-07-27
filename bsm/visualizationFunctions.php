@@ -5,10 +5,10 @@
 
  /**
  * function to return json data to use in pie chart for domestic units
- * @param {}: NONE
+ * @param {string}: "Domestic" or "France""
  * @return {string}: json-formatted string
  */
- function getDomesticUnitsPieData(){
+ function getUnitsPieData($serviceLocation){
      //$unitsJson = file_get_contents('data/units.json');
 
      //TODO: fix file permission issues to use file_get_contents instead of curl
@@ -31,12 +31,12 @@
 
      //TODO: combine the next two loops into one for performance
      foreach ($units as $unit){
-         if ($unit['service_location']=='Domestic'){
+         if ($unit['service_location']==$serviceLocation){
              $unitTypes[$unit['type']] = 0;
          }
      }
      foreach ($units as $unit){
-         if ($unit['service_location']=='Domestic'){
+         if ($unit['service_location']==$serviceLocation){
              $unitTypes[$unit['type']]++;
          }
      }
