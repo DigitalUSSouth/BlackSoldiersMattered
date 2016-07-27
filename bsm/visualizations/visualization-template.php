@@ -2,6 +2,8 @@
 $title = 'visualization-template';
 
 require_once ('../header.php');
+
+require ('../visualizationFunctions.php');
 ?>
     <!-- Content -->
     <div id="page-container">
