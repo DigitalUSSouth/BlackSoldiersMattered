@@ -68,11 +68,13 @@ require_once 'config.php';
     <?php endif;?>
     <?php if($title=='map-4'):?><script src="<?php print ROOT_FOLDER;?>js/bsm-map4.js"></script><?php endif;?> 
 
-    <!-- JS for visualizations -->
+    <!-- Stuff for visualizations -->
     <?php if($title=='slide-4'): ?>
     <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
     <script src="<?php print ROOT_FOLDER;?>js/d3pie.min.js"></script>
     <script src="<?php print ROOT_FOLDER;?>js/slide-4.js"></script>
+    <style>
+    </style>
     <?php endif; ?>
 
 

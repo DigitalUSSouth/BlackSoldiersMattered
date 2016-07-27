@@ -6,7 +6,7 @@ require_once ('../header.php');
 require ('../visualizationFunctions.php');
 ?>
     <!-- Content -->
-    <div id="page-container">
+    <div class="row" id="page-container">
       <div class="visualization-container">
         <script>
           var domesticUnitsPieData = <?php print getDomesticUnitsPieData(); ?>;

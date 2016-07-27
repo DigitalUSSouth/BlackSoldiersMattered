@@ -22,7 +22,10 @@ $(document).ready(function(){
 		"location": "bottom-left"
 	},
 	"size": {
-		"pieOuterRadius": "90%"
+		canvasHeight: 500,
+		canvasWidth: 750,
+		pieInnerRadius: 0,
+		pieOuterRadius: null
 	},
 	"data": {
 		"sortOrder": "value-desc",
@@ -60,6 +63,11 @@ $(document).ready(function(){
 			"size": 8
 		}
 	},
+	"tooltips": {
+		"enabled" : true,
+		"type": "placeholder",
+		"string": "{label}, {value}"
+	},
 	"misc": {
 		"gradient": {
 			"enabled": true,
@@ -67,5 +75,8 @@ $(document).ready(function(){
 		}
 	}
     });
+
+//pie.redraw();
+//$("#myPie svg").addClass("testClass");
 
 });
