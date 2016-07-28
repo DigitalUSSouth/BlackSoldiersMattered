@@ -11,7 +11,7 @@ rm -rf ~/bsm-old/*
 cp -a /var/www/html/bsm ~/bsm-old
 
 shopt -s extglob
-rm -rf !(bsm-temp)
+rm -rf !(bsm-temp|data)
 
 echo "Copying files"
 cp -a bsm-temp/bsm/. /var/www/html/bsm
