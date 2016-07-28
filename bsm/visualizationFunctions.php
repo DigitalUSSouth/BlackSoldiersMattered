@@ -54,4 +54,51 @@
      //var_dump($jsonContent);
      return $jsonContent;
  }
+
+ /**
+ * function to return json data to use in pie chart for domestic units
+ * @param {}: none
+ * @return {string}: json-formatted config object for d3pie
+ */
+ function getUnitsOverseasDomesticPieData(){
+     //TODO: fix file permission issues to use file_get_contents instead of curl
+     $ch = curl_init();
+	curl_setopt_array($ch, array(
+      CURLOPT_RETURNTRANSFER => 1,
+      CURLOPT_URL => ROOT_FOLDER.'data/units.json',
+	));
+	
+	$unitsJson = curl_exec($ch);
+	if (curl_error($ch)){
+		throw new Exception('Unable to read units.json file.');
+	}
+
+     $units = json_decode($unitsJson,true);
+
+     $domesticCount = 0;
+     $overseasCount = 0;
+
+     foreach ($units as $unit){
+         if ($unit['service_location']=='France'){
+             $overseasCount++;
+         }
+         else if ($unit['service_location']=='Domestic'){
+             $domesticCount++;
+         }
+     }
+
+     $content = array(
+         array(
+             "label" => 'Domestic Units',
+             "value" => $domesticCount,
+         ),
+         array(
+             "label" => 'Overseas Units',
+             "value" => $overseasCount
+         )
+     );
+
+     return json_encode($content,JSON_PRETTY_PRINT);
+
+ }
  ?>

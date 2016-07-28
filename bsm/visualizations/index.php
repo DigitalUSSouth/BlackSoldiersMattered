@@ -6,7 +6,6 @@ require_once ('../header.php');
 ?>
     <!-- Content -->
     <div class="row" id="page-container">
-      
       <div class="jumbotron">
         <h2>The following pages correspond to slides from the powerpoint. These are in-progress visualizations.</h2>
         <ul>
@@ -14,7 +13,6 @@ require_once ('../header.php');
           <!-- commit -->
         </ul>
       </div>
-      
     </div>
 <?php 
 require_once ('../footer.php');
