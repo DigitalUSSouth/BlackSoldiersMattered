@@ -32,12 +32,12 @@
      //TODO: combine the next two loops into one for performance
      foreach ($units as $unit){
          if ($unit['service_location']==$serviceLocation){
-             $unitTypes[$unit['type']] = 0;
+             $unitTypes[$unit['category']] = 0;
          }
      }
      foreach ($units as $unit){
          if ($unit['service_location']==$serviceLocation){
-             $unitTypes[$unit['type']]++;
+             $unitTypes[$unit['category']]++;
          }
      }
 

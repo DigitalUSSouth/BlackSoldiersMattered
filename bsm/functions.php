@@ -313,32 +313,33 @@ function importUnits(){
 
 		//check if empty
 		//TODO: add prior check to make sure it's an array before accessing $fields[0]
-		$name = $fields[0];
+		$name = trim($fields[0]);
 		if ($name=='') continue;
 		
 		$camps = array();
 		$initialCamp = array(
-			"id" => $fields[5],
-			"date" => $fields[6]//TODO: parse into date object
+			"id" => $fields[6],
+			"date" => $fields[7]//TODO: parse into date object
 		);
 		$camps[] = $initialCamp;
 		$secondCamp = array(
-			"id" => $fields[8],
-			"date" => $fields[9]//TODO: parse into date object
+			"id" => $fields[9],
+			"date" => $fields[10]//TODO: parse into date object
 		);
 		if ($secondCamp['id']!='')$camps[] = $secondCamp;
 
 		$unit = array(
 				"id" => $name,
 				"service_location" => $fields[1],
-				"type" => $fields[2],
+				"category" => $fields[2],
+				"type" => $fields[3],
 				"location" => $camps,
-				"port_embarkation" => $fields[10],
-				"responsibilities" => $fields[14],
-				"unusual_experiences" => $fields[15],
-				"demobilized_date" => $fields[16],//TODO: parse into date object
-				"demobilized_place" => $fields[17],
-				"companies" => $fields[15]
+				"port_embarkation" => $fields[11],
+				"responsibilities" => $fields[15],
+				"unusual_experiences" => $fields[16],
+				"demobilized_date" => $fields[17],//TODO: parse into date object
+				"demobilized_place" => $fields[18],
+				"companies" => $fields[20]
 
 				
 		);
