@@ -31,6 +31,8 @@ function importRandomSample(){
 	}
 
  $counter=0;
+ $soldiers = array();
+ try {
 	while($line = $file->fgets()){
 		//discard first 4 lines
 		//TODO: move this outside of loop for performance
@@ -43,7 +45,7 @@ function importRandomSample(){
 		$line = preg_replace('/\\t"/',"\t", $line);
 		//echo $line.'<br>';
 		$line = preg_replace('/"\\t/',"\t", $line);
-		print $line.'<br>';
+		//print $line.'<br>';
 		
 		$fields = explode("\t",$line);
 
@@ -52,11 +54,12 @@ function importRandomSample(){
 		}
 		catch (Exception $e) {
 			print '<h1 class="text-danger text-center">Unable to parse date: '.$e->getMessage().' - '.$fields[0].'</h1>';
-			//TODO: email admin to inform that solr is down
 			//die();
 		}
 
+		try{
 		$soldier = array(
+
 				"id"=> $fields[0],
 				"first_name" => $fields[1],
 				"last_name" => $fields[2],
@@ -83,18 +86,103 @@ function importRandomSample(){
 				"death_cause" => $fields[34],
 				"death_notified" => $fields[35]
 		);
+		}
+		catch (Exception $e) {
+			print '<h1 class="text-danger text-center">Exception: '.$e->getMessage().' - '.$fields[0].'</h1>';
+			continue;
+			//die();
+		}
 		
-		$jsonSoldier = json_encode($soldier,JSON_UNESCAPED_SLASHES);
-		
-		file_put_contents('data/'.$soldier['id'].'.json',$jsonSoldier);
-		
-		print $jsonSoldier;
-		
-		
+		$soldiers [$soldier['id']] = $soldier;	
+	  }
+    }
+	catch (Exception $e) {
+			print '<h1 class="text-danger text-center">Exception: '.$e->getMessage().' </h1>';
+			//die();
 	}
-	
-	
-	
+
+	writeJson('data/soldiers.json',$soldiers);
+
+}
+
+/**
+ * computes stats for all soldiers
+ * @param {}
+ * @return {}
+ */
+ function computeSoldierStats(){
+
+	 $soldiers = readJson('data/soldiers.json');
+
+	 $soldierStats = array();//main soldierStats object
+	 $soldierStats['total_number'] = sizeof($soldiers);
+
+	 $birthPlaceNC = 0;
+	 $birthPlaceOther = 0;
+
+	 
+	 foreach ($soldiers as $soldier){
+
+		 //calculate total number from NC vs from other states
+		 //check birth place
+		 //the regex will match ..../XX
+		 // /XX is forward-slash followed by two letter state code
+		 if (preg_match('/\/[A-Z]{2}$/',$soldier['birth_place'])){
+			 $birthPlaceOther++;
+			 //debug
+			 //print $soldier['birth_place'].'<br>';
+		 }
+		 else {
+			 $birthPlaceNC++;
+		 }
+
+		 //TODO: add other calculations to this loop
+		 //      and add to $soldierStats array to be used by visualizations
+
+
+	 }
+
+	 $soldierStats['birth_place_NC'] = $birthPlaceNC;
+	 $soldierStats['birth_place_other'] = $birthPlaceOther;
+
+	 $jsonSoldierStats = json_encode($soldierStats,JSON_UNESCAPED_SLASHES|JSON_PRETTY_PRINT); //remove JSON_PRETTY_PRINT in production
+	 print $jsonSoldierStats;
+	 file_put_contents('data/soldierStats.json',$jsonSoldierStats);
+
+	 //var_dump($soldierStats);
+ }
+
+/**
+ * function to format read from a json file
+ * @param {string} filepath to a valid json file 
+ * @return {string} associative array of json file contents or exception on failure
+ */
+function readJson($filename){
+	try{
+		 $jsonData = file_get_contents(ROOT_FOLDER.$filename);
+		 return json_decode($jsonData,true);
+	 }
+	 catch (Exception $e) {
+			print '<h1 class="text-danger text-center">Exception: Unable to read json file '.$filename.' - '.$e->getMessage().' </h1>';
+			die();
+	 }
+}
+
+/**
+ * function to format read from a json file
+ * @param {string} filepath to a valid json file 
+ * @return {string} associative array of json file contents or exception on failure
+ */
+function writeJson($filename,$object){
+	try {
+	$jsonObject = json_encode($object,JSON_UNESCAPED_SLASHES|JSON_PRETTY_PRINT); //remove JSON_PRETTY_PRINT in production
+	 print $jsonObject.'<br>';
+	 file_put_contents($filename,$jsonObject);
+	 }
+	 catch (Exception $e) {
+			print '<h1 class="text-danger text-center">Exception: Unable to write json file '.$filename.' - '.$e->getMessage().' </h1>';
+			die();
+	 }
 }
 
 /**
@@ -264,9 +352,7 @@ function importCamps(){
 		echo '<div class="jumbotron"><h2 class="text-danger">Error parsing camps file  -- Results may not be correct</h2><p>'.$error->getMessage().' -- line: '.$counter.'</p></div>';
 	}
 
-	$jsonCamps = json_encode($camps,JSON_UNESCAPED_SLASHES|JSON_PRETTY_PRINT); //remove JSON_PRETTY_PRINT in production
-	print $jsonCamps;
-	file_put_contents('data/camps.json',$jsonCamps);
+	writeJson('data/camps.json',$camps);
 	
 }
 
@@ -353,9 +439,7 @@ function importUnits(){
 		echo '<div class="jumbotron"><h2 class="text-danger">Error parsing units file  -- Results may not be correct</h2><p>'.$error->getMessage().' -- line: '.$counter.'</p></div>';
 	}
 
-	$jsonUnits = json_encode($units,JSON_UNESCAPED_SLASHES|JSON_PRETTY_PRINT); //remove JSON_PRETTY_PRINT in production
-	print $jsonUnits;
-	file_put_contents('data/units.json',$jsonUnits);
+	writeJson('data/units.json',$units);
 	
 	
 }

@@ -1,4 +1,4 @@
 
 bsm/leaflet/.com.apple.timemachine.supported
-bsm/data/
+bsm/data/*
 .vscode

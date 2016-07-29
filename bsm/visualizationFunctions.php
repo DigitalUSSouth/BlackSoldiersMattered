@@ -3,27 +3,16 @@
  */
 
 
+require_once 'functions.php';
+
  /**
  * function to return json data to use in pie chart for domestic units
  * @param {string}: "Domestic" or "France""
  * @return {string}: json-formatted string
  */
  function getUnitsPieData($serviceLocation){
-     //$unitsJson = file_get_contents('data/units.json');
 
-     //TODO: fix file permission issues to use file_get_contents instead of curl
-     $ch = curl_init();
-	curl_setopt_array($ch, array(
-      CURLOPT_RETURNTRANSFER => 1,
-      CURLOPT_URL => ROOT_FOLDER.'data/units.json',
-	));
-	
-	$unitsJson = curl_exec($ch);
-	if (curl_error($ch)){
-		throw new Exception('Unable to read units.json file.');
-	}
-
-     $units = json_decode($unitsJson,true);
+     $units = readJson('data/units.json');
 
      $content = array();
      $unitTypes = array();
@@ -61,19 +50,8 @@
  * @return {string}: json-formatted config object for d3pie
  */
  function getUnitsOverseasDomesticPieData(){
-     //TODO: fix file permission issues to use file_get_contents instead of curl
-     $ch = curl_init();
-	curl_setopt_array($ch, array(
-      CURLOPT_RETURNTRANSFER => 1,
-      CURLOPT_URL => ROOT_FOLDER.'data/units.json',
-	));
-	
-	$unitsJson = curl_exec($ch);
-	if (curl_error($ch)){
-		throw new Exception('Unable to read units.json file.');
-	}
 
-     $units = json_decode($unitsJson,true);
+     $units = readJson('data/units.json');
 
      $domesticCount = 0;
      $overseasCount = 0;

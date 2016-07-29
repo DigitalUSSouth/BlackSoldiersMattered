@@ -11,6 +11,7 @@ require_once ('header.php');
           <li><a href="maps/2">Map 2 - vis timeline</a></li>
           <li><a href="maps/3">Map 3 - static heatmap</a></li>
           <li><a href="maps/4">Map 4 - hexbin</a></li>
+          <li><a href="visualizations">Visualizations preview</a></li>
           <!-- commit -->
         </ul>
       </div>
