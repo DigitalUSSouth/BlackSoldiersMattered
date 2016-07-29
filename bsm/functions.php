@@ -145,9 +145,7 @@ function importRandomSample(){
 	 $soldierStats['birth_place_NC'] = $birthPlaceNC;
 	 $soldierStats['birth_place_other'] = $birthPlaceOther;
 
-	 $jsonSoldierStats = json_encode($soldierStats,JSON_UNESCAPED_SLASHES|JSON_PRETTY_PRINT); //remove JSON_PRETTY_PRINT in production
-	 print $jsonSoldierStats;
-	 file_put_contents('data/soldierStats.json',$jsonSoldierStats);
+	 writeJson('data/soldierStats.json',$soldierStats);
 
 	 //var_dump($soldierStats);
  }
