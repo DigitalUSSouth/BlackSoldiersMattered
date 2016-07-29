@@ -25,7 +25,7 @@ echo "convertCamps - Done."
 php convertUnits.php | grep error
 echo "convertUnits - Done."
 php convert.php | grep error
-echo "convert solidiers - Done.
+echo "convert solidiers - Done."
 
 
 exit
