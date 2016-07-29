@@ -19,4 +19,13 @@ cp -a bsm-temp/bsm/. /var/www/html/bsm
 echo "Removing temporary files"
 rm -rf bsm-temp
 
+echo "Running data conversion scripts"
+php convertCamps.php | grep error
+echo "convertCamps - Done."
+php convertUnits.php | grep error
+echo "convertUnits - Done."
+php convert.php | grep error
+echo "convert solidiers - Done.
+
+
 exit
