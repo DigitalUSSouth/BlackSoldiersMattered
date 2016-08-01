@@ -125,9 +125,9 @@ function importRandomSample(){
 
 		 //calculate total number from NC vs from other states
 		 //check birth place
-		 //the regex will match ..../XX
-		 // /XX is forward-slash followed by two letter state code
-		 if (preg_match('/\/[A-Z]{2}$/',$soldier['birth_place'])){
+		 //the regex will match . XX
+		 // coma(,) followed by one or more spaces, followed by two letter state codes
+		 if (preg_match('/, +[A-Z]{2}$/',$soldier['birth_place'])){
 			 $birthPlaceOther++;
 			 //debug
 			 //print $soldier['birth_place'].'<br>';
