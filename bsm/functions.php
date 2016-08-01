@@ -151,7 +151,7 @@ function importRandomSample(){
  }
 
 /**
- * function to format read from a json file
+ * function to read from a json file and place contents in php array
  * @param {string} filepath to a valid json file 
  * @return {string} associative array of json file contents or exception on failure
  */
@@ -167,9 +167,9 @@ function readJson($filename){
 }
 
 /**
- * function to format read from a json file
+ * function to write contents of php array object to json file
  * @param {string} filepath to a valid json file 
- * @return {string} associative array of json file contents or exception on failure
+ * @return {none} exception on failure
  */
 function writeJson($filename,$object){
 	try {
