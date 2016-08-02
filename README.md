@@ -13,12 +13,15 @@
 ##Slides
 - [x] 4
 - [] 5
+- [] 6
+- [] 13
 
 
 ##Questions for Dr. Hudson
 - [] ask about camp description/additional details
 - [] ask about "Where unit served" fields in units spreadsheet
 - [] slide 5 - type of map (heat, pins, cluster)
+- [] slide 5,6 - soldier categories?
 
 ##Sid
 - fixed the text not showing up in bsm-4 map.

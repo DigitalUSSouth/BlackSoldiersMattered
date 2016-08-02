@@ -68,7 +68,7 @@ require_once 'functions.php';
      $content = array(
          array(
              "label" => 'Domestic Units',
-             "value" => $domesticCount,
+             "value" => $domesticCount
          ),
          array(
              "label" => 'Overseas Units',
@@ -79,4 +79,44 @@ require_once 'functions.php';
      return json_encode($content,JSON_PRETTY_PRINT);
 
  }
+
+/**
+ * function to return json data to use in pie chart for birth place ratio
+ * @param {none}
+ * @return {string}: json-formatted string
+ */
+function getBirthPlaceRatio(){
+    $soldierStats = readJson('data/soldierStats.json');
+    $birthPlaceRatio = array(
+         array(
+             "label" => 'Born in North Carolina',
+             "value" => $soldierStats['birth_place_NC']
+         ),
+         array(
+             "label" => 'Born in other states',
+             "value" => $soldierStats['birth_place_other']
+         )
+    );
+    return json_encode($birthPlaceRatio,JSON_UNESCAPED_SLASHES|JSON_PRETTY_PRINT);
+}
+
+/**
+ * function to return json data to use in pie chart for induction place ratio
+ * @param {none}
+ * @return {string}: json-formatted string
+ */
+function getInductionPlaceRatio(){
+    $soldierStats = readJson('data/soldierStats.json');
+    $inductionPlaceRatio = array(
+         array(
+             "label" => 'Inducted in North Carolina',
+             "value" => $soldierStats['induction_place_NC']
+         ),
+         array(
+             "label" => 'Inducted in other states',
+             "value" => $soldierStats['induction_place_other']
+         )
+    );
+    return json_encode($inductionPlaceRatio,JSON_UNESCAPED_SLASHES|JSON_PRETTY_PRINT);
+}
  ?>

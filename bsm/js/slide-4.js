@@ -1,4 +1,4 @@
-/* javascript for slide-5 */
+/* javascript for slide-4 */
 
 $(document).ready(function(){
     var pie = new d3pie("myPie", {

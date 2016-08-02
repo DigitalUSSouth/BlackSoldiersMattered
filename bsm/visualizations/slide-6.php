@@ -1,5 +1,5 @@
 <?php
-$title = 'slide-5';
+$title = 'slide-6';
 
 require_once ('../header.php');
 
@@ -10,7 +10,7 @@ require ('../visualizationFunctions.php');
       <div class="visualization-container">
         <!-- TODO: Insert map here -->
         <script>
-          var birthPlaceRatio = <?php print getBirthPlaceRatio();?>;
+          var inductionPlaceRatio = <?php print getInductionPlaceRatio();?>;
         </script>
         <div id="myPie">
         </div>

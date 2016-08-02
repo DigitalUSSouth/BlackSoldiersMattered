@@ -120,13 +120,16 @@ function importRandomSample(){
 	 $birthPlaceNC = 0;
 	 $birthPlaceOther = 0;
 
+	 $inductionPlaceNC = 0;
+	 $inductionPlaceOther = 0;
+
 	 
 	 foreach ($soldiers as $soldier){
 
 		 //calculate total number from NC vs from other states
 		 //check birth place
 		 //the regex will match . XX
-		 // coma(,) followed by one or more spaces, followed by two letter state codes
+		 // comma(,) followed by one or more spaces, followed by two letter state codes
 		 if (preg_match('/, +[A-Z]{2}$/',$soldier['birth_place'])){
 			 $birthPlaceOther++;
 			 //debug
@@ -136,6 +139,18 @@ function importRandomSample(){
 			 $birthPlaceNC++;
 		 }
 
+		 //calculate total number inducted in NC vs from other states
+		 if (preg_match('/, +[A-Z]{2}$/',$soldier['induction_place'])){
+			 $inductionPlaceOther++;
+			 //debug
+			 //print $soldier['induction_place'].'<br>';
+		 }
+		 else {
+			 $inductionPlaceNC++;
+			 print $soldier['induction_place'].'<br>';
+		 }
+
+
 		 //TODO: add other calculations to this loop
 		 //      and add to $soldierStats array to be used by visualizations
 
@@ -144,6 +159,9 @@ function importRandomSample(){
 
 	 $soldierStats['birth_place_NC'] = $birthPlaceNC;
 	 $soldierStats['birth_place_other'] = $birthPlaceOther;
+
+	 $soldierStats['induction_place_NC'] = $inductionPlaceNC;
+	 $soldierStats['induction_place_other'] = $inductionPlaceOther;
 
 	 writeJson('data/soldierStats.json',$soldierStats);
 

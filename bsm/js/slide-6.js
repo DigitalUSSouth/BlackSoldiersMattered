@@ -2,7 +2,7 @@ $(document).ready(function(){
     var pie = new d3pie("myPie", {
 	"header": {
 		"title": {
-			"text": "Born in NC vs Other States",
+			"text": "Inducted in NC vs Other States",
 			"fontSize": 24,
 			"font": "open sans"
 		},
@@ -27,7 +27,7 @@ $(document).ready(function(){
 	},
 	"data": {
 		"sortOrder": "value-desc",
-		"content": birthPlaceRatio
+		"content": inductionPlaceRatio
 	},
 	"labels": {
 		"outer": {
