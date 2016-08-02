@@ -119,4 +119,24 @@ function getInductionPlaceRatio(){
     );
     return json_encode($inductionPlaceRatio,JSON_UNESCAPED_SLASHES|JSON_PRETTY_PRINT);
 }
+
+/**
+ * function to return json data to use in pie chart
+ * @param {none}
+ * @return {string}: json-formatted string
+ */
+function get92vs93(){
+    $soldierStats = readJson('data/soldierStats.json');
+    $inductionPlaceRatio = array(
+         array(
+             "label" => '92nd Division',
+             "value" => $soldierStats['total_92_division']
+         ),
+         array(
+             "label" => '93rd Division',
+             "value" => $soldierStats['total_93_division']
+         )
+    );
+    return json_encode($inductionPlaceRatio,JSON_UNESCAPED_SLASHES|JSON_PRETTY_PRINT);
+}
  ?>

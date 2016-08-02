@@ -123,6 +123,12 @@ function importRandomSample(){
 	 $inductionPlaceNC = 0;
 	 $inductionPlaceOther = 0;
 
+	 $total92Division = 0;
+	 $total93Division = 0;
+
+	 //TODO: Add try-catch aroung this
+	 $units = readJson('data/units.json'); //load units object
+
 	 
 	 foreach ($soldiers as $soldier){
 
@@ -147,7 +153,22 @@ function importRandomSample(){
 		 }
 		 else {
 			 $inductionPlaceNC++;
-			 print $soldier['induction_place'].'<br>';
+		 }
+
+		 //calculate total number in 92nd vs 93rd combat divisions
+		 $soldierUnits = $soldier['unit_progression'];
+		 //print $soldier['id'].'<br>';
+		 foreach ($soldierUnits as $soldierUnit){
+			 //TODO: add error detection - try catch blocks
+			 $soldierUnitID = $soldierUnit[0];
+			 //print '|'.$soldierUnitID.'|';
+			 $unit = $units[$soldierUnitID];
+			 if ($unit['category']=='Combat--92nd Division'){
+				 $total92Division++;
+			 }
+			 else if ($unit['category']=='Combat--93rd Division'){
+				 $total93Division++;
+			 }
 		 }
 
 
@@ -162,6 +183,9 @@ function importRandomSample(){
 
 	 $soldierStats['induction_place_NC'] = $inductionPlaceNC;
 	 $soldierStats['induction_place_other'] = $inductionPlaceOther;
+
+	 $soldierStats['total_92_division']  = $total92Division;
+	 $soldierStats['total_93_division']  = $total93Division;
 
 	 writeJson('data/soldierStats.json',$soldierStats);
 

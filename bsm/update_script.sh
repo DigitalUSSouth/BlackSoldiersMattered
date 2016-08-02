@@ -4,6 +4,7 @@
 
 echo "Cloning from github"
 rm -rf bsm-temp
+rm -f data/*
 git clone https://github.com/DigitalUSSouth/BlackSoldiersMattered.git bsm-temp
 
 echo "Creating backup"
@@ -20,11 +21,11 @@ echo "Removing temporary files"
 rm -rf bsm-temp
 
 echo "Running data conversion scripts"
-php convertCamps.php | grep error
+curl localhost/bsm/convertCamps | grep 'error\|warning'
 echo "convertCamps - Done."
-php convertUnits.php | grep error
+curl localhost/bsm/convertUnits | grep 'error\|warning'
 echo "convertUnits - Done."
-php convert.php | grep error
+curl localhost/bsm/convert | grep 'error\|warning'
 echo "convert solidiers - Done."
 
 
