@@ -21,11 +21,11 @@ echo "Removing temporary files"
 rm -rf bsm-temp
 
 echo "Running data conversion scripts"
-curl localhost/bsm/convertCamps | grep 'error\|warning'
+curl localhost/bsm/convertCamps | grep -i 'error\|warning\|invalid\|exception'
 echo "convertCamps - Done."
-curl localhost/bsm/convertUnits | grep 'error\|warning'
+curl localhost/bsm/convertUnits | grep -i 'error\|warning\|invalid\|exception'
 echo "convertUnits - Done."
-curl localhost/bsm/convert | grep 'error\|warning'
+curl localhost/bsm/convert | grep -i 'error\|warning\|invalid\|exception'
 echo "convert solidiers - Done."
 
 
