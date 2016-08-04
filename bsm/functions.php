@@ -256,6 +256,32 @@ function formatDate($input){
 }
 
 /**
+ * function to parse a unit + date cell
+ * @param {string} string in the following format: QMC Camp Taylor to 1918-04-13
+ *                 where "QMC Camp Taylor" is the unit and "1918-04-13"
+ * @return {array} element [0] is unit element [1] is date string, exception on failure
+ */
+ function parseUnitDateCell($input){
+	 //this is some really ugly regex
+	 if (preg_match('/.+?(?= to [0-9]{4}-[0-9]{2}-[0-9]{2})/',trim($input),$dateMatch)){
+		 $unit[] = $dateMatch[0];
+	 }
+	 else {
+		 $unit[] = ''; 
+	 }
+
+	 //parse date from unit column
+	 // column format is: QMC Camp Taylor to 1918-04-13
+	 if (preg_match('/[0-9]{4}-[0-9]{2}-[0-9]{2}$/',trim($input),$dateMatch)){
+		 $unit[] = $dateMatch[0];
+	 }
+	 else {
+		 $unit[] = ''; 
+	 }
+	 return $unit;
+ }
+
+/**
  * creates a units object for a soldier
  * @param {array} array of strings containing unit details
  * @return {string} Unit object to be inserted into a soldier, exception on failure
@@ -276,12 +302,18 @@ function formatDate($input){
 
 	 //second unit
 	 $unit = array();
-	 $unit[] = $unitFields[4];
-	 $unit[] = $unitFields[3];
-	 $unit[] = '';//TODO: parse date out from unit name	
+
+	 //parse date from unit column
+	 $parsedUnit = parseUnitDateCell($unitFields[4]);
 	 
+	 $unit[] = $parsedUnit[0];
+	 $unit[] = $unitFields[3];
+	 $unit[] = $parsedUnit[1];
+
 	 if ($unit[0] != '' )$units[] = $unit;
 
+
+	 //TODO: Update the following units to use parse function
 	 //third unit
 	 $unit = array();
 	 $unit[] = $unitFields[6];

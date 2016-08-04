@@ -89,6 +89,11 @@ require_once 'config.php';
     <script src="<?php print ROOT_FOLDER;?>js/d3pie.min.js"></script>
     <script src="<?php print ROOT_FOLDER;?>js/slide-6.js"></script>
     <?php endif; ?>
+    <?php if($title=='slide-13'): ?>
+    <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <script src="<?php print ROOT_FOLDER;?>js/d3pie.min.js"></script>
+    <script src="<?php print ROOT_FOLDER;?>js/slide-13.js"></script>
+    <?php endif; ?>
 
 
   </head>

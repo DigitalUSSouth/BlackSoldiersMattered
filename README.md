@@ -20,8 +20,14 @@
 ##Questions for Dr. Hudson
 - [] ask about camp description/additional details
 - [] ask about "Where unit served" fields in units spreadsheet
+- [] slide 4 training camps, where is the data
 - [] slide 5 - type of map (heat, pins, cluster)
 - [] slide 5,6 - soldier categories?
+- [] slide 12, 15 - unit categories?
+- [] slide 13 map?
+- [] slide 14, 17 - explain diagram
+
+
 
 ##Sid
 - fixed the text not showing up in bsm-4 map.
@@ -32,6 +38,15 @@
  
 ##Adrian
 - in-progress: conversiont script for random sample spreadsheet
+
+
+
+slide 4 - order pies
+slide 4 - add soldiers proportion
+slide 4 - A section training camps - proportions of soldiers
+slide 5 - blank service date=domestic
+slide 5 - combat units: service date + unit
+slide 5 - officers acronym
 
 
 

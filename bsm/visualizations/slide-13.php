@@ -10,7 +10,7 @@ require ('../visualizationFunctions.php');
       <div class="visualization-container">
         <!-- TODO: Insert map here -->
         <script>
-          var 92vs93 = <?php print get92vs93();?>;
+          var combat92vs93 = <?php print get92vs93();?>;
         </script>
         <div id="myPie">
         </div>
