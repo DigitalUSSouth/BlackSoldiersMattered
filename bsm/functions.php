@@ -49,11 +49,16 @@ function importRandomSample(){
 		
 		$fields = explode("\t",$line);
 
+		//get rid of whitespace around all fields
+		foreach ($fields as &$field){//need to use &$ to pass by reference
+			$field = trim($field);
+		}
+
 		try {
 			$units = createUnitsObject(array_splice($fields,12,15));
 		}
 		catch (Exception $e) {
-			print '<h1 class="text-danger text-center">Unable to parse date: '.$e->getMessage().' - '.$fields[0].'</h1>';
+			print '<h1 class="text-danger text-center">Unable to create units object: '.$e->getMessage().' - '.$fields[0].'</h1>';
 			//die();
 		}
 
@@ -61,8 +66,8 @@ function importRandomSample(){
 		$soldier = array(
 
 				"id"=> $fields[0],
-				"first_name" => $fields[1],
-				"last_name" => $fields[2],
+				"last_name" => $fields[1],
+				"first_name" => $fields[2],
 				"residence_county" => $fields[3],
 				"residence_city" => $fields[4],
 				"entrance_status" => $fields[5],
@@ -316,41 +321,56 @@ function formatDate($input){
 	 //TODO: Update the following units to use parse function
 	 //third unit
 	 $unit = array();
-	 $unit[] = $unitFields[6];
+
+	 $parsedUnit = parseUnitDateCell($unitFields[6]);
+
+	 $unit[] = $parsedUnit[0];
 	 $unit[] = $unitFields[5];
-	 $unit[] = '';//TODO: parse date out from unit name	
+	 $unit[] = $parsedUnit[1];
 	 
 	 if ($unit[0] != '' )$units[] = $unit; //only add if it's not empty
 	 
 	 //fourth unit
 	 $unit = array();
-	 $unit[] = $unitFields[8];
+
+	 $parsedUnit = parseUnitDateCell($unitFields[8]);
+
+	 $unit[] = $parsedUnit[0];
 	 $unit[] = $unitFields[7];
-	 $unit[] = '';//TODO: parse date out from unit name	
+	 $unit[] = $parsedUnit[1];
 	 
 	 if ($unit[0] != '' )$units[] = $unit;
 
 	 //fifth unit
 	 $unit = array();
-	 $unit[] = $unitFields[10];
+
+	 $parsedUnit = parseUnitDateCell($unitFields[10]);
+
+	 $unit[] = $parsedUnit[0];
 	 $unit[] = $unitFields[9];
-	 $unit[] = '';//TODO: parse date out from unit name	
+	 $unit[] = $parsedUnit[1];
 	 
 	 if ($unit[0] != '' )$units[] = $unit;
 
 	 //sixth unit
 	 $unit = array();
-	 $unit[] = $unitFields[12];
+
+	 $parsedUnit = parseUnitDateCell($unitFields[12]);
+
+	 $unit[] = $parsedUnit[0];
 	 $unit[] = $unitFields[11];
-	 $unit[] = '';//TODO: parse date out from unit name	
+	 $unit[] = $parsedUnit[1];
 	 
 	 if ($unit[0] != '' )$units[] = $unit;
 
 	 //last unit
 	 $unit = array();
-	 $unit[] = $unitFields[14];
+
+	 $parsedUnit = parseUnitDateCell($unitFields[14]);
+
+	 $unit[] = $parsedUnit[0];
 	 $unit[] = $unitFields[13];
-	 $unit[] = '';//TODO: parse date out from unit name	
+	 $unit[] = $parsedUnit[1];
 	 
 	 if ($unit[0] != '' )$units[] = $unit;
 
