@@ -67,8 +67,6 @@ units.json will contain an array of unit objects
 			"id" :" camp",
 			"date" : "yyyy-mm-dd"
 		}
-			/*does this "camp" pull the whole subsequent camp record from above? -Sid 
-			I think so, we will probably need that in order to get the locations and type of camp - Adrian*/
 	],
 	"port_embarkation" : ["value","date"],
 	/* todo: figure out 'where unit served' columns */
@@ -77,4 +75,30 @@ units.json will contain an array of unit objects
 	"demobilized_date" : "date",
 	"demobilized_place" : "place",
 	"companies" : ["A","B","C" /* etc...*/]
+}
+
+
+/* soldier locations object 
+soldierLocations.json contains location information - work in progress
+*/
+{
+	"1917-04" : {
+		"soldier1_id": [lat,lng],
+		"soldier2_id": [lat,lng],
+		"soldier3_id": [lat,lng]
+	},
+	/*...*/
+	"1918-11"
+}
+
+/* unit locations object 
+unitLocations.json contains location information - work in progress
+*/
+{
+	"1917-04" : {
+		"unit1_id" : [lat,lng],
+		"unit2_id" : [lat,lng]
+	},
+	/*...*/
+	"1918-11"
 }

@@ -198,6 +198,19 @@ function importRandomSample(){
  }
 
 /**
+ * computes locations for all soldiers, separated per month and saves it in soldierLocations.json
+ * @param {}
+ * @return {}
+ */
+ function computeSoldierLocations(){
+	 $soldiers = readJson('data/soldiers.json');
+	 $units = readJson('data/units.json');
+	 //$camps = readJson('data/camps.json');
+
+	 
+ }
+
+/**
  * function to read from a json file and place contents in php array
  * @param {string} filepath to a valid json file 
  * @return {string} associative array of json file contents or exception on failure
