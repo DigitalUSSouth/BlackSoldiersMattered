@@ -48,6 +48,7 @@ camps.json will contain an array of camp objects
 	"id" : "",
 	"name" : "value",
 	"place" :  "value",
+	"latlng" : [lat,lng],
 	"type" : "value"
 }
 
@@ -102,3 +103,4 @@ unitLocations.json contains location information - work in progress
 	/*...*/
 	"1918-11"
 }
+ 

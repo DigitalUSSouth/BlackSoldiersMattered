@@ -457,6 +457,39 @@ function importCamps(){
 		echo '<div class="jumbotron"><h2 class="text-danger">Error parsing camps file  -- Results may not be correct</h2><p>'.$error->getMessage().' -- line: '.$counter.'</p></div>';
 	}
 
+	try {
+		$file = new SplFileObject("testdata/camps.csv");
+	}
+	catch (Exception $error){
+		echo '<div class="jumbotron"><h1 class="text-danger">Unable to open uploaded file. Please try again.</h1><p>'.$error->getMessage().'</p></div>';
+		return;
+	}
+
+	$counter=0;
+	try{
+		while($line = $file->fgets()){
+			//discard first line
+			if ($counter++ < 1) {/*echo $line;*/continue;}
+
+			$fields = explode(",",$line);
+			print $line.'<br>';
+			foreach($fields as &$field){
+				$field = trim($field);
+			}
+
+			try{
+				$camps[$fields[0]]['latlng'] = [$fields[4],$fields[5]];
+			}
+			catch(Exception $error){
+				echo '<div class="jumbotron"><h2 class="text-danger">Error parsing camps.csv file  </h2><p>'.$error->getMessage().' -- line: '.$counter.'</p></div>';
+			}
+		}
+	}
+	catch (Exception $error){
+		echo '<div class="jumbotron"><h2 class="text-danger">Error parsing camps.csv file  </h2><p>'.$error->getMessage().' -- line: '.$counter.'</p></div>';
+	}
+	
+
 	writeJson('data/camps.json',$camps);
 	
 }
