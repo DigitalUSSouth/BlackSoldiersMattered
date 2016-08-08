@@ -25,9 +25,10 @@ html, body {
   padding: 0;
 }
 
+
 /* additional sections */
 #home {
-  background: url(../images/home.jpg) no-repeat center center fixed;
+  background: url(../images/rifle_practice_camp_jackson_south_carolina-_-_nara_-_533602-tif.jpg) no-repeat center center fixed;
   background-position: inherit;
   /*padding-top: 4em;*/
   display: table;
@@ -41,10 +42,12 @@ html, body {
     color: black;
 }
 #home .panel{
-  opacity: 0.55;
+  opacity: 0.70;
+  background-color: lightgray;
   border-radius: 2em;
   margin-left: 2em;
   margin-right: 2em;
+  margin-top: 40%;
 }
 
 #about {
@@ -67,7 +70,7 @@ html, body {
 }
 
 #information {
-  background: url(../images/bg.png) no-repeat center center fixed; 
+  background: url('../images/N_2009_4_162 371st Infantry Band 1917.jpg') no-repeat center center fixed; 
   display: table;
   height: 800px;
   position: relative;
@@ -77,7 +80,7 @@ html, body {
   -o-background-size: cover;
   background-size: cover;
 }
-#information .panel, {
+#information .panel {
   opacity: 0.85;
 }
 

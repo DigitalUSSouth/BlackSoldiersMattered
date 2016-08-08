@@ -28,3 +28,8 @@ $("#navbar-collapse-main ul li a[href^='#'], #home a[href^='#']").on('click', fu
      });
 
 });
+
+//update address bar when scrolling
+$(window).on('activate.bs.scrollspy', function (e) {
+    history.replaceState({}, "", $("a[href^='#']", e.target).attr("href"));
+});
