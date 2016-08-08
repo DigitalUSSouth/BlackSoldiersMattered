@@ -44,7 +44,7 @@
   <div class="text-vcenter">
     <div class="panel">
       <h1>Black Soldiers Mattered</h1>
-      <h2>Black North Carolinians as Soldiers in the First World War: A Microcosm of the National African American Experience</h2>
+      <h2 class="text-highlight"><em><strong>Black North Carolinians as Soldiers in the First World War: A Microcosm of the National African American Experience</em></strong></h2>
       <h3>By Janet G. Hudson</h3>
     </div>
     <a href="#about" class="btn btn-default btn-lg">Explore</a>
@@ -61,7 +61,7 @@
       </div>
       <div class="col-sm-6 text-center">
         <h2>subtitle?</h2>
-        <p class="lead">April 6, 1917, changed the lives of 21,609 young African American men from North Carolina The participation of these Black North Carolinians in World War I has been mostly ignored. <strong>Black Soldiers Mattered</strong> addresses that void with this interactive site that allows you to explore the entire journey of Black North Carolinians from induction to demobilization, the specific journey of the many different units they served, and the journey of individual soldiers. </p>
+        <p class="lead">April 6, 1917, changed the lives of 21,609 young African American men from North Carolina The participation of these Black North Carolinians in World War I has been mostly ignored. <strong><span class="text-highlight">Black Soldiers Mattered</span></strong> addresses that void with this interactive site that allows you to explore the entire journey of Black North Carolinians from induction to demobilization, the specific journey of the many different units they served, and the journey of individual soldiers. </p>
       </div>
     </div>
   </div>

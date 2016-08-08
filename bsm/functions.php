@@ -161,20 +161,22 @@ function importRandomSample(){
 		 }
 
 		 //calculate total number in 92nd vs 93rd combat divisions
-		 $soldierUnits = $soldier['unit_progression'];
+		 //This isn't working!!!!
+		 //TODO: Fix this
+		 /*$soldierUnits = $soldier['unit_progression'];
 		 //print $soldier['id'].'<br>';
 		 foreach ($soldierUnits as $soldierUnit){
 			 //TODO: add error detection - try catch blocks
 			 $soldierUnitID = $soldierUnit[0];
-			 //print '|'.$soldierUnitID.'|';
+			 print '|'.$soldierUnitID.'|';
 			 $unit = $units[$soldierUnitID];
-			 if ($unit['category']=='Combat--92nd Division'){
+			 if (preg_match('/92/',$unit['category'])){
 				 $total92Division++;
 			 }
-			 else if ($unit['category']=='Combat--93rd Division'){
+			 else if (preg_match('/93/',$unit['category'])){
 				 $total93Division++;
 			 }
-		 }
+		 }*/
 
 
 		 //TODO: add other calculations to this loop
@@ -189,8 +191,9 @@ function importRandomSample(){
 	 $soldierStats['induction_place_NC'] = $inductionPlaceNC;
 	 $soldierStats['induction_place_other'] = $inductionPlaceOther;
 
-	 $soldierStats['total_92_division']  = $total92Division;
-	 $soldierStats['total_93_division']  = $total93Division;
+	 //commented out until fixed
+	 //$soldierStats['total_92_division']  = $total92Division;
+	 //$soldierStats['total_93_division']  = $total93Division;
 
 	 writeJson('data/soldierStats.json',$soldierStats);
 
@@ -205,7 +208,7 @@ function importRandomSample(){
  function computeSoldierLocations(){
 	 $soldiers = readJson('data/soldiers.json');
 	 $units = readJson('data/units.json');
-	 //$camps = readJson('data/camps.json');
+	 $camps = readJson('data/camps.json');
 
 	 
  }
