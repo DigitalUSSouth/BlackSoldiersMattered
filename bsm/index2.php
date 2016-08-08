@@ -11,7 +11,7 @@
   <link href="css/font-awesome.min.css" rel="stylesheet">
   <link href="css/style-v2.css" rel="stylesheet" />
 </head>
-<body>
+<body data-spy="scroll" data-target=".navbar" data-offset="65">
   
   <!-- navigation panel -->
 <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -42,9 +42,11 @@
   <!-- first section - Home -->
 <div id="home" class="home">
   <div class="text-vcenter">
-    <h1>Black Soldiers Mattered</h1>
-    <h2>Black North Carolinians as Soldiers in the First World War: A Microcosm of the National African American Experience</h2>
-    <h3>By Janet G. Hudson</h3>
+    <div class="panel">
+      <h1>Black Soldiers Mattered</h1>
+      <h2>Black North Carolinians as Soldiers in the First World War: A Microcosm of the National African American Experience</h2>
+      <h3>By Janet G. Hudson</h3>
+    </div>
     <a href="#about" class="btn btn-default btn-lg">Explore</a>
   </div>
 </div>
