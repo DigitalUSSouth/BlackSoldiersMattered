@@ -55,14 +55,17 @@ function importRandomSample(){
 		foreach ($fields as &$field){//need to use &$ to pass by reference
 			$field = trim($field);
 		}
+		
 
 		try {
-			$units = createUnitsObject(array_splice($fields,12,15));
+			$units = createUnitsObject($fields,12,26);
 		}
 		catch (Exception $e) {
 			print '<h1 class="text-danger text-center">Unable to create units object: '.$e->getMessage().' - '.$fields[0].'</h1>';
 			//die();
 		}
+
+		$dischage_date = parseDischargeDateCell($fields[28]);
 
 		try{
 		$soldier = array(
@@ -85,9 +88,10 @@ function importRandomSample(){
 				"engagements" => [
 					/* TODO: add stuff for engagements*/
 				],
-				"discharge_date" => $fields[28], /* TODO:  convert all these dates to ISO 8601 date format */
-				"service_date_start" => $fields[29],
-				"service_date_end" => $fields[30],
+				"discharge_date" => $dischage_date[0],
+				"discharge_date_notes" => $dischage_date[1],
+				"service_date_start" => formatDate($fields[29]),
+				"service_date_end" => formatDate($fields[30]),
 				"wounded" => $fields[32],
 				"death_date" => $fields[33],
 				"death_cause" => $fields[34],
@@ -259,10 +263,15 @@ function writeJson($filename,$object){
 
 /**
  * creates a units object for a soldier
- * @param {array} array of strings containing unit details
+ * @param {int,int} offset ints for units array details
  * @return {string} Unit object to be inserted into a soldier, exception on failure
  */
- function createUnitsObject($unitFields){
+ function createUnitsObject($input,$startIndex, $endIndex){
+	 $unitFields = array();
+	 for ($i=$startIndex; $i<=$endIndex; $i++){
+		 $unitFields[] = $input[$i];
+	 }
+
 	 if (sizeof($unitFields) != 15){
 		throw new Exception('Invalid input for createUnitsObject function.');
 	}

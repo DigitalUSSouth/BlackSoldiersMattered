@@ -5,7 +5,31 @@
 
 
 
+/**
+ * function to parse a discharge date cell
+ * @param {string} string in the following format: 7/15/1919 for immediate re-enlistment
+ *                 where "for immediate re-enlistment" is the notes and "7/15/1919"
+ * @return {array} element [0] is date element [1] is notes
+ */
+ function parseDischargeDateCell($input){
+     $dischargeDate = array();
+     //var_dump($input);
+	 if (preg_match('/^[0-9]{1,2}\/[0-9]{1,2}\/[0-9]{2,4}/',trim($input),$dateMatch)){
+		 $dischargeDate[] = formatDate($dateMatch[0]);//convert to YYYY-MM-DD
+	 }
+	 else {
+		 $dischargeDate[] = ''; 
+	 }
 
+     if (preg_match('/\b[0-9]{1,2}\/[0-9]{1,2}\/[0-9]{2,4}\s+\K.+/',trim($input),$dateMatch)){
+		 $dischargeDate[] = $dateMatch[0];
+	 }
+	 else {
+		 $dischargeDate[] = ''; 
+	 }
+     //var_dump ($dischargeDate);
+	 return $dischargeDate;
+ }
 
 
 
@@ -76,6 +100,9 @@ function formatDate($input){
 	if (!is_string($input)){
 		throw new Exception('Input date must be a string: '.$input);
 	}
+
+    if (trim($input)=='') return '';
+
 	$parts = explode('/',$input);
 
 	if (sizeof($parts) != 3) {
@@ -91,7 +118,7 @@ function formatDate($input){
 	$day = sprintf('%02d', (int)$day);
 
 	//add leading '19' to year
-	$year = '19'.$year;
+    if (strlen($year)<4) $year = '19'.$year;
 
 	//create final return string
 	return $year.'-'.$month.'-'.$day;
