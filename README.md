@@ -15,6 +15,7 @@
 - [] 5
 - [] 6
 - [] 13
+- [] 8
 
 
 ##Questions for Dr. Hudson
@@ -35,12 +36,15 @@
 - cleaned the (older)camps.csv file a bit
 - added Normalization suggestion comments to the Database Schema first draft
 - uploaded tab-to-json conversion scripts for Units and Camps [untested]
+
+
+###Started on Slide 8
  
 ##Adrian
 - in-progress: conversiont script for random sample spreadsheet
 
 
-
+###
 slide 4 - order pies
 slide 4 - add soldiers proportion
 slide 4 - A section training camps - proportions of soldiers
