@@ -205,13 +205,51 @@ function importRandomSample(){
  * @param {}
  * @return {}
  */
- function computeSoldierLocations(){
-	 $soldiers = readJson('data/soldiers.json');
-	 $units = readJson('data/units.json');
-	 $camps = readJson('data/camps.json');
+function computeSoldierLocations(){
+	$soldiers = readJson('data/soldiers.json');
+	$units = readJson('data/units.json');
+	$camps = readJson('data/camps.json');
+	//
+}
 
-	 
- }
+
+//SOMETIMES I REALLY WISH PHP ALLOWED OPERATOR OVERLOADING
+/**
+ * function to compare two date objects
+ * @param {array,array} two date objects to compare [year,month,day]
+ * @return {int} 0 if equal, 1 if first is greater (later date), -1 if second if greater
+ * WARNING: does not check if objects are valid. Make sure objects are valid if using function
+ */
+function compareDates($date1, $date2){
+	if ($date1['year'] > $date2['year']) return 1;
+	else if ($date1['year'] < $date2['year']) return -1;
+	//if years are equal then we check months
+	else if ($date1['month'] > $date2['month']) return 1;
+	else if ($date1['month'] < $date2['month']) return -1;
+	//if months are equal we check days
+	else if ($date1['day'] > $date2['day']) return 1;
+	else if ($date1['day'] < $date2['day']) return -1;
+	//if all else fails then they are equal
+	else return 0;
+}
+
+/**
+ * function to parse an iso date into discrete parts
+ * @param {string} ISO formatted date string YYYY-MM-DD
+ * @return {array} associative array [year,month,day], throws exception on failure
+ */
+function parseDate($input){
+	if (!preg_match('/[0-9]{4}-[0-9]{2}-[0-9]{2}/',trim($input))) throw new Exception('Parse date: Invalid date format: '.$input);
+
+	$parts = explode('-',trim($input);
+	if (sizeof($parts)!= 3) throw new Exception('Parse date. Incorrect number of parts: '.$input);
+
+	$date=array();
+	$date['year'] = (int)$parts[0];
+	$date['month'] = (int)$parts[1];
+	$date['day'] = (int)$parts[2];
+	return $date;
+}
 
 /**
  * function to read from a json file and place contents in php array

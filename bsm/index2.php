@@ -59,8 +59,8 @@
       <div class="col-sm-6">
         <img src="images/logo.png" alt="" />
       </div>
-      <div class="col-sm-6 text-center">
-        <h2>subtitle?</h2>
+      <div class="col-sm-6 text-right">
+        <h2>Soldier's Journey</h2>
         <p class="lead">April 6, 1917, changed the lives of 21,609 young African American men from North Carolina The participation of these Black North Carolinians in World War I has been mostly ignored. <strong><span class="text-highlight">Black Soldiers Mattered</span></strong> addresses that void with this interactive site that allows you to explore the entire journey of Black North Carolinians from induction to demobilization, the specific journey of the many different units they served, and the journey of individual soldiers. </p>
       </div>
     </div>
@@ -105,20 +105,19 @@
       <div class="col-sm-6">
         <div class="panel panel-default">
           <div class="panel-heading">
-            <h2 class="panel-title">Additional information</h2>
+            <h2 class="panel-title">National Service Shaped by Racism</h2>
           </div>
-          <div class="panel-body lead">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed hendrerit adipiscing blandit. Aliquam placerat, velit a fermentum fermentum, mi felis vehicula justo, a dapibus quam augue non massa. Duis euismod, augue et tempus consequat, lorem mauris porttitor quam, consequat ultricies mauris mi a metus. Phasellus congue, leo sed ultricies tristique, nunc libero tempor ligula, at varius mi nibh in nisi. Aliquam erat volutpat. Maecenas rhoncus, neque facilisis rhoncus tempus, elit ligula varius dui, quis amet. 
+          <div class="panel-body lead">Military preparations for war conformed to the rules of segregated America, influencing all African American soldiers’ wartime experiences. Yet even within these limitations, Black North Carolinians made their mark. They were among the first American combat soldiers, black or white, to arrive in Europe, among the early stevedore volunteers, among the recipients of military awards and honors, and among the last returning soldiers who restored the killing fields of France for human habitation.
           </div>
         </div>
       </div>
       <div class="col-sm-6">
         <div class="panel panel-default">
           <div class="panel-heading">
-            <h2 class="panel-title">Additional information</h2>
+            <h2 class="panel-title">Overseas v. Domestic Service</h2>
           </div>
           <div class="panel-body lead">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed hendrerit adipiscing blandit. Aliquam placerat, velit a fermentum fermentum, mi felis vehicula justo, a dapibus quam augue non massa. Duis euismod, augue et tempus consequat, lorem mauris porttitor quam, consequat ultricies mauris mi a metus. Phasellus congue, leo sed ultricies tristique, nunc libero tempor ligula, at varius mi nibh in nisi. Aliquam erat volutpat. Maecenas rhoncus, neque facilisis rhoncus tempus, elit ligula varius dui, quis amet. 
+            Approximately half of Black North Carolinians experienced the war in France and the other half in the US. Of those who sailed abroad, approximately 20% served as combat soldiers in arms. North Carolinians served in both segregated combat divisions—92nd and 93rd. The other 80% in France served as laboring soldiers in five different types of units. The half assigned to domestic units met a wide variety of needs in a host of specialized labor units.
           </div>
         </div>
       </div>
