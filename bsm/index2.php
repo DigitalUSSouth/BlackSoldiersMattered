@@ -74,24 +74,53 @@
     <h2 class="text-center">Explore</h2> <hr />
     <div class="row text-center">
       <div class="col-sm-3 col-xs-6">
-        <i class="fa fa-map" aria-hidden="true"></i>
-        <h4>Collective experience</h4>
-        <p>Explore the collective journey of all soldiers and units.</p>
+        <a href="#collectiveExperience" class="explore-link light-link">
+          <i class="fa fa-map" aria-hidden="true"></i>
+          <h4>Collective experience</h4>
+          <p>Explore the collective journey of all soldiers and units.</p>
+        </a>
       </div>
       <div class="col-sm-3 col-xs-6">
-        <i class="fa fa-map-marker" aria-hidden="true"></i>
-        <h4>Individual experiences</h4>
-        <p>Choose a Soldier and explore his journey.</p>
+        <a href="#individualExperience" class="explore-link light-link">
+          <i class="fa fa-map-marker" aria-hidden="true"></i>
+          <h4>Individual experiences</h4>
+          <p>Choose a Soldier and explore his journey.</p>
+        </a>
       </div>
       <div class="col-sm-3 col-xs-6">
-        <i class="fa fa-calendar" aria-hidden="true"></i>
-        <h4>Timelines</h4>
-        <p>View dynamic timelines that illustrate various aspects of the soldiers' trajectory</p>
+        <a href="#timelines" class="explore-link light-link">
+          <i class="fa fa-calendar" aria-hidden="true"></i>
+          <h4>Timelines</h4>
+          <p>View dynamic timelines that illustrate various aspects of the soldiers' trajectory</p>
+        </a>
       </div>
       <div class="col-sm-3 col-xs-6">
-        <i class="fa fa-pie-chart" aria-hidden="true"></i>
-        <h4>Statistics</h4>
-        <p>Explore charts...</p>
+        <a href="#statistics" class="explore-link light-link">
+          <i class="fa fa-pie-chart" aria-hidden="true"></i>
+          <h4>Statistics</h4>
+          <p>Explore charts...</p>
+        </a>
+      </div>
+    </div>
+    <!-- collapsible panels -->
+    <div class="collapse row" id="collectiveExperience">
+      <div class="col-xs-12">
+        <h1>collective experience stuff</h1>
+      </div>
+    </div>
+    <div class="collapse row" id="individualExperience">
+      <div class="col-xs-12">
+        <h1>individual experience stuff</h1>
+      </div>
+    </div>
+    <div class="collapse row" id="timelines">
+      <div class="col-xs-12">
+        <h1>timelines stuff</h1>
+      </div>
+    </div>
+    <div class="collapse row" id="statistics">
+      <div class="col-xs-12">
+        <h1>stats stuff</h1>
       </div>
     </div>
   </div>

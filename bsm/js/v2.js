@@ -33,3 +33,22 @@ $("#navbar-collapse-main ul li a[href^='#'], #home a[href^='#']").on('click', fu
 $(window).on('activate.bs.scrollspy', function (e) {
     history.replaceState({}, "", $("a[href^='#']", e.target).attr("href"));
 });
+
+//function to toggle collapsed divs
+$(".explore-link").click(function (e) {
+    e.preventDefault();
+    var href = $(this).attr('href');
+
+    $('#explore .text-center div').removeClass('section-selected');
+    if (!$(href).is(':visible')){
+      $(this).parent().addClass('section-selected');
+    }
+    
+    $('#explore .collapse').each(function (i) {
+      if ($(this).is(':visible')){
+        $(this).slideToggle(200);
+      }
+    });
+
+    $(href).slideToggle(200);
+});

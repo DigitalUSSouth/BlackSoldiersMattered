@@ -29,6 +29,15 @@ html, body {
   color: #805500;
 }
 
+.light-link:link, .light-link:hover, .light-link:visited, .light-link:active {
+  color: #ffffff;
+}
+
+.section-selected {
+  background-color: #737373;
+  ;
+}
+
 
 /* additional sections */
 #home {
@@ -75,6 +84,14 @@ html, body {
   text-align: center;
   vertical-align: middle;
   width: 140px;
+}
+
+#explore .text-center div{
+  height: 100%;
+}
+
+#explore .collapse {
+  background-color: #737373;
 }
 
 #information {
