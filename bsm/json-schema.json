@@ -11,7 +11,7 @@ each soldier will be in its own json file: soldierid.json
 	"last_name" : "value",
 	"residence_county" : "value",
 	"residence_city" : "value",
-	"entrance_status" : "value",
+	"induction_status" : "value",
 	"induction_place" : "value",
 	"induction_date" : "value", /* ISO 8601 date format */
 	"birth_place" : "value",
@@ -33,6 +33,7 @@ each soldier will be in its own json file: soldierid.json
 			/* etc. */ 
 		],
 	"discharge_date" : "value", /* ISO 8601 date format */
+	"discharge_date_notes" : "value",
 	"service_date_start" : "value", /* ISO 8601 date format */
 	"service_date_end" : "value", /* ISO 8601 date format */
 	"wounded" : "value",
