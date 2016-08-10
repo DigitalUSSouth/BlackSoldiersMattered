@@ -97,6 +97,10 @@ html, body {
   margin-top: 1em;
 }
 
+#explore .collapse .row {
+  padding: 4em;
+}
+
 #information {
   background: url('../images/N_2009_4_162 371st Infantry Band 1917.jpg') no-repeat center center fixed; 
   display: table;

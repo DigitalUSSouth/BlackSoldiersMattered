@@ -1,4 +1,8 @@
-<!DOCTYPE html>
+<?php
+
+require_once ('config.php');
+require_once ('visualizationFunctions.php');
+?><!DOCTYPE html>
 <html lang="en" >
 <head>
   <meta charset="utf-8" />
@@ -10,6 +14,12 @@
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/font-awesome.min.css" rel="stylesheet">
   <link href="css/style-v2.css" rel="stylesheet" />
+
+  <!-- need to load jquery at top because of leaflet -->
+  <script src="js/jquery.min.js"></script>
+  <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <script src="<?php print ROOT_FOLDER;?>js/d3pie.min.js"></script>
+
 </head>
 <body data-spy="scroll" data-target=".navbar" data-offset="65">
   
@@ -120,7 +130,14 @@
     </div>
     <div class="collapse row" id="statistics">
       <div class="col-xs-12">
-        <h1>stats stuff</h1>
+        <div class="row">
+          <div class="col-xs-4">
+            <button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#unitStatsModal">View Unit statistics</button>
+          </div>
+          <div class="col-xs-4">
+            <button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#soldierStatsModal">View Soldier statistics</button>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -178,8 +195,76 @@
 </footer>
 <!-- /footer -->
 
+  <?php 
+  /* These are the modals for individual visualizations
+   * Add here and link from the appropriate place to display
+   */
+  ?>
+  <!-- Modals -->
+<div id="unitStatsModal" class="modal fade" role="dialog">
+  <div class="modal-dialog modal-lg">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Unit Statistics</h4>
+      </div>
+      <div class="modal-body">
+        <script src="js/modals/unitStats.js"></script>
+        <script>
+          var unitStatsModalDisplayed = false;
+          var overseasVsDomesticPieData = <?php print getUnitsOverseasDomesticPieData(); ?>;
+          var domesticUnitsPieData = <?php print getUnitsPieData('Domestic'); ?>;
+          var overseasUnitsPieData = <?php print getUnitsPieData('France'); ?>;
+        </script> 
+        <div id="overseasDomesticUnitsPie">
+        </div>
+        <div id="domesticUnitsPie">
+        </div>
+        <div id="overseasUnitsPie">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div id="soldierStatsModal" class="modal fade" role="dialog">
+  <div class="modal-dialog modal-lg">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Soldier Statistics</h4>
+      </div>
+      <div class="modal-body">
+        <script src="js/modals/soldierStats.js"></script>
+        <!-- TODO: Insert map here -->
+        <script>
+          var soldierStatsModalDisplayed = false;
+          var birthPlaceRatio = <?php print getBirthPlaceRatio();?>;
+          var inductionPlaceRatio = <?php print getInductionPlaceRatio();?>;
+        </script>
+        <div id="birthPlacePie">
+        </div>
+        <div id="inductionPlacePie">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
   <!-- attach JavaScripts -->
-  <script src="js/jquery.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <script src="js/v2.js"></script>
 </body>
