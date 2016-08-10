@@ -58,6 +58,7 @@ function importRandomSample(){
 		
 
 		try {
+			$units = array(); //reset units object
 			$units = createUnitsObject($fields,12,26);
 		}
 		catch (Exception $e) {
@@ -66,6 +67,12 @@ function importRandomSample(){
 		}
 
 		$dischage_date = parseDischargeDateCell($fields[28]);
+
+		//fix units end date for soldiers who only had one unit
+		//we get the end date from discharge date
+		if (sizeof($units)==1){
+			$units[0][2] = $dischage_date[0];
+		}
 
 		try{
 		$soldier = array(
@@ -217,9 +224,130 @@ function computeSoldierLocations(){
 	$soldiers = readJson('data/soldiers.json');
 	$units = readJson('data/units.json');
 	$camps = readJson('data/camps.json');
-	//
+	
+	//will need to adjust these
+	$minDate = [1917,1,31];
+	$maxDate = [1920,1,31];
+
+	$prevDate = $minDate;
+	$currentDate = [1917,2,28];
+
+	$soldierLocations = array();
+
+//ini_set('memory_limit', '3072M');
+set_time_limit(600);
+	//brute force approach
+	while(compareDates($currentDate,$maxDate)==-1){
+		print '<h1>'.$currentDate[0].'-'.$currentDate[1].'</h1><br><br>';
+		foreach ($soldiers as $soldier){
+			//continue;
+			$soldierUnits = $soldier['unit_progression'];
+			if (sizeof($soldierUnits)<1) continue;//TODO: add error reporting here
+			$unit = $soldierUnits[0];
+			foreach ($soldierUnits as $currentUnit){
+				$isInRange=false;
+				$isGreaterThanPrev = compareDates(parseDate($currentUnit[2]),$prevDate) == 1;
+				$isLessThanCurrent = compareDates(parseDate($currentUnit[2]),$currentDate) ==-1;
+				$isEqualToCurrent = compareDates(parseDate($currentUnit[2]),$currentDate) == 0;
+				$isInRange = $isGreaterThanPrev && ($isLessThanCurrent || $isEqualToCurrent);
+				if ($isInRange){
+					$unit = $currentUnit;
+				}
+			}
+
+			$unitName = $unit[0];
+			$unitDetails = $units[$unitName];//this corresponds to a unit object from units.json
+			$unitLocations = $unitDetails['location'];//from unit object
+			if (sizeof($unitLocations)<1) continue; //TODO: add error reporting
+			$location = $unitLocations[0];
+			foreach ($unitLocations as $currentLocation){
+				$isInRange=false;
+				$isGreaterThanPrev = compareDates(parseDate($currentLocation['date']),$prevDate) == 1;
+				$isLessThanCurrent = compareDates(parseDate($currentLocation['date']),$currentDate) ==-1;
+				$isEqualToCurrent = compareDates(parseDate($currentLocation['date']),$currentDate) == 0;
+				$isInRange = $isGreaterThanPrev && ($isLessThanCurrent || $isEqualToCurrent);
+				if ($isInRange){
+					$location = $currentLocation;
+				}
+			}
+			$campName = $location['id'];
+
+			if (!array_key_exists($campName,$camps)) continue;//TODO add error reporting
+			$campDetails = $camps[$campName];//This corresponds to a camp object
+
+
+			if (!array_key_exists('latlng',$campDetails)) continue;//TODO add error reporting
+			$latlng = $campDetails['latlng'];
+
+			
+			//$soldierLocationsItem = [$soldier['id'],$latlng];
+
+			if ($latlng==null) continue;
+			$dateIndex = $currentDate[0].'-'.$currentDate[1];
+			$soldierLocations[$dateIndex][$soldier['id']] = $latlng;
+			//print_r($soldierLocations);
+			//return;
+
+		}
+		$prevDate = incrementDate($prevDate);
+		$currentDate = incrementDate($currentDate);
+	}
+
+	writeJson('data/soldierLocations.json',$soldierLocations);
 }
 
+function incrementDate($date){
+	if ($date[1]==12) {
+		$date[0]++;
+		$date[1] = 1;
+		$date[2] = 31;
+	}
+	else {
+		$date[1]++;
+		switch ($date[1]){
+			case 1:
+			  $date[2] = 31;
+			  break;
+			case 1:
+			  $date[2] = 31;
+			  break;
+			case 2:
+			  $date[2] = 28;
+			  break;
+			case 3:
+			  $date[2] = 31;
+			  break;
+			case 4:
+			  $date[2] = 30;
+			  break;
+			case 5:
+			  $date[2] = 31;
+			  break;
+			case 6:
+			  $date[2] = 30;
+			  break;
+			case 7:
+			  $date[2] = 31;
+			  break;
+			case 8:
+			  $date[2] = 31;
+			  break;
+			case 9:
+			  $date[2] = 30;
+			  break;
+			case 10:
+			  $date[2] = 31;
+			  break;
+			case 11:
+			  $date[2] = 30;
+			  break;
+			case 12:
+			  $date[2] = 31;
+			  break;
+		}
+	}
+	return $date;
+}
 
 
 
@@ -281,7 +409,7 @@ function writeJson($filename,$object){
 	 //initial unit
 	 $unit[] = $unitFields[1];//unit name
 	 $unit[] = $unitFields[0];//company
-	 $unit[] = $unitFields[2];//transfer date
+	 $unit[] = formatDate($unitFields[2]);//transfer date
 
 	 $units[] = $unit;
 
@@ -353,7 +481,6 @@ function writeJson($filename,$object){
 	 $unit[] = $parsedUnit[1];
 	 
 	 if ($unit[0] != '' )$units[] = $unit;
-
 	 return $units;
 
  }
@@ -508,14 +635,19 @@ function importUnits(){
 		if ($name=='') continue;
 		
 		$camps = array();
+
+		//add trailing '-00' if needed
+		$dateInitialCamp = (sizeof(explode('-',trim($fields[7])))==2)?$fields[7].'-00':$fields[7];
+		$dateSecondCamp = (sizeof(explode('-',trim($fields[10])))==2)?$fields[10].'-00':$fields[10];
+
 		$initialCamp = array(
 			"id" => $fields[6],
-			"date" => $fields[7]//TODO: parse into date object
+			"date" => $dateInitialCamp
 		);
 		$camps[] = $initialCamp;
 		$secondCamp = array(
 			"id" => $fields[9],
-			"date" => $fields[10]//TODO: parse into date object
+			"date" => $dateSecondCamp
 		);
 		if ($secondCamp['id']!='')$camps[] = $secondCamp;
 
@@ -528,7 +660,7 @@ function importUnits(){
 				"port_embarkation" => $fields[11],
 				"responsibilities" => $fields[15],
 				"unusual_experiences" => $fields[16],
-				"demobilized_date" => $fields[17],//TODO: parse into date object
+				"demobilized_date" => (sizeof(explode('-',trim($fields[17])))==2)?$fields[17].'-00':$fields[17],
 				"demobilized_place" => $fields[18],
 				"companies" => $fields[20]
 

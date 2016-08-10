@@ -58,14 +58,17 @@ function formatBirthDate($input){
  * WARNING: does not check if objects are valid. Make sure objects are valid if using function
  */
 function compareDates($date1, $date2){
-	if ($date1['year'] > $date2['year']) return 1;
-	else if ($date1['year'] < $date2['year']) return -1;
+	$year = 0;
+	$month = 1;
+	$day = 2;
+	if ($date1[$year] > $date2[$year]) return 1;
+	else if ($date1[$year] < $date2[$year]) return -1;
 	//if years are equal then we check months
-	else if ($date1['month'] > $date2['month']) return 1;
-	else if ($date1['month'] < $date2['month']) return -1;
+	else if ($date1[$month] > $date2[$month]) return 1;
+	else if ($date1[$month] < $date2[$month]) return -1;
 	//if months are equal we check days
-	else if ($date1['day'] > $date2['day']) return 1;
-	else if ($date1['day'] < $date2['day']) return -1;
+	else if ($date1[$day] > $date2[$day]) return 1;
+	else if ($date1[$day] < $date2[$day]) return -1;
 	//if all else fails then they are equal
 	else return 0;
 }
@@ -78,16 +81,24 @@ function compareDates($date1, $date2){
  * @return {array} associative array [year,month,day], throws exception on failure
  */
 function parseDate($input){
+	try{
 	if (!preg_match('/[0-9]{4}-[0-9]{2}-[0-9]{2}/',trim($input))) throw new Exception('Parse date: Invalid date format: '.$input);
 
 	$parts = explode('-',trim($input));
 	if (sizeof($parts)!= 3) throw new Exception('Parse date. Incorrect number of parts: '.$input);
 
 	$date=array();
-	$date['year'] = (int)$parts[0];
-	$date['month'] = (int)$parts[1];
-	$date['day'] = (int)$parts[2];
+	$date[] = (int)$parts[0];
+	$date[] = (int)$parts[1];
+	$date[] = (int)$parts[2];
+	}
+	catch (Exception $e) {
+		//TODO: add proper exception handling
+		print '<h1 class="text-danger text-center">Exception: '.$e->getMessage().' </h1>';
+		return array(0,0,0);
+	}
 	return $date;
+	
 }
 
 

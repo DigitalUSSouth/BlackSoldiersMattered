@@ -7,7 +7,9 @@ require_once 'functions.php';
 <pre>
 
 <?php 
-importRandomSample();
+
+computeSoldierStats();
+computeSoldierLocations();
 ?></pre>
 <?php 
 require_once ('footer.php');
