@@ -39,13 +39,17 @@ $(".explore-link").click(function (e) {
     e.preventDefault();
     var href = $(this).attr('href');
 
-    $('#explore .text-center div').removeClass('section-selected');
+    $('#explore i').removeClass('section-selected');
     if (!$(href).is(':visible')){
-      $(this).parent().addClass('section-selected');
+      $(this).find('i').addClass('section-selected');
     }
     
     $('#explore .collapse').each(function (i) {
       if ($(this).is(':visible')){
+        var attrHref =  '#' + ($(this).attr('id'));
+        if ( attrHref== href) {
+          return;
+        }
         $(this).slideToggle(200);
       }
     });

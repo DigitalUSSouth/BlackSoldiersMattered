@@ -35,6 +35,7 @@ html, body {
 
 .section-selected {
   background-color: #737373;
+  border-radius: 0.5em;
   ;
 }
 
@@ -92,6 +93,8 @@ html, body {
 
 #explore .collapse {
   background-color: #737373;
+  border-radius: 0.5em;
+  margin-top: 1em;
 }
 
 #information {
