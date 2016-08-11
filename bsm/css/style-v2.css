@@ -122,3 +122,10 @@ html, body {
 footer {
   padding: 20px 0;
 }
+
+
+
+/*styles for maps*/
+#allSoldiersJourneyMap {
+  height: 450px;
+}

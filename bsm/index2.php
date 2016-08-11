@@ -18,6 +18,13 @@ require_once ('visualizationFunctions.php');
   <!-- need to load jquery at top because of leaflet -->
   <script src="js/jquery.min.js"></script>
   <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+  
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css">
+    <script src="<?php print ROOT_FOLDER;?>leaflet/leaflet.js"></script>
+    <link rel="stylesheet" href="<?php print ROOT_FOLDER;?>leaflet/leaflet.css" />
+    <script src="<?php print ROOT_FOLDER;?>leaflet/leaflet-heat.js"></script>
+    <!--<script src="https://code.jquery.com/jquery-1.12.4.js"></script>-->
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
     <script src="<?php print ROOT_FOLDER;?>js/d3pie.min.js"></script>
 
 </head>
@@ -115,7 +122,11 @@ require_once ('visualizationFunctions.php');
     <!-- collapsible panels -->
     <div class="collapse row" id="collectiveExperience">
       <div class="col-xs-12">
-        <h1>collective experience stuff</h1>
+        <div class="row">
+          <div class="col-xs-4">
+            <button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#allSoldiersJourneyModal">View Collective Journey</button>
+          </div>
+        </div>
       </div>
     </div>
     <div class="collapse row" id="individualExperience">
@@ -254,6 +265,56 @@ require_once ('visualizationFunctions.php');
         </div>
         <div id="inductionPlacePie">
         </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div id="allSoldiersJourneyModal" class="modal fade" role="dialog">
+  <div class="modal-dialog modal-lg">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Collective Journey</h4>
+      </div>
+      <div class="modal-body">
+        <script src="js/modals/allSoldiersJourney.js"></script>
+<?php
+        $fullSoldierLocations = readJson('data/soldierLocations.json');
+$soldierLocations = array();
+foreach ($fullSoldierLocations as $key => $fullSoldierLocationsItem){
+    $soldierLocationsItem = array();
+    foreach ($fullSoldierLocationsItem as $latlng){
+        //var_dump( $latlng);
+        if (!preg_match('/[0-9]{1,2}\.[0-9]{1,5}/',$latlng[0]) || !preg_match('/[0-9]{1,2}\.[0-9]{1,5}/',$latlng[1])) continue; //TODO: add error reporting
+        $soldierLocationsItem[] = $latlng;
+    }
+    $soldierLocations[$key] = $soldierLocationsItem;
+}
+
+
+?>
+<script>
+var soldierLocations = <?php print json_encode($soldierLocations,JSON_PRETTY_PRINT);?>;
+
+</script>
+        <script>
+          var map3;
+          var markers = [];
+          var heat;
+        </script>
+        <div id="allSoldiersJourneyMap"></div>
+        <div id="slider1"></div>
+        <div id="dateDisplay">1917-2</div>
+        <?php 
+        print sizeof($soldierLocations['1918-4']);
+        ?>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
