@@ -76,7 +76,7 @@ require_once ('visualizationFunctions.php');
       <div class="col-sm-6">
         <img src="images/logo.png" alt="" />
       </div>
-      <div class="col-sm-6 text-right">
+      <div class="col-sm-6 text-left">
         <h2>Soldier's Journey</h2>
         <p class="lead">April 6, 1917, changed the lives of 21,609 young African American men from North Carolina The participation of these Black North Carolinians in World War I has been mostly ignored. <strong><span class="text-highlight">Black Soldiers Mattered</span></strong> addresses that void with this interactive site that allows you to explore the entire journey of Black North Carolinians from induction to demobilization, the specific journey of the many different units they served, and the journey of individual soldiers. </p>
       </div>

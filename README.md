@@ -52,5 +52,6 @@
 - slide 5 - officers acronym
 
 
-
+##Coordinates to Fix
+- Camp Jackson, SC
 

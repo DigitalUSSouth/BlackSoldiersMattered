@@ -146,6 +146,9 @@ function importRandomSample(){
 	 $total92Division = 0;
 	 $total93Division = 0;
 
+	 $placesCount = 0;
+	 $inductionPlaces = array();
+
 	 //TODO: Add try-catch aroung this
 	 $units = readJson('data/units.json'); //load units object
 
@@ -166,14 +169,43 @@ function importRandomSample(){
 		 }
 
 		 //calculate total number inducted in NC vs from other states
+		 // also performs geocoding for induction places
 		 if (preg_match('/, +[A-Z]{2}$/',$soldier['induction_place'])){
 			 $inductionPlaceOther++;
-			 //debug
-			 //print $soldier['induction_place'].'<br>';
+			 print $soldier['induction_place'].'<br>';
+			 /*
+			 if (!array_key_exists($soldier['induction_place'],$inductionPlaces)){
+				 $placesCount++;
+				 //CHANGE TO DUSS API KEY IN PRODUCTION
+				 $url = 'https://maps.googleapis.com/maps/api/geocode/json?address='.urlencode($soldier['induction_place']).'&key=AIzaSyBVXm_BC0-fmKBncSUzB_5NMGIv9HPLhYY';
+			 	print $url.'<br>';
+				 $jsonResult = file_get_contents($url);
+				 $result = json_decode($jsonResult,true);
+				 $lat = $result['results'][0]['geometry']['location']['lat'];
+				 $lng = $result['results'][0]['geometry']['location']['lng'];
+				 writeJson('data/'.$soldier['induction_place'].'.json',$result);
+				 $inductionPlaces[$soldier['induction_place']] = [$lat,$lng];
+			 }*/
 		 }
 		 else {
 			 $inductionPlaceNC++;
+			 print $soldier['induction_place'].'<br>';
+			 
+			 /*if (!array_key_exists($soldier['induction_place'],$inductionPlaces)){
+				 $placesCount++;
+				 $url = 'https://maps.googleapis.com/maps/api/geocode/json?address='.urlencode($soldier['induction_place']).',+NC&key=AIzaSyBVXm_BC0-fmKBncSUzB_5NMGIv9HPLhYY';
+			 	 print $url.'<br>';
+				 $jsonResult = file_get_contents($url);
+				 $result = json_decode($jsonResult,true);
+				 $lat = $result['results'][0]['geometry']['location']['lat'];
+				 $lng = $result['results'][0]['geometry']['location']['lng'];
+				 writeJson('data/'.$soldier['induction_place'].'.json',$result);
+				 $inductionPlaces[$soldier['induction_place']] = [$lat,$lng];
+			 }
+			 */
 		 }
+
+		 
 
 		 //calculate total number in 92nd vs 93rd combat divisions
 		 //This isn't working!!!!
@@ -206,11 +238,14 @@ function importRandomSample(){
 	 $soldierStats['induction_place_NC'] = $inductionPlaceNC;
 	 $soldierStats['induction_place_other'] = $inductionPlaceOther;
 
+	 $soldierStats['induction_places_count'] = $placesCount;
+
 	 //commented out until fixed
 	 //$soldierStats['total_92_division']  = $total92Division;
 	 //$soldierStats['total_93_division']  = $total93Division;
 
 	 writeJson('data/soldierStats.json',$soldierStats);
+	 writeJson('data/inductionPlaces.json',$inductionPlaces);
 
 	 //var_dump($soldierStats);
  }

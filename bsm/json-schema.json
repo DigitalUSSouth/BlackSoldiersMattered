@@ -104,4 +104,10 @@ unitLocations.json contains location information - work in progress
 	/*...*/
 	"1918-11"
 }
- 
+
+/* induction places object 
+inductionPlaces.json contains location information - work in progress
+*/
+{
+	"id" : [lat,lng]
+}

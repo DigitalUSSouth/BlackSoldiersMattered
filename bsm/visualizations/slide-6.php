@@ -8,13 +8,18 @@ require ('../visualizationFunctions.php');
     <!-- Content -->
     <div class="row" id="page-container">
       <div class="visualization-container">
-        <!-- TODO: Insert map here -->
-        <script>
+      <script>
           var inductionPlaceRatio = <?php print getInductionPlaceRatio();?>;
+          var inductionPlaces = <?php print file_get_contents('../data/inductionPlaces.json'); ?>;
         </script>
+        <!-- induction place map-->
+        <div id="inductionPlaceMap" style="height: 400px;">
+        </div>
+        
         <div id="myPie">
         </div>
       </div>
+
       
     </div>
 <?php 
