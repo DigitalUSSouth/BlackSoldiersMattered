@@ -94,6 +94,7 @@ $(document).ready(function(){
 console.log('created layers')
 	$.each(inductionPlaces,function (key,mkr){
 		//console.log(mkr);
+		if (key=="") return; //if key is blank then it's an invalid marker so we just return
 		var marker = L.marker(mkr,{title:key}).bindPopup(key);
 		markers.addLayer(marker);
 	});
