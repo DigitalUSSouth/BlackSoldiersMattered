@@ -232,9 +232,14 @@ var pie2 = new d3pie("overseasUnitsPie", {
 	},
 	"callbacks": {
 		onload : function (){
-			$("svg").attr("viewBox","0 0 750 500");
+			$("svg").each(function (){
+				var elem = $(this)[0];
+				//alert (elem);
+				elem.setAttribute("viewBox","0 0 750 500");
+			});
+			//$("svg").attr("viewBox","0 0 750 500");
 			$("svg").removeAttr("width height");
-			alert('onload');
+			//alert('onload');
 		}
 	}
     });
