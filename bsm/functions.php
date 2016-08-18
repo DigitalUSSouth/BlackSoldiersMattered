@@ -253,8 +253,8 @@ function importRandomSample(){
 	 //$soldierStats['total_93_division']  = $total93Division;
 
 	 writeJson('data/soldierStats.json',$soldierStats);
-	 writeJson('data/inductionPlaces.json',$inductionPlaces);
-	 writeJson('data/birthPlaces.json',$birthPlaces);
+	 //writeJson('data/inductionPlaces.json',$inductionPlaces);
+	 //writeJson('data/birthPlaces.json',$birthPlaces);
 
 	 //var_dump($soldierStats);
  }
@@ -301,6 +301,13 @@ set_time_limit(600);
 	while(compareDates($currentDate,$maxDate)==-1){
 		print '<h1>'.$currentDate[0].'-'.$currentDate[1].'</h1><br><br>';
 		foreach ($soldiers as $soldier){
+			//if induction date is later than current date then
+			//we just skip, we don't want to add to array if
+			//soldier has not been inducted yet
+			if (compareDates($soldier['induction_date'],$currentDate)==1){
+				//maybe we should log this?
+				continue;
+			}
 			//continue;
 			$soldierUnits = $soldier['unit_progression'];
 			if (sizeof($soldierUnits)<1) continue;//TODO: add error reporting here
