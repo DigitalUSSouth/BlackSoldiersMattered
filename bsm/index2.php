@@ -76,7 +76,7 @@ require_once ('visualizationFunctions.php');
       <div class="col-sm-6">
         <img src="images/logo.png" alt="" />
       </div>
-      <div class="col-sm-6 text-right">
+      <div class="col-sm-6 text-left">
         <h2>Soldier's Journey</h2>
         <p class="lead">April 6, 1917, changed the lives of 21,609 young African American men from North Carolina The participation of these Black North Carolinians in World War I has been mostly ignored. <strong><span class="text-highlight">Black Soldiers Mattered</span></strong> addresses that void with this interactive site that allows you to explore the entire journey of Black North Carolinians from induction to demobilization, the specific journey of the many different units they served, and the journey of individual soldiers. </p>
       </div>
@@ -91,36 +91,36 @@ require_once ('visualizationFunctions.php');
     <h2 class="text-center">Explore</h2> <hr />
     <div class="row text-center">
       <div class="col-sm-3 col-xs-6">
-        <a href="#collectiveExperience" class="explore-link light-link">
+        <a href="#explorePlaces" class="explore-link light-link">
           <i class="fa fa-map" aria-hidden="true"></i>
-          <h4>Collective experience</h4>
-          <p>Explore the collective journey of all soldiers and units.</p>
+          <h4>Places</h4>
+          <p>Explore the places where these soldiers lived, were recruited, and trained.</p>
         </a>
       </div>
       <div class="col-sm-3 col-xs-6">
-        <a href="#individualExperience" class="explore-link light-link">
-          <i class="fa fa-map-marker" aria-hidden="true"></i>
-          <h4>Individual experiences</h4>
-          <p>Choose a Soldier and explore his journey.</p>
+        <a href="#exploreSoldiers" class="explore-link light-link">
+          <i class="fa fa-users" aria-hidden="true"></i>
+          <h4>Soldiers</h4>
+          <p>....?</p>
         </a>
       </div>
       <div class="col-sm-3 col-xs-6">
-        <a href="#timelines" class="explore-link light-link">
-          <i class="fa fa-calendar" aria-hidden="true"></i>
-          <h4>Timelines</h4>
+        <a href="#exploreDomesticService" class="explore-link light-link">
+          <i class="fa fa-home" aria-hidden="true"></i>
+          <h4>Domestic Service</h4>
           <p>View dynamic timelines that illustrate various aspects of the soldiers' trajectory</p>
         </a>
       </div>
       <div class="col-sm-3 col-xs-6">
-        <a href="#statistics" class="explore-link light-link">
-          <i class="fa fa-pie-chart" aria-hidden="true"></i>
-          <h4>Statistics</h4>
+        <a href="#exploreOverseasService" class="explore-link light-link">
+          <i class="fa fa-ship" aria-hidden="true"></i>
+          <h4>Overseas Service</h4>
           <p>Explore charts...</p>
         </a>
       </div>
     </div>
     <!-- collapsible panels -->
-    <div class="collapse row" id="collectiveExperience">
+    <div class="collapse row" id="explorePlaces">
       <div class="col-xs-12">
         <div class="row">
           <div class="col-xs-4">
@@ -129,17 +129,17 @@ require_once ('visualizationFunctions.php');
         </div>
       </div>
     </div>
-    <div class="collapse row" id="individualExperience">
+    <div class="collapse row" id="exploreSoldiers">
       <div class="col-xs-12">
         <h1>individual experience stuff</h1>
       </div>
     </div>
-    <div class="collapse row" id="timelines">
+    <div class="collapse row" id="exploreDomesticService">
       <div class="col-xs-12">
         <h1>timelines stuff</h1>
       </div>
     </div>
-    <div class="collapse row" id="statistics">
+    <div class="collapse row" id="exploreOverseasService">
       <div class="col-xs-12">
         <div class="row">
           <div class="col-xs-4">

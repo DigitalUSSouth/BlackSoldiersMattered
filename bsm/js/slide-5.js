@@ -74,4 +74,29 @@ $(document).ready(function(){
 	}
     });
 
+	// set up the map
+	birthPlaceMap = new L.Map('birthPlaceMap');
+
+	// create the tile layer with correct attribution
+	var osmUrl='http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
+	var osmAttrib='Map data © <a href="http://openstreetmap.org">OpenStreetMap</a> contributors';
+	var osm = new L.TileLayer(osmUrl, {minZoom: 2, maxZoom: 12, attribution: osmAttrib});
+	var basemapLayer = new L.TileLayer('http://{s}.tiles.mapbox.com/v3/github.map-xgq2svrz/{z}/{x}/{y}.png');
+
+	// start the map in United Sates
+	birthPlaceMap.setView(new L.LatLng(39.57182, -97.60254),4);
+	birthPlaceMap.addLayer(osm);
+	
+	var markers = L.markerClusterGroup();
+console.log('created layers')
+	$.each(birthPlaces,function (key,mkr){
+		
+		if (key=="" || mkr[0]==null || mkr[1]==null) return; //if key is blank then it's an invalid marker so we just return
+		console.log(key+' '+mkr);
+		var marker = L.marker(mkr,{title:key}).bindPopup(key);//.addTo(birthPlaceMap);
+		markers.addLayer(marker);
+	});
+
+	birthPlaceMap.addLayer(markers);
+
 });

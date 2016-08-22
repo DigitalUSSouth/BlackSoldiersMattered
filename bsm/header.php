@@ -86,11 +86,24 @@ require_once 'config.php';
     <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
     <script src="<?php print ROOT_FOLDER;?>js/d3pie.min.js"></script>
     <script src="<?php print ROOT_FOLDER;?>js/slide-5.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.5.0/MarkerCluster.Default.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.5.0/MarkerCluster.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.5.0/leaflet.markercluster.js"></script>
     <?php endif; ?>
     <?php if($title=='slide-6'): ?>
     <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
     <script src="<?php print ROOT_FOLDER;?>js/d3pie.min.js"></script>
     <script src="<?php print ROOT_FOLDER;?>js/slide-6.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.5.0/MarkerCluster.Default.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.5.0/MarkerCluster.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.5.0/leaflet.markercluster.js"></script>
+
+
+    <!--<link rel="stylesheet" href="<?php print ROOT_FOLDER;?>leaflet/MarkerCluster.css" />
+	<link rel="stylesheet" href="<?php print ROOT_FOLDER;?>leaflet/MarkerCluster.Default.css" />
+	<script src="<?php print ROOT_FOLDER;?>leaflet/leaflet.markercluster-src.js"></script>-->
     <?php endif; ?>
     <?php if($title=='slide-13'): ?>
     <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>

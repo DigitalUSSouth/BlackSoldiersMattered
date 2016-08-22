@@ -8,10 +8,14 @@ require ('../visualizationFunctions.php');
     <!-- Content -->
     <div class="row" id="page-container">
       <div class="visualization-container">
-        <!-- TODO: Insert map here -->
+        
         <script>
           var birthPlaceRatio = <?php print getBirthPlaceRatio();?>;
+          var birthPlaces = <?php print file_get_contents('../data/birthPlaces.json'); ?>;
         </script>
+        <!-- birth place map-->
+        <div id="birthPlaceMap" style="height: 400px;">
+        </div>
         <div id="myPie">
         </div>
       </div>

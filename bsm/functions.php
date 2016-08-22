@@ -146,9 +146,16 @@ function importRandomSample(){
 	 $total92Division = 0;
 	 $total93Division = 0;
 
+	 $placesCount = 0;
+	 $inductionPlaces = array();
+
+	 $birthPlacesCount = 0;
+	 $birthPlaces = array();
+
 	 //TODO: Add try-catch aroung this
 	 $units = readJson('data/units.json'); //load units object
 
+	 set_time_limit(600);
 	 
 	 foreach ($soldiers as $soldier){
 
@@ -156,24 +163,56 @@ function importRandomSample(){
 		 //check birth place
 		 //the regex will match . XX
 		 // comma(,) followed by one or more spaces, followed by two letter state codes
+		 //this also does geocoding for birth places
 		 if (preg_match('/, +[A-Z]{2}$/',$soldier['birth_place'])){
 			 $birthPlaceOther++;
 			 //debug
-			 //print $soldier['birth_place'].'<br>';
+			 print $soldier['birth_place'].'<br>';
+			 //commented out because of google API daily limiy
+			 /*if (!array_key_exists($soldier['birth_place'],$birthPlaces)){
+				 $birthPlacesCount++;
+				 $latlng = geocode($soldier['birth_place']);
+				 $birthPlaces[$soldier['birth_place']] = $latlng;
+			 }*/
 		 }
 		 else {
 			 $birthPlaceNC++;
+			 print $soldier['birth_place'].'<br>';
+			 /*if (!array_key_exists($soldier['birth_place'],$birthPlaces)){
+				 $birthPlacesCount++;
+				 $latlng = geocode($soldier['birth_place'].', NC');
+				 $birthPlaces[$soldier['birth_place'].', NC'] = $latlng;
+			 }*/
 		 }
 
 		 //calculate total number inducted in NC vs from other states
+		 // also performs geocoding for induction places
 		 if (preg_match('/, +[A-Z]{2}$/',$soldier['induction_place'])){
 			 $inductionPlaceOther++;
-			 //debug
 			 //print $soldier['induction_place'].'<br>';
+			 
+			 //commented out because there is only a limited number of API requests allowed per day
+			 /*if (!array_key_exists($soldier['induction_place'],$inductionPlaces)){
+				 $placesCount++;
+				 $latlng = geocode($soldier['induction_place']);
+				 //writeJson('data/'.$soldier['induction_place'].'.json',$result);
+				 $inductionPlaces[$soldier['induction_place']] = $latlng;
+			 }*/
 		 }
 		 else {
 			 $inductionPlaceNC++;
+			 //print $soldier['induction_place'].'<br>';
+			 
+			 /*if (!array_key_exists($soldier['induction_place'],$inductionPlaces)){
+				 $placesCount++;
+				 $latlng = geocode($soldier['induction_place'].', NC');
+				 //writeJson('data/'.$soldier['induction_place'].'.json',$result);
+				 $inductionPlaces[$soldier['induction_place'].', NC'] = $latlng;
+			 }*/
+			 
 		 }
+
+		 
 
 		 //calculate total number in 92nd vs 93rd combat divisions
 		 //This isn't working!!!!
@@ -206,14 +245,36 @@ function importRandomSample(){
 	 $soldierStats['induction_place_NC'] = $inductionPlaceNC;
 	 $soldierStats['induction_place_other'] = $inductionPlaceOther;
 
+	 $soldierStats['induction_places_count'] = $placesCount;
+	 $soldierStats['birth_places_count'] = $birthPlacesCount;
+
 	 //commented out until fixed
 	 //$soldierStats['total_92_division']  = $total92Division;
 	 //$soldierStats['total_93_division']  = $total93Division;
 
 	 writeJson('data/soldierStats.json',$soldierStats);
+	 //writeJson('data/inductionPlaces.json',$inductionPlaces);
+	 //writeJson('data/birthPlaces.json',$birthPlaces);
 
 	 //var_dump($soldierStats);
  }
+
+/**
+ * geocode a place name - uses google geocoding API
+ * @param {string} literal name of place to geocode
+ * @return {array} [(float)lat,(float)lng]
+ */
+function geocode($locationName){
+//CHANGE TO DUSS API KEY IN PRODUCTION
+if ($locationName=="") return [0,0];
+	 $url = 'https://maps.googleapis.com/maps/api/geocode/json?address='.urlencode($locationName).'&key=AIzaSyBVXm_BC0-fmKBncSUzB_5NMGIv9HPLhYY';
+ 	print $url.'<br>';
+	 $jsonResult = file_get_contents($url);
+	 $result = json_decode($jsonResult,true);
+	 $lat = $result['results'][0]['geometry']['location']['lat'];
+	 $lng = $result['results'][0]['geometry']['location']['lng'];
+	 return [$lat,$lng];
+}  
 
 /**
  * computes locations for all soldiers, separated per month and saves it in soldierLocations.json
@@ -240,6 +301,13 @@ set_time_limit(600);
 	while(compareDates($currentDate,$maxDate)==-1){
 		print '<h1>'.$currentDate[0].'-'.$currentDate[1].'</h1><br><br>';
 		foreach ($soldiers as $soldier){
+			//if induction date is later than current date then
+			//we just skip, we don't want to add to array if
+			//soldier has not been inducted yet
+			if (compareDates($soldier['induction_date'],$currentDate)==1){
+				//maybe we should log this?
+				continue;
+			}
 			//continue;
 			$soldierUnits = $soldier['unit_progression'];
 			if (sizeof($soldierUnits)<1) continue;//TODO: add error reporting here

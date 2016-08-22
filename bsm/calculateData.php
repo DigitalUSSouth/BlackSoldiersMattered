@@ -9,7 +9,7 @@ require_once 'functions.php';
 <?php 
 
 computeSoldierStats();
-computeSoldierLocations();
+//computeSoldierLocations();
 ?></pre>
 <?php 
 require_once ('footer.php');

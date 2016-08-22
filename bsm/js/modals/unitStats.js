@@ -229,6 +229,20 @@ var pie2 = new d3pie("overseasUnitsPie", {
 			"enabled": true,
 			"percentage": 100
 		}
+	},
+	"callbacks": {
+		onload : function (){
+			$("svg").each(function (){
+				var elem = $(this)[0];
+				//alert (elem);
+				elem.setAttribute("viewBox","0 0 750 500");
+			});
+			//$("svg").attr("viewBox","0 0 750 500");
+			$("svg").removeAttr("width height");
+			//alert('onload');
+		}
 	}
     });
+
+	
 })
