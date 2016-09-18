@@ -2,10 +2,6 @@
 
 
 // Define global constants
-define("DB_HOST", "localhost");
-define("DB_USER", "root");
-define("DB_PASS", "");
-define("DB_BASE", "bsm");
 define("ROOT_FOLDER", "http://" . $_SERVER["HTTP_HOST"] . "/bsm/");
 
 

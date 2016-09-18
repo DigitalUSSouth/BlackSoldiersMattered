@@ -116,47 +116,4 @@ require_once 'config.php';
 
   <body>
 
-    <!-- Fixed navbar -->
-    <nav class="navbar navbar-default navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header"> 
-          <a class="navbar-brand" href="<?php print ROOT_FOLDER;?>"><img src="<?php print ROOT_FOLDER;?>images/logo.png" height="150px" width="150px"></a>
-          <div class="topbanner">
-            <img src="<?php print ROOT_FOLDER;?>images/headersplit.png">
-            <img src="<?php print ROOT_FOLDER;?>images/banner.png">
-          </div>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav navbar-right">
-            <li></li>
-            <li class="active"><a href="<?php print ROOT_FOLDER;?>">Home</a></li>
-            <!-- Interactive Maps -->
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Interactive Maps <span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                <li><a href="#">North Carolina</a></li>
-                <li><a href="#">United States</a></li>
-                <li><a href="#">Europe</a></li>
-                <li><a href="#">All Maps</a></li>
-              </ul>
-            </li>
-            <!-- Categories -->
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Categories <span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                <li><a href="#">How</a></li>
-                <li role="separator" class="divider"></li>
-                <li class="dropdown-header">Where</li>
-                <li><a href="#">Lived</a></li>
-                <li><a href="#">Served</a></li>
-              </ul>
-            </li>
-
-            <li><a href="#about">Search</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </div><!--/.nav-collapse -->
-      </div>
-    </nav>
-
     <div class="container">

@@ -1,17 +1,8 @@
-body {
-  min-height: 700px;
-  padding-top: 190px;
-  background-image: url('../images/bg.png');
-  background-repeat: repeat;
-}
 
 main {
 	padding-top:1em;
 }
 
-.jumbotron {
-	/*height:675px;*/
-}
 
 .navbar-nav > li > a{ 
   padding: 15px 30px;
@@ -33,131 +24,6 @@ main {
 	background-color: black;
 }
 
-#navbar {
-	padding-left:50px;
-}
-
-.navbar .navbar-nav {
-  display: inline-block;
-  float: none;
-  vertical-align: top;
-}
-
-.navbar .navbar-collapse {
-  text-align: center;
-}
-
-.navbar-default {
-  background-color: black;
-  text-transform: uppercase;
-}
-
-.navbar-default .navbar-text {
-  color: #c0c0c0;
-}
-
-.navbar-default .navbar-nav > li > a {
-  color: #c0c0c0;
-}
-
-.navbar-default .navbar-nav > li > a:hover {
-  color: #c0c0c0;
-}
-
-.navbar-default .navbar-nav > li > a:visited {
-  color: #c0c0c0;
-}
-
-@media (min-width: 979px) {
-.navbar-default .navbar-nav > li.dropdown:hover > ul.dropdown-menu {
-    display: block;
-	margin-top: 0;
-	background-color: black;
-	color: #c0c0c0;
- }
-}
-
-@media (min-width: 979px) {
-.navbar-default .navbar-nav > li.dropdown:hover > ul.dropdown-menu > li > a {
-	color: #c0c0c0;
- }
-}
-
-@media (min-width: 979px) {
-.navbar-default .navbar-nav > li.dropdown > ul.dropdown-menu > li > a:hover {
-	color: black;
- }
-}
-
-@media (min-width: 979px) {
-.navbar-default .navbar-nav > li.dropdown > ul.dropdown-menu > li#whereSubMenu > ul.submenu {
-    position: relative;
-    left: 100%;
-    top: -25px;
-    margin-top:-6px;
-	margin-left:-1px;
-	display: none;
-	}
-}
-
-@media (min-width: 979px) {
-.navbar-default .navbar-nav > li.dropdown > ul.dropdown-menu > li#whereSubMenu > ul.submenu  > li > a {
-	color: #c0c0c0;
- }
-}
-
-@media (min-width: 979px) {
-.navbar-default .navbar-nav > li.dropdown > ul.dropdown-menu > li#whereSubMenu:hover > ul.submenu {
-	display: block;
-	background-color: black;
-	color: #c0c0c0;
-	}
-}
-
-.projectcarousel div #wrapper
-{
-  float: left;
-  display: block;
-  position: relative;
-  /*border: 5px solid #EEEEEE;*/
-  height: 185px;
-  width: 170px;
-  margin: 5px;
-  /*background-color: #FFFFFF;*/
-}
-
-.column
-{
-  width: 170px;
-  height: 450px;
-}
-
-.hoverimg
-{
-  border-radius: 25px;
-  border: 5px solid #EEEEEE;
-  height: 170px;
-  width: 170px;
-  margin: 5px;
-  background-color: #FFFFFF;
-}
-
-positioner .text {
-position:relative;
-bottom:145px;
-text-align: center;
-left:7px;
-visibility:hidden;
-margin-left:1px;
-margin-right: 0px;
-
-color: #FFFFFF;
-text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
-}
-
-positioner:hover .text {
-visibility:visible;
-}
 
 
 /* general styles */

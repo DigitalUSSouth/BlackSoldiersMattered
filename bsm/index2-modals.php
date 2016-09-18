@@ -1,0 +1,141 @@
+  <?php 
+  /* These are the modals for individual visualizations
+   * Add here and link from the appropriate place to display
+   */
+  ?>
+  <!-- Modals -->
+<div id="timelinesModal" class="modal fade" role="dialog">
+  <div class="modal-dialog modal-lg">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Timelines</h4>
+      </div>
+      <div class="modal-body">
+        <iframe src="bubbles/index.html" style="width:100%;height:800px;"></iframe>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<div id="unitStatsModal" class="modal fade" role="dialog">
+  <div class="modal-dialog modal-lg">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Unit Statistics</h4>
+      </div>
+      <div class="modal-body">
+        <script src="js/modals/unitStats.js"></script>
+        <script>
+          var unitStatsModalDisplayed = false;
+          var overseasVsDomesticPieData = <?php print getUnitsOverseasDomesticPieData(); ?>;
+          var domesticUnitsPieData = <?php print getUnitsPieData('Domestic'); ?>;
+          var overseasUnitsPieData = <?php print getUnitsPieData('France'); ?>;
+        </script> 
+        <div id="overseasDomesticUnitsPie">
+        </div>
+        <div id="domesticUnitsPie">
+        </div>
+        <div id="overseasUnitsPie">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div id="soldierStatsModal" class="modal fade" role="dialog">
+  <div class="modal-dialog modal-lg">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Soldier Statistics</h4>
+      </div>
+      <div class="modal-body">
+        <script src="js/modals/soldierStats.js"></script>
+        <!-- TODO: Insert map here -->
+        <script>
+          var soldierStatsModalDisplayed = false;
+          var birthPlaceRatio = <?php print getBirthPlaceRatio();?>;
+          var inductionPlaceRatio = <?php print getInductionPlaceRatio();?>;
+        </script>
+        <!--<div id="birthPlacePie">
+        </div>-->
+        <iframe src="visualizations/slide-5" style="width:100%;height:1000px;"></iframe>
+        <h1 class="text-danger">Need to add map for induction place and map/chart for residence</h1>
+        <div id="inductionPlacePie">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div id="allSoldiersJourneyModal" class="modal fade" role="dialog">
+  <div class="modal-dialog modal-lg">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Collective Journey</h4>
+      </div>
+      <div class="modal-body">
+        <script src="js/modals/allSoldiersJourney.js"></script>
+<?php
+        $fullSoldierLocations = readJson('data/soldierLocations.json');
+$soldierLocations = array();
+foreach ($fullSoldierLocations as $key => $fullSoldierLocationsItem){
+    $soldierLocationsItem = array();
+    foreach ($fullSoldierLocationsItem as $latlng){
+        //var_dump( $latlng);
+        if (!preg_match('/[0-9]{1,3}\.[0-9]{1,5}/',$latlng[0]) || !preg_match('/[0-9]{1,3}\.[0-9]{1,5}/',$latlng[1])) continue; //TODO: add error reporting
+        $soldierLocationsItem[] = $latlng;
+    }
+    $soldierLocations[$key] = $soldierLocationsItem;
+}
+
+
+?>
+<script>
+var soldierLocations = <?php print json_encode($soldierLocations,JSON_PRETTY_PRINT);?>;
+
+</script>
+        <script>
+          var map3;
+          var markers = [];
+          var heat;
+        </script>
+        <div id="allSoldiersJourneyMap"></div>
+        <div id="slider1"></div>
+        <div id="dateDisplay">1917-2</div>
+        <?php 
+        print sizeof($soldierLocations['1918-4']);
+        ?>
+        <h2 class="text-danger">Data here is cleaned up, but needs to be updated to display on the map. This is not a big a task.</h2>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>

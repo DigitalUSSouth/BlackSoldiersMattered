@@ -85,7 +85,7 @@ require_once ('visualizationFunctions.php');
 </div>
 <!-- /second section -->
 
-  <!-- third section - Services -->
+  <!-- third section - explore -->
 <div id="explore" class="pad-section">
   <div class="container">
     <h2 class="text-center">Explore</h2> <hr />
@@ -101,21 +101,21 @@ require_once ('visualizationFunctions.php');
         <a href="#exploreSoldiers" class="explore-link light-link">
           <i class="fa fa-users" aria-hidden="true"></i>
           <h4>Soldiers</h4>
-          <p>....?</p>
+          <p>Explore soldiers' journey</p>
         </a>
       </div>
       <div class="col-sm-3 col-xs-6">
         <a href="#exploreDomesticService" class="explore-link light-link">
           <i class="fa fa-home" aria-hidden="true"></i>
           <h4>Domestic Service</h4>
-          <p>View dynamic timelines that illustrate various aspects of the soldiers' trajectory</p>
+          <p>Explore soldiers' domestic service.</p>
         </a>
       </div>
       <div class="col-sm-3 col-xs-6">
         <a href="#exploreOverseasService" class="explore-link light-link">
           <i class="fa fa-ship" aria-hidden="true"></i>
           <h4>Overseas Service</h4>
-          <p>Explore charts...</p>
+          <p>Explore soldiers' overseas service.</p>
         </a>
       </div>
     </div>
@@ -124,6 +124,9 @@ require_once ('visualizationFunctions.php');
       <div class="col-xs-12">
         <div class="row">
           <div class="col-xs-4">
+            <button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#soldierStatsModal">View maps/charts </button>
+          </div>
+          <div class="col-xs-4">
             <button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#allSoldiersJourneyModal">View Collective Journey</button>
           </div>
         </div>
@@ -131,24 +134,25 @@ require_once ('visualizationFunctions.php');
     </div>
     <div class="collapse row" id="exploreSoldiers">
       <div class="col-xs-12">
-        <h1>individual experience stuff</h1>
+        <div class="row">
+          <div class="col-xs-4">
+            <button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#timelinesModal">View timelines</button>
+          </div>
+        </div>
       </div>
     </div>
     <div class="collapse row" id="exploreDomesticService">
-      <div class="col-xs-12">
-        <h1>timelines stuff</h1>
-      </div>
-    </div>
-    <div class="collapse row" id="exploreOverseasService">
       <div class="col-xs-12">
         <div class="row">
           <div class="col-xs-4">
             <button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#unitStatsModal">View Unit statistics</button>
           </div>
-          <div class="col-xs-4">
-            <button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#soldierStatsModal">View Soldier statistics</button>
-          </div>
         </div>
+      </div>
+    </div>
+    <div class="collapse row" id="exploreOverseasService">
+      <div class="col-xs-12">
+        
       </div>
     </div>
   </div>
@@ -205,125 +209,7 @@ require_once ('visualizationFunctions.php');
   </div>
 </footer>
 <!-- /footer -->
-
-  <?php 
-  /* These are the modals for individual visualizations
-   * Add here and link from the appropriate place to display
-   */
-  ?>
-  <!-- Modals -->
-<div id="unitStatsModal" class="modal fade" role="dialog">
-  <div class="modal-dialog modal-lg">
-
-    <!-- Modal content-->
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Unit Statistics</h4>
-      </div>
-      <div class="modal-body">
-        <script src="js/modals/unitStats.js"></script>
-        <script>
-          var unitStatsModalDisplayed = false;
-          var overseasVsDomesticPieData = <?php print getUnitsOverseasDomesticPieData(); ?>;
-          var domesticUnitsPieData = <?php print getUnitsPieData('Domestic'); ?>;
-          var overseasUnitsPieData = <?php print getUnitsPieData('France'); ?>;
-        </script> 
-        <div id="overseasDomesticUnitsPie">
-        </div>
-        <div id="domesticUnitsPie">
-        </div>
-        <div id="overseasUnitsPie">
-        </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-
-  </div>
-</div>
-
-<div id="soldierStatsModal" class="modal fade" role="dialog">
-  <div class="modal-dialog modal-lg">
-
-    <!-- Modal content-->
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Soldier Statistics</h4>
-      </div>
-      <div class="modal-body">
-        <script src="js/modals/soldierStats.js"></script>
-        <!-- TODO: Insert map here -->
-        <script>
-          var soldierStatsModalDisplayed = false;
-          var birthPlaceRatio = <?php print getBirthPlaceRatio();?>;
-          var inductionPlaceRatio = <?php print getInductionPlaceRatio();?>;
-        </script>
-        <div id="birthPlacePie">
-        </div>
-        <div id="inductionPlacePie">
-        </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-
-  </div>
-</div>
-
-<div id="allSoldiersJourneyModal" class="modal fade" role="dialog">
-  <div class="modal-dialog modal-lg">
-
-    <!-- Modal content-->
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Collective Journey</h4>
-      </div>
-      <div class="modal-body">
-        <script src="js/modals/allSoldiersJourney.js"></script>
-<?php
-        $fullSoldierLocations = readJson('data/soldierLocations.json');
-$soldierLocations = array();
-foreach ($fullSoldierLocations as $key => $fullSoldierLocationsItem){
-    $soldierLocationsItem = array();
-    foreach ($fullSoldierLocationsItem as $latlng){
-        //var_dump( $latlng);
-        if (!preg_match('/[0-9]{1,2}\.[0-9]{1,5}/',$latlng[0]) || !preg_match('/[0-9]{1,2}\.[0-9]{1,5}/',$latlng[1])) continue; //TODO: add error reporting
-        $soldierLocationsItem[] = $latlng;
-    }
-    $soldierLocations[$key] = $soldierLocationsItem;
-}
-
-
-?>
-<script>
-var soldierLocations = <?php print json_encode($soldierLocations,JSON_PRETTY_PRINT);?>;
-
-</script>
-        <script>
-          var map3;
-          var markers = [];
-          var heat;
-        </script>
-        <div id="allSoldiersJourneyMap"></div>
-        <div id="slider1"></div>
-        <div id="dateDisplay">1917-2</div>
-        <?php 
-        print sizeof($soldierLocations['1918-4']);
-        ?>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-
-  </div>
-</div>
-
+<?php require 'index2-modals.php'; ?>
 
   <!-- attach JavaScripts -->
   <script src="js/bootstrap.min.js"></script>

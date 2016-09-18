@@ -308,6 +308,11 @@ set_time_limit(600);
 				//maybe we should log this?
 				continue;
 			}
+
+			//likewise, if current date is later than discharge date
+			//we just skip
+			//TODO: add if statement
+
 			//continue;
 			$soldierUnits = $soldier['unit_progression'];
 			if (sizeof($soldierUnits)<1) continue;//TODO: add error reporting here
@@ -747,4 +752,18 @@ function importUnits(){
 	writeJson('data/units.json',$units);
 	
 	
+}
+
+
+/**
+ * create CSV for soldiers recruited timeline
+ */
+function createCSVRecruitedSoldiers(){
+	$soldiers = readJson('data/soldiers.json');
+	
+	$csv = array();
+	$csv[] = array('');
+	foreach ($soldiers as $soldier){
+
+	}
 }

@@ -286,7 +286,7 @@ function bubbleChart() {
     var content = '<span class="name">Title: </span><span class="value">' +
                   d.id +
                   '</span><br/>' +
-                  '<span class="name">Amount: </span><span class="value">$' +
+                  '<span class="name">Amount: </span><span class="value">' +
                   d.name +
                   '</span><br/>' +
                   '<span class="name">Year: </span><span class="value">' +
