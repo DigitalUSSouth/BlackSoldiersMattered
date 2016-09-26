@@ -7,7 +7,8 @@ require_once 'functions.php';
 <pre>
 
 <?php 
-importRandomSample();
+//importRandomSample();
+createDischargeDateCsv();
 ?></pre>
 <?php 
 require_once ('footer.php');

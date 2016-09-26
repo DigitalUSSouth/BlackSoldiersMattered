@@ -92,7 +92,7 @@ console.log('created layers')
 	$.each(birthPlaces,function (key,mkr){
 		
 		if (key=="" || mkr[0]==null || mkr[1]==null) return; //if key is blank then it's an invalid marker so we just return
-		console.log(key+' '+mkr);
+		//console.log(key+' '+mkr);
 		var marker = L.marker(mkr,{title:key}).bindPopup(key);//.addTo(birthPlaceMap);
 		markers.addLayer(marker);
 	});

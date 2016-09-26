@@ -11,7 +11,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Timelines</h4>
+        <h4 class="modal-title">Entrance status</h4>
       </div>
       <div class="modal-body">
         <iframe src="bubbles/index.html" style="width:100%;height:800px;"></iframe>
@@ -24,8 +24,32 @@
   </div>
 </div>
 
+<div id="dischargeDateModal" class="modal fade" role="dialog">
+  <div class="modal-dialog modal-lg">
 
-<div id="unitStatsModal" class="modal fade" role="dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Discharge Date</h4>
+      </div>
+      <div class="modal-body">
+        <h2>Discharge date for all soldiers</h2>
+        <div id="graphDischargeDateAll" style="width:100%; height:300px;"></div>
+        <h2>Compare domestic vs. overseas soldiers' discharge dates</h2>
+        <div id="graphDischargeDateCompare" style="width:100%; height:300px;"></div>
+        <script src="js/modals/dischargeDateModal.js"></script>
+        <h2 class="text-danger">TODO: add comparison for labor vs combat for overseas soldiers</h2>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div id="overseasStatsModal" class="modal fade" role="dialog">
   <div class="modal-dialog modal-lg">
 
     <!-- Modal content-->
@@ -35,7 +59,7 @@
         <h4 class="modal-title">Unit Statistics</h4>
       </div>
       <div class="modal-body">
-        <script src="js/modals/unitStats.js"></script>
+        <script src="js/modals/overseasStats.js"></script>
         <script>
           var unitStatsModalDisplayed = false;
           var overseasVsDomesticPieData = <?php print getUnitsOverseasDomesticPieData(); ?>;
@@ -130,7 +154,7 @@ var soldierLocations = <?php print json_encode($soldierLocations,JSON_PRETTY_PRI
         <?php 
         print sizeof($soldierLocations['1918-4']);
         ?>
-        <h2 class="text-danger">Data here is cleaned up, but needs to be updated to display on the map. This is not a big a task.</h2>
+        <h2 class="text-danger">Data here is cleaned up, but needs to be updated to display on the map.</h2>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

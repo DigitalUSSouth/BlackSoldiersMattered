@@ -767,3 +767,48 @@ function createCSVRecruitedSoldiers(){
 
 	}
 }
+
+/**
+ * create CSV for discharge date
+ */
+function createDischargeDateCsv(){
+	$soldiers = readJson('data/soldiers.json');
+
+	$data = array(
+	);
+
+	$dataCmp = array(
+	);
+
+	foreach ($soldiers as $soldier){
+		$dateMatches;
+		if (preg_match('/^[0-9]{4}-[0-9]{2}/',$soldier['discharge_date'],$dateMatches)){
+			if (!array_key_exists($dateMatches[0],$data)){
+				$data[$dateMatches[0]] = 0;
+			}
+			if (!array_key_exists($dateMatches[0],$dataCmp)){
+				$dataCmp[$dateMatches[0]] = [0,0];
+			}
+			$data[$dateMatches[0]]++;
+			if ($soldier['service_date_start']==""){//domestic
+				$dataCmp[$dateMatches[0]][0]++;
+			}
+			else {//overseas
+				$dataCmp[$dateMatches[0]][1]++;
+			}
+		}
+	}
+	$csvData = "Discharge Date,Number of Soldiers Discharged\n";
+	foreach ($data as $key => $val){
+		$csvData = $csvData.$key.','.$val."\n";
+	}
+	print $csvData;
+	file_put_contents('data/dischargeDate.csv',$csvData);
+
+	$csvData = "Discharge Date,Domestic,Overseas\n";
+	foreach ($dataCmp as $key => $val){
+		$csvData = $csvData.$key.','.$val[0].','.$val[1]."\n";
+	}
+	print $csvData;
+	file_put_contents('data/dischargeDateCompare.csv',$csvData);
+}

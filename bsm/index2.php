@@ -27,6 +27,10 @@ require_once ('visualizationFunctions.php');
     <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
     <script src="<?php print ROOT_FOLDER;?>js/d3pie.min.js"></script>
 
+    <!-- dygraphs--> 
+    <script src="//cdnjs.cloudflare.com/ajax/libs/dygraph/1.1.1/dygraph-combined.js"></script>
+
+
 </head>
 <body data-spy="scroll" data-target=".navbar" data-offset="65">
   
@@ -90,34 +94,34 @@ require_once ('visualizationFunctions.php');
   <div class="container">
     <h2 class="text-center">Explore</h2> <hr />
     <div class="row text-center">
-      <div class="col-sm-3 col-xs-6">
+      <div class="col-sm-4 col-xs-6">
         <a href="#explorePlaces" class="explore-link light-link">
           <i class="fa fa-map" aria-hidden="true"></i>
           <h4>Places</h4>
           <p>Explore the places where these soldiers lived, were recruited, and trained.</p>
         </a>
       </div>
-      <div class="col-sm-3 col-xs-6">
+      <div class="col-sm-4 col-xs-6">
         <a href="#exploreSoldiers" class="explore-link light-link">
           <i class="fa fa-users" aria-hidden="true"></i>
           <h4>Soldiers</h4>
           <p>Explore soldiers' journey</p>
         </a>
       </div>
-      <div class="col-sm-3 col-xs-6">
+      <div class="col-sm-4 col-xs-6">
         <a href="#exploreDomesticService" class="explore-link light-link">
-          <i class="fa fa-home" aria-hidden="true"></i>
-          <h4>Domestic Service</h4>
+          <i class="fa fa-server" aria-hidden="true"></i>
+          <h4>Explore Service</h4>
           <p>Explore soldiers' domestic service.</p>
         </a>
       </div>
-      <div class="col-sm-3 col-xs-6">
+      <!--<div class="col-sm-3 col-xs-6">
         <a href="#exploreOverseasService" class="explore-link light-link">
           <i class="fa fa-ship" aria-hidden="true"></i>
           <h4>Overseas Service</h4>
           <p>Explore soldiers' overseas service.</p>
         </a>
-      </div>
+      </div>-->
     </div>
     <!-- collapsible panels -->
     <div class="collapse row" id="explorePlaces">
@@ -135,8 +139,14 @@ require_once ('visualizationFunctions.php');
     <div class="collapse row" id="exploreSoldiers">
       <div class="col-xs-12">
         <div class="row">
-          <div class="col-xs-4">
-            <button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#timelinesModal">View timelines</button>
+          <div class="col-xs-3">
+            <button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#timelinesModal">Entrance status</button>
+          </div>
+          <div class="col-xs-3">
+            <button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#dischargeDateModal">Discharge date</button>
+          </div>
+          <div class="col-xs-6">
+            <button type="button" class="btn btn-default btn-lg"><span class="text-danger">Link to explore individual soldier pages goes here</span></button>
           </div>
         </div>
       </div>
@@ -145,16 +155,22 @@ require_once ('visualizationFunctions.php');
       <div class="col-xs-12">
         <div class="row">
           <div class="col-xs-4">
-            <button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#unitStatsModal">View Unit statistics</button>
+            <button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#overseasStatsModal">View statistics</button>
+          </div>
+          <div class="col-xs-4">
+            <button type="button" class="btn btn-default btn-lg">Domestic journey</button>
+          </div>
+          <div class="col-xs-4">
+            <button type="button" class="btn btn-default btn-lg">Overseas journey</button>
           </div>
         </div>
       </div>
     </div>
-    <div class="collapse row" id="exploreOverseasService">
+    <!--<div class="collapse row" id="exploreOverseasService">
       <div class="col-xs-12">
         
       </div>
-    </div>
+    </div>-->
   </div>
 </div>
 <!-- /third section -->

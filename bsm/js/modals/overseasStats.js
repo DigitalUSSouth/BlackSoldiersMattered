@@ -1,4 +1,4 @@
-$('#unitStatsModal').on('shown.bs.modal', function() {
+$('#overseasStatsModal').on('shown.bs.modal', function() {
     if (unitStatsModalDisplayed) return; //if the modal has been opened before we don't want to redraw everything
     unitStatsModalDisplayed = true;
     var pie = new d3pie("domesticUnitsPie", {
