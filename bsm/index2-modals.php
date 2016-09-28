@@ -34,6 +34,7 @@
         <h4 class="modal-title">Discharge Date</h4>
       </div>
       <div class="modal-body">
+        <h3 class="text-danger">We can customize/refine the look/feel of these charts</h3>
         <h2>Discharge date for all soldiers</h2>
         <div id="graphDischargeDateAll" style="width:100%; height:300px;"></div>
         <h2>Compare domestic vs. overseas soldiers' discharge dates</h2>
