@@ -82,29 +82,42 @@
   </div>
 </div>
 
-<div id="soldierStatsModal" class="modal fade" role="dialog">
+<div id="mapsChartsModal" class="modal fade" role="dialog">
   <div class="modal-dialog modal-lg">
 
     <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Soldier Statistics</h4>
+        <h4 class="modal-title">Soldier Locations</h4>
       </div>
       <div class="modal-body">
-        <script src="js/modals/soldierStats.js"></script>
+        <script src="js/modals/mapsCharts.js"></script>
         <!-- TODO: Insert map here -->
         <script>
           var soldierStatsModalDisplayed = false;
           var birthPlaceRatio = <?php print getBirthPlaceRatio();?>;
+          var birthPlaces = <?php print file_get_contents('data/birthPlaces.json'); ?>;
+
           var inductionPlaceRatio = <?php print getInductionPlaceRatio();?>;
+          var inductionPlaces = <?php print file_get_contents('data/inductionPlaces.json'); ?>;
+
+          var residencePlaces = <?php print file_get_contents('data/residencePlaces.json'); ?>;
         </script>
-        <!--<div id="birthPlacePie">
-        </div>-->
-        <iframe src="visualizations/slide-5" style="width:100%;height:1000px;"></iframe>
-        <h1 class="text-danger">Need to add map for induction place and map/chart for residence</h1>
+        <h1 class="text-primary">Birth</h1>
+        <div id="birthPlaceMap" style="height: 400px;"></div>
+        <div id="birthPlacePie">
+        </div>
+        <!--
+        <iframe src="visualizations/slide-5" style="width:100%;height:1000px;"></iframe> -->
+        <h1 class="text-primary">Induction</h1>
+        <div id="inductionPlaceMap" style="height: 400px;"></div>
         <div id="inductionPlacePie">
         </div>
+
+        <h1 class="text-primary">Residence</h1>
+        <div id="residencePlaceMap" style="height: 400px;"></div>
+
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

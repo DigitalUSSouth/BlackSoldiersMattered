@@ -152,6 +152,9 @@ function importRandomSample(){
 	 $birthPlacesCount = 0;
 	 $birthPlaces = array();
 
+	 $residencePlacesCount = 0;
+	 $residencePlaces = array();
+
 	 //TODO: Add try-catch aroung this
 	 $units = readJson('data/units.json'); //load units object
 
@@ -202,14 +205,22 @@ function importRandomSample(){
 		 else {
 			 $inductionPlaceNC++;
 			 //print $soldier['induction_place'].'<br>';
-			 
-			 /*if (!array_key_exists($soldier['induction_place'],$inductionPlaces)){
+			 /*
+			 if (!array_key_exists($soldier['induction_place'],$inductionPlaces)){
 				 $placesCount++;
 				 $latlng = geocode($soldier['induction_place'].', NC');
 				 //writeJson('data/'.$soldier['induction_place'].'.json',$result);
 				 $inductionPlaces[$soldier['induction_place'].', NC'] = $latlng;
 			 }*/
 			 
+		 }
+
+		 //residence places
+		 if (!array_key_exists($soldier['residence_city'].', NC',$inductionPlaces)){
+		   $residencePlacesCount++;
+		   $latlng = geocode($soldier['residence_city'].', NC');
+	       //writeJson('data/'.$soldier['induction_place'].'.json',$result);
+		   $residencePlaces[$soldier['residence_city'].', NC'] = $latlng;
 		 }
 
 		 
@@ -252,9 +263,10 @@ function importRandomSample(){
 	 //$soldierStats['total_92_division']  = $total92Division;
 	 //$soldierStats['total_93_division']  = $total93Division;
 
-	 writeJson('data/soldierStats.json',$soldierStats);
+	 //writeJson('data/soldierStats.json',$soldierStats);
 	 //writeJson('data/inductionPlaces.json',$inductionPlaces);
 	 //writeJson('data/birthPlaces.json',$birthPlaces);
+	 writeJson('data/residencePlaces.json',$residencePlaces);
 
 	 //var_dump($soldierStats);
  }

@@ -31,6 +31,13 @@ require_once ('visualizationFunctions.php');
     <script src="//cdnjs.cloudflare.com/ajax/libs/dygraph/1.1.1/dygraph-combined.js"></script>
 
 
+    <!-- marker cluster stuff -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.5.0/MarkerCluster.Default.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.5.0/MarkerCluster.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.5.0/leaflet.markercluster.js"></script>
+    
+
+
 </head>
 <body data-spy="scroll" data-target=".navbar" data-offset="65">
   
@@ -128,7 +135,7 @@ require_once ('visualizationFunctions.php');
       <div class="col-xs-12">
         <div class="row">
           <div class="col-xs-4">
-            <button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#soldierStatsModal">View maps/charts </button>
+            <button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#mapsChartsModal">View maps/charts </button>
           </div>
           <div class="col-xs-4">
             <button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#allSoldiersJourneyModal">View Collective Journey</button>
