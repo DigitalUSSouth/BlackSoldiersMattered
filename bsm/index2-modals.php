@@ -103,6 +103,9 @@
           var inductionPlaces = <?php print file_get_contents('data/inductionPlaces.json'); ?>;
 
           var residencePlaces = <?php print file_get_contents('data/residencePlaces.json'); ?>;
+
+          var campsPlaces = <?php print file_get_contents('data/campsPlaces.json'); ?>;
+
         </script>
         <h1 class="text-primary">Birth</h1>
         <div id="birthPlaceMap" style="height: 400px;"></div>
@@ -117,6 +120,9 @@
 
         <h1 class="text-primary">Residence</h1>
         <div id="residencePlaceMap" style="height: 400px;"></div>
+
+        <h1 class="text-primary">Camps</h1>
+        <div id="campsMap" style="height: 400px;"></div>
 
       </div>
       <div class="modal-footer">

@@ -74,7 +74,7 @@ $(document).ready(function(){
 	}
     });
 
-	// set up the map
+	// set up the map 
 	birthPlaceMap = new L.Map('birthPlaceMap');
 
 	// create the tile layer with correct attribution

@@ -72,7 +72,7 @@
                 .style("visibility", "visible")
                 .style("top", function () { return (d3.event.pageY - 30)+"px"})
                 .style("left", function () { return (d3.event.pageX - 30)+"px";})
-		.text(function() {return "cname";}) //need to add a function to pull camp names from data
+		.text(cname) //need to add a function to pull camp names from data
             })
             .on("mouseout", function (d) { d3.select("#tooltip").style("visibility", "hidden") });
         },
@@ -110,7 +110,7 @@
             data.push({
               properties: {
                 group: +d.group,
-		cname: d["campnames"],
+		cname: "FLSL",
               //  city: d.city,
           //      state: d.state,
            //     store: d.storenumber

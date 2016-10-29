@@ -9,8 +9,8 @@ require_once 'functions.php';
 <?php 
 
 //computeSoldierStats();
-//computeSoldierLocations();
-createCSVRecruitedSoldiers();
+computeSoldierLocations();
+//createCSVRecruitedSoldiers();
 ?></pre>
 <?php 
 require_once ('footer.php');

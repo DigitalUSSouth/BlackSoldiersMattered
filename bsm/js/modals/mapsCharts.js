@@ -166,17 +166,17 @@ var pie = new d3pie("inductionPlacePie", {
 	birthPlaceMap.setView(new L.LatLng(39.57182, -97.60254),4);
 	birthPlaceMap.addLayer(osm);
 	
-	var markers = L.markerClusterGroup();
+	var birthMarkers = L.markerClusterGroup();
 console.log('created layers')
 	$.each(birthPlaces,function (key,mkr){
 		
 		if (key=="" || mkr[0]==null || mkr[1]==null) return; //if key is blank then it's an invalid marker so we just return
 		//console.log(key+' '+mkr);
 		var marker = L.marker(mkr,{title:key}).bindPopup(key);//.addTo(birthPlaceMap);
-		markers.addLayer(marker);
+		birthMarkers.addLayer(marker);
 	});
 
-	birthPlaceMap.addLayer(markers);
+	birthPlaceMap.addLayer(birthMarkers);
 
 
     // set up the map 
@@ -192,17 +192,17 @@ console.log('created layers')
 	inductionPlaceMap.setView(new L.LatLng(39.57182, -97.60254),4);
 	inductionPlaceMap.addLayer(osm);
 	
-	var markers = L.markerClusterGroup();
+	var inductionMarkers = L.markerClusterGroup();
 console.log('created layers')
 	$.each(inductionPlaces,function (key,mkr){
 		
 		if (key=="" || mkr[0]==null || mkr[1]==null) return; //if key is blank then it's an invalid marker so we just return
 		//console.log(key+' '+mkr);
 		var marker = L.marker(mkr,{title:key}).bindPopup(key);//.addTo(birthPlaceMap);
-		markers.addLayer(marker);
+		inductionMarkers.addLayer(marker);
 	});
 
-	inductionPlaceMap.addLayer(markers);
+	inductionPlaceMap.addLayer(inductionMarkers);
     
     
     
@@ -216,20 +216,59 @@ console.log('created layers')
 	var basemapLayer = new L.TileLayer('http://{s}.tiles.mapbox.com/v3/github.map-xgq2svrz/{z}/{x}/{y}.png');
 
 	// start the map in United Sates
-	residencePlaceMap.setView(new L.LatLng(35.131547,-79.4294789),6);
+	residencePlaceMap.setView(new L.LatLng(35.131547,-79.4294789),7);
 	residencePlaceMap.addLayer(osm);
 	
-	var markers = L.markerClusterGroup();
+	var residenceMarkers = L.markerClusterGroup();
 console.log('created layers')
 	$.each(residencePlaces,function (key,mkr){
 		
 		if (key=="" || mkr[0]==null || mkr[1]==null) return; //if key is blank then it's an invalid marker so we just return
 		//console.log(key+' '+mkr);
 		var marker = L.marker(mkr,{title:key}).bindPopup(key);//.addTo(birthPlaceMap);
-		markers.addLayer(marker);
+		residenceMarkers.addLayer(marker);
 	});
 
-	residencePlaceMap.addLayer(markers);
+	residencePlaceMap.addLayer(residenceMarkers);
+
+
+// set up camps map 
+	campsMap = new L.Map('campsMap');
+
+	// create the tile layer with correct attribution
+	var osmUrl='http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
+	var osmAttrib='Map data © <a href="http://openstreetmap.org">OpenStreetMap</a> contributors';
+	var osm = new L.TileLayer(osmUrl, {minZoom: 2, maxZoom: 12, attribution: osmAttrib});
+	var basemapLayer = new L.TileLayer('http://{s}.tiles.mapbox.com/v3/github.map-xgq2svrz/{z}/{x}/{y}.png');
+
+	// start the map in United Sates
+	campsMap.setView(new L.LatLng(35.131547,-63.4294789),3);
+	campsMap.addLayer(osm);
+
+
+var redMarker = L.AwesomeMarkers.icon({
+    icon: 'flag',
+    markerColor: 'red'
+  });
+
+  var blueMarker = L.AwesomeMarkers.icon({
+    icon: 'flag',
+    markerColor: 'red'
+  });
+
+  //L.marker([34.941196,-87.512291], {icon: redMarker}).addTo(campsMap);	
+	var campsMarkers = L.markerClusterGroup();
+//console.log('created layers')
+	$.each(campsPlaces,function (key,mkr){
+	    if (key=="" || mkr[0]==null || mkr[1]==null) return; //if key is blank then it's an invalid marker so we just return
+		//console.log(key+' '+mkr);
+		var marker = L.marker(mkr,{title:key}).bindPopup(key);//.addTo(birthPlaceMap);
+		campsMarkers.addLayer(marker);
+	});
+
+	campsMap.addLayer(campsMarkers);
+
+
 
 
 });//$('#mapsChartsModal').on('shown.bs.modal', function()

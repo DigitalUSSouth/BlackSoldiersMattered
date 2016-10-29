@@ -56,17 +56,17 @@ function importRandomSample(){
 			$field = trim($field);
 		}
 		
-
+$dischage_date = parseDischargeDateCell($fields[28]);
 		try {
 			$units = array(); //reset units object
-			$units = createUnitsObject($fields,12,26);
+			$units = createUnitsObject($fields,12,26,$dischage_date[0]);
 		}
 		catch (Exception $e) {
 			print '<h1 class="text-danger text-center">Unable to create units object: '.$e->getMessage().' - '.$fields[0].'</h1>';
 			//die();
 		}
 
-		$dischage_date = parseDischargeDateCell($fields[28]);
+		
 
 		//fix units end date for soldiers who only had one unit
 		//we get the end date from discharge date
@@ -296,7 +296,7 @@ if ($locationName=="") return [0,0];
 function computeSoldierLocations(){
 	$soldiers = readJson('data/soldiers.json');
 	$units = readJson('data/units.json');
-	$camps = readJson('data/camps.json');
+	$campsPlaces = readJson('data/campsPlaces.json');
 	
 	//will need to adjust these
 	$minDate = [1917,1,31];
@@ -309,8 +309,66 @@ function computeSoldierLocations(){
 
 //ini_set('memory_limit', '3072M');
 set_time_limit(600);
+    
+	//go through all soldiers and add them to appropriate date ranges
+	foreach ($soldiers as $soldier){
+		$isOverseas = true;
+		if ($soldier['service_date_start']==''){
+			$isOverseas = false;
+		}
+		$inductionDate = $soldier['induction_date'];
+
+		if (!$isOverseas){
+			$beginDate = $inductionDate;
+			$parsedBeginDate = parseDate($beginDate);
+
+			//iterate through units
+			foreach ($soldier['unit_progression'] as $unit){
+				//find latlng
+				//TODO: add conditions for when units changed location
+
+				if (!array_key_exists($unit[0],$units)){
+					print 'Error unit not found in units (from unit progression): '.$unit[0].'<br>';
+					 continue;
+				}
+				$camp = $units[$unit[0]]['location'][0]['id'];
+
+				if(trim($camp)=='') {
+					print 'Error camp empty: '.$soldier['id'].'<br>';
+					continue;
+				}
+				if(!array_key_exists($camp,$campsPlaces)){
+					print 'Error camp not found in places: '.$camp.'<br>';
+					 continue;
+				}
+
+				$latlng = $campsPlaces[$camp];
+
+				//print '<h1>'.$camp.'-'.$latlng[0].','.$latlng[1].'</h1>';
+
+				$parsedEndDate = parseDate($unit[2]);
+				//print_r($parsedBeginDate);
+				//print_r($parsedEndDate);
+
+				while(compareDates($parsedBeginDate,$parsedEndDate)==-1){
+				    $beginYear = $parsedBeginDate[0];
+				    $beginMonth = $parsedBeginDate[1];
+				    $endYear = $parsedEndDate[0];
+				    
+					$soldierLocations[$beginYear.'-'.$beginMonth][$soldier['id']] = $latlng;
+					//print $latlng.'<br>';
+
+					$parsedBeginDate = incrementDate($parsedBeginDate);
+				}
+			}
+		}
+		//iterate through unit
+	}
+
+print_r($soldierLocations);
+
 	//brute force approach
-	while(compareDates($currentDate,$maxDate)==-1){
+	/*while(compareDates($currentDate,$maxDate)==-1){
 		print '<h1>'.$currentDate[0].'-'.$currentDate[1].'</h1><br><br>';
 		foreach ($soldiers as $soldier){
 			//if induction date is later than current date then
@@ -323,7 +381,10 @@ set_time_limit(600);
 
 			//likewise, if current date is later than discharge date
 			//we just skip
-			//TODO: add if statement
+			if (compareDates($soldier['discharge_date'],$currentDate)==1){
+				//maybe we should log this?
+				continue;
+			}
 
 			//continue;
 			$soldierUnits = $soldier['unit_progression'];
@@ -376,7 +437,7 @@ set_time_limit(600);
 		}
 		$prevDate = incrementDate($prevDate);
 		$currentDate = incrementDate($currentDate);
-	}
+	}*/
 
 	writeJson('data/soldierLocations.json',$soldierLocations);
 }
@@ -479,7 +540,7 @@ function writeJson($filename,$object){
  * @param {int,int} offset ints for units array details
  * @return {string} Unit object to be inserted into a soldier, exception on failure
  */
- function createUnitsObject($input,$startIndex, $endIndex){
+ function createUnitsObject($input,$startIndex, $endIndex, $dischargeDate){
 	 $unitFields = array();
 	 for ($i=$startIndex; $i<=$endIndex; $i++){
 		 $unitFields[] = $input[$i];
@@ -559,11 +620,11 @@ function writeJson($filename,$object){
 	 //last unit
 	 $unit = array();
 
-	 $parsedUnit = parseUnitDateCell($unitFields[14]);
+	 //$parsedUnit = trim($unitFields[14]);
 
-	 $unit[] = $parsedUnit[0];
+	 $unit[] = trim($unitFields[14]);
 	 $unit[] = $unitFields[13];
-	 $unit[] = $parsedUnit[1];
+	 $unit[] = $dischargeDate;
 	 
 	 if ($unit[0] != '' )$units[] = $unit;
 	 return $units;
@@ -620,8 +681,8 @@ function importCamps(){
 		$camp = array(
 				"id" => $name,
 				"place" => $fields[1],
-				"type" => $fields[2]
-
+				"type" => $fields[2],
+				"latlng" => geocode($fields[1])
 				
 		);
 
@@ -636,6 +697,8 @@ function importCamps(){
 		echo '<div class="jumbotron"><h2 class="text-danger">Error parsing camps file  -- Results may not be correct</h2><p>'.$error->getMessage().' -- line: '.$counter.'</p></div>';
 	}
 
+
+/*
 	try {
 		$file = new SplFileObject("testdata/camps.csv");
 	}
@@ -648,7 +711,7 @@ function importCamps(){
 	try{
 		while($line = $file->fgets()){
 			//discard first line
-			if ($counter++ < 1) {/*echo $line;*/continue;}
+			if ($counter++ < 1) {/*echo $line;/continue;}
 
 			$fields = explode(",",$line);
 			print $line.'<br>';
@@ -667,7 +730,7 @@ function importCamps(){
 	catch (Exception $error){
 		echo '<div class="jumbotron"><h2 class="text-danger">Error parsing camps.csv file  </h2><p>'.$error->getMessage().' -- line: '.$counter.'</p></div>';
 	}
-	
+	*/
 
 	writeJson('data/camps.json',$camps);
 	

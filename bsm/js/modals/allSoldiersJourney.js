@@ -56,7 +56,7 @@ $('#allSoldiersJourneyModal').on('shown.bs.modal', function() {
 	    });
 	});
 });
-
+ 
 
 //function to get date index from slider value
 function getDateIndex(val){

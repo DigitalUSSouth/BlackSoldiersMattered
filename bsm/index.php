@@ -37,6 +37,9 @@ require_once ('visualizationFunctions.php');
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.5.0/leaflet.markercluster.js"></script>
     
 
+    <link rel="stylesheet" href="leaflet-markers/leaflet.awesome-markers.css">
+    <script src="leaflet-markers/leaflet.awesome-markers.js"></script>
+
 
 </head>
 <body data-spy="scroll" data-target=".navbar" data-offset="65">
