@@ -96,7 +96,7 @@
         <!-- TODO: Insert map here -->
         <script>
           var soldierStatsModalDisplayed = false;
-          var birthPlaceRatio = <?php print getBirthPlacteRatio();?>;
+          var birthPlaceRatio = <?php print getBirthPlaceRatio();?>;
           var birthPlaces = <?php print file_get_contents('data/birthPlaces.json'); ?>;
 
           var inductionPlaceRatio = <?php print getInductionPlaceRatio();?>;

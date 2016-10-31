@@ -2,6 +2,7 @@
 
 require_once ('config.php');
 require_once ('visualizationFunctions.php');
+require_once ('functions.php');
 ?><!DOCTYPE html>
 <html lang="en" >
 <head>
@@ -60,11 +61,11 @@ require_once ('visualizationFunctions.php');
 
     <div class="collapse navbar-collapse" id="navbar-collapse-main">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#home">Start</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#explore">Explore</a></li>
-        <li><a href="#information">Information</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="index#home">Start</a></li>
+        <li><a href="index#about">About</a></li>
+        <li><a href="index#explore">Explore</a></li>
+        <li><a href="index#information">Information</a></li>
+        <li><a href="index#contact">Contact</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->

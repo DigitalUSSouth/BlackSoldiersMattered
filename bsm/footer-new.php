@@ -6,7 +6,7 @@
   </div>
 </footer>
 <!-- /footer -->
-<?php require 'index2-modals.php'; ?>
+<?php //require 'index2-modals.php'; ?>
 
   <!-- attach JavaScripts -->
   <script src="js/bootstrap.min.js"></script>
