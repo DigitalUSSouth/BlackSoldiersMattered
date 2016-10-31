@@ -309,7 +309,7 @@ function computeSoldierLocations(){
 
 //ini_set('memory_limit', '3072M');
 set_time_limit(600);
-    
+    $overseasCounter = 1;
 	//go through all soldiers and add them to appropriate date ranges
 	foreach ($soldiers as $soldier){
 		$isOverseas = true;
@@ -362,9 +362,107 @@ set_time_limit(600);
 				}
 			}
 		}
+		else {//overseas
+		//continue;
+		    //when soldier is overseas soldier
+			//first we do exactly the same thing as for domestic soldiers
+			//then we overwrite the locations for those in soldiers
+			//for the range in service dates
+		    $beginDate = $inductionDate;
+			$parsedBeginDate = parseDate($beginDate);
+
+			//iterate through units
+			foreach ($soldier['unit_progression'] as $unit){
+				//find latlng
+				//TODO: add conditions for when units changed location
+
+				if (!array_key_exists($unit[0],$units)){
+					print 'Error unit not found in units (from unit progression): '.$unit[0].'<br>';
+					 continue;
+				}
+				$camp = $units[$unit[0]]['location'][0]['id'];
+
+				if(trim($camp)=='') {
+					print 'Error camp empty: '.$soldier['id'].'<br>';
+					continue;
+				}
+				if(!array_key_exists($camp,$campsPlaces)){
+					print 'Error camp not found in places: '.$camp.'<br>';
+					 continue;
+				}
+
+				$latlng = $campsPlaces[$camp];
+
+				//print '<h1>'.$camp.'-'.$latlng[0].','.$latlng[1].'</h1>';
+
+				$parsedEndDate = parseDate($unit[2]);
+				//print_r($parsedBeginDate);
+				//print_r($parsedEndDate);
+
+				while(compareDates($parsedBeginDate,$parsedEndDate)==-1){
+				    $beginYear = $parsedBeginDate[0];
+				    $beginMonth = $parsedBeginDate[1];
+				    $endYear = $parsedEndDate[0];
+				    
+					$soldierLocations[$beginYear.'-'.$beginMonth][$soldier['id']] = $latlng;
+					//print $latlng.'<br>';
+
+					$parsedBeginDate = incrementDate($parsedBeginDate);
+				}
+				
+				//now we overwrite with random France coordinates
+				$franceLocations  = array("Base Section 1" => [47.2734979,-2.213848],
+				"Base Section 2" => [44.837789,-0.57918],
+				"Base Section 3" => [51.5073509,-0.1277583],
+				"Base Section 4" => [49.49437,0.107929],
+				"Base Section 5" => [48.390394,-4.486076],
+				"Base Section 6" => [43.296482,5.36978]);
+				$latlng = $franceLocations["Base Section $overseasCounter"];
+				$overseasCounter++;
+				if($overseasCounter>6){
+					$overseasCounter=1;
+				}
+
+
+				$overseasBeginDate = parseDate($soldier['service_date_start']);
+				$overseasEndDate = parseDate($soldier['service_date_end']);
+				while(compareDates($overseasBeginDate,$overseasEndDate)==-1){
+				    $beginYear = $overseasBeginDate[0];
+				    $beginMonth = $overseasBeginDate[1];
+				    $endYear = $overseasEndDate[0];
+				    
+					$soldierLocations[$beginYear.'-'.$beginMonth][$soldier['id']] = $latlng;
+					//print $latlng.'<br>';
+
+					$overseasBeginDate = incrementDate($overseasBeginDate);
+				}
+
+
+
+			}
+		}
 		//iterate through unit
 	}
 
+ksort($soldierLocations);
+$counter=0;
+/*
+reset($soldierLocations);
+$firstKey = key($soldierLocations);
+end($soldierLocations);
+$lastKey = key($soldierLocations);
+
+$startMatches;
+preg_match('/[0-9]{1,4}/',$firstKey,$startMatches);
+$endMatches;
+preg_match('/[0-9]{1,4}/',$lastKey,$endMatches);
+8*/
+//$
+
+$counter =1;
+foreach ($soldierLocations as $key=>$value){
+	print "case ".$counter++.":\n  return \"".$key."\";\n";
+}
 print_r($soldierLocations);
 
 	//brute force approach

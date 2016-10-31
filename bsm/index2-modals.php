@@ -96,7 +96,7 @@
         <!-- TODO: Insert map here -->
         <script>
           var soldierStatsModalDisplayed = false;
-          var birthPlaceRatio = <?php print getBirthPlaceRatio();?>;
+          var birthPlaceRatio = <?php print getBirthPlacteRatio();?>;
           var birthPlaces = <?php print file_get_contents('data/birthPlaces.json'); ?>;
 
           var inductionPlaceRatio = <?php print getInductionPlaceRatio();?>;
@@ -144,6 +144,9 @@
       </div>
       <div class="modal-body">
         <script src="js/modals/allSoldiersJourney.js"></script>
+        <script>
+        var allSoldiersJourneyModalDisplayed = false;
+        </script>
 <?php
         $fullSoldierLocations = readJson('data/soldierLocations.json');
 $soldierLocations = array();
@@ -170,9 +173,9 @@ var soldierLocations = <?php print json_encode($soldierLocations,JSON_PRETTY_PRI
         </script>
         <div id="allSoldiersJourneyMap"></div>
         <div id="slider1"></div>
-        <div id="dateDisplay">1917-2</div>
+        <div id="dateDisplay">1913-8</div>
         <?php 
-        print sizeof($soldierLocations['1918-4']);
+        //print sizeof($soldierLocations['1918-4']);
         ?>
         <h2 class="text-danger">Data here is cleaned up, but needs to be updated to display on the map.</h2>
       </div>
