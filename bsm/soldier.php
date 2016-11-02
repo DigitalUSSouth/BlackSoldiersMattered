@@ -10,6 +10,7 @@ require_once "config.php";
         <img src="images/logo.png" alt="" />
       </div>
       <div class="col-sm-9 text-left">
+        <table>
         <?php
           if (!isset($_GET['id'])|| trim($_GET['id'])==""){
               print 'Invalid id';
@@ -23,19 +24,26 @@ require_once "config.php";
             if (empty($val)){
                 continue;
             }
-            if ($key=='unit_progression'){
-                foreach ($val as $unit):?>
-                  <p><strong></strong></p>
+            if ($key=='unit_progression'):?>
+                <tr><th><big><?php print $soldierFieldNames[$key];?>:&nbsp;</big></th><td>
                 <?php
-                endforeach;
-            }
+                foreach ($val as $unit):?>
+                  <strong>Unit: </strong><?php print $unit[0];?>
+                  <strong>Company: </strong><?php print $unit[1];?>
+                  <strong>To date: </strong><?php print $unit[2];?>
+                  <br>
+                <?php
+                endforeach;?>
+                </td></tr>
+            <?php
             else:
             ?>
-            <p><strong><?php print $soldierFieldNames[$key];?>:</strong> <?php print $val;?></p>
+            <tr><th><big><?php print $soldierFieldNames[$key];?>:&nbsp;</big></th><td><?php print $val;?></td></tr>
           <?php
             endif;
           endforeach;
         ?>
+        </table>
       </div>
     </div>
   </div>
