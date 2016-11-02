@@ -1,5 +1,7 @@
 <?php
+$pageTitle = 'Soldier';
 require_once "header-new.php";
+require_once "config.php";
 ?>
 <div id="about" class="pad-section">
   <div class="container">
@@ -9,18 +11,29 @@ require_once "header-new.php";
       </div>
       <div class="col-sm-9 text-left">
         <?php
+          if (!isset($_GET['id'])|| trim($_GET['id'])==""){
+              print 'Invalid id';
+              die();
+          }
+          $id = $_GET['id'];
           $soldiers = readJson('data/soldiers.json');
-          //reset($soldiers);
-          //$key = key($soldiers);
-          //$soldier = $soldiers[$key];
-          //print  ($soldier);
-          foreach ($soldiers as $soldier):
-            print '<h1>'.$soldier['last_name'].', '.$soldier['first_name'].'</h1>';
-            foreach ($soldier as $key => $val):?>
-              <strong><?php print $key?>:</strong><pre><?php var_dump($val);?></pre>
-          <?php 
-            endforeach;
-            break;
+          $soldier = $soldiers[$id];
+          //print '<pre>';var_dump($soldier);print '</pre>';
+          foreach ($soldier as $key=>$val):
+            if (empty($val)){
+                continue;
+            }
+            if ($key=='unit_progression'){
+                foreach ($val as $unit):?>
+                  <p><strong></strong></p>
+                <?php
+                endforeach;
+            }
+            else:
+            ?>
+            <p><strong><?php print $soldierFieldNames[$key];?>:</strong> <?php print $val;?></p>
+          <?php
+            endif;
           endforeach;
         ?>
       </div>

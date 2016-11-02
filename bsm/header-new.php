@@ -8,7 +8,7 @@ require_once ('functions.php');
 <head>
   <meta charset="utf-8" />
   <meta name="author" content="Script Tutorials" />
-  <title>Black Soldiers Mattered</title>
+  <title>Black Soldiers Mattered - <?php print $pageTitle;?></title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
   <!-- attach CSS styles -->
