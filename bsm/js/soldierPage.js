@@ -30,6 +30,7 @@ $(document).ready(function (){
 
     var markerCluster = L.markerClusterGroup();
     var counter = 0;
+    var firstLatlng;
     $.each(soldier.unit_progression, function(id, unit){
         var unitName = unit[0];
         //console.log(unitName);
@@ -39,17 +40,23 @@ $(document).ready(function (){
         var camp = units[unitName].location[0].id;
         //console.log(camp);
         var latlng = camps[camp].latlng;
+        var place = camps[camp].place;
+        if(counter++==0) firstLatlng=latlng;
         //console.log(latlng);
         var marker = L.marker(latlng,{title:unitName}).bindPopup(
             "<h3>Unit: "+unitName+"</h3>"
             +"<p><strong>Company: </strong>"+companyName+"</p>"
             +"<p><strong>Camp: </strong>"+camp+"</p>"
+            +"<p><strong>Place: </strong>"+place+"</p>"
             +"<p><strong>To date: </strong>"+toDate+"</p>"
         ).addTo(soldierMap);
         unitMarkers.push(marker);
         //console.log(unitMarkers);
         //markerCluster.addLayer(marker);
     });
+
+    soldierMap.panTo(firstLatlng);
+    unitMarkers[0].openPopup();
     
 //    soldierMap.addLayer(markerCluster);
 	

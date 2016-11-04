@@ -157,7 +157,7 @@ require_once ('visualizationFunctions.php');
             <button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#dischargeDateModal">Discharge date</button>
           </div>
           <div class="col-xs-6">
-            <button type="button" class="btn btn-default btn-lg"><span class="text-danger">Link to explore individual soldier pages goes here</span></button>
+            <a class="btn btn-default btn-lg" href="soldiers">Explore individual soldiers</a>
           </div>
         </div>
       </div>
