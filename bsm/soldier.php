@@ -10,7 +10,7 @@ require_once "config.php";
         <img src="images/logo.png" alt="" />
       </div>
       <div class="col-sm-9 text-left">
-        <table>
+        
         <?php
           if (!isset($_GET['id'])|| trim($_GET['id'])==""){
               print 'Invalid id';
@@ -18,8 +18,12 @@ require_once "config.php";
           }
           $id = $_GET['id'];
           $soldiers = readJson('data/soldiers.json');
+          $units = readJson('data/units.json');
+          $camps = readJson('data/camps.json');
           $soldier = $soldiers[$id];
           //print '<pre>';var_dump($soldier);print '</pre>';
+          print '<h1 class="text-primary">'.$soldier['last_name'].', '.$soldier['first_name'].'</h1>';
+          print '<table>';
           foreach ($soldier as $key=>$val):
             if (empty($val)){
                 continue;
@@ -44,11 +48,56 @@ require_once "config.php";
           endforeach;
         ?>
         </table>
-      </div>
-    </div>
+      </div><!-- col-sm-9 -->
+    </div><!-- row -->
+    <div class="row">
+      <div class="col-xs-10 col-xs-offset-1"><h2 class="text-primary">Unit progression</h2></div>
+      <div class="col-xs-10 col-xs-offset-1">
+        <script src="js/soldierPage.js"></script>
+        <div id="map-buttons">
+          <?php
+            $unitCounter = 0;
+            foreach ($soldier['unit_progression'] as $unit):
+              $unitName = $unit[0];
+              $companyName = $unit[1];
+              $toDate = $unit[2];
+              $camp = $units[$unitName]['location'][0]['id'];
+              $latlng = $camps[$camp]['latlng'];
+              //var_dump( $latlng);
+              if ($latlng==NULL) continue;//skip if error
+              if ($unitCounter==0):
+              ?>
+                <button id="unit-button-<?php print $unitCounter;?>" class="btn btn-primary"><?php print $unitName; ?></button>
+              <?php
+              else:
+              ?>
+                <i class="fa fa-arrow-right"></i><button id="unit-button-<?php print $unitCounter;?>" class="btn btn-default"><?php print $unitName; ?></button>
+              <?php
+              endif;
+              ?>
+                <script>
+                  $("#unit-button-<?php print $unitCounter;?>").click(function(e){
+                    //alert('hi<?php print $unitCounter;?>');
+                    soldierMap.panTo(<?php print json_encode($latlng);?>);
+                    unitMarkers[<?php print $unitCounter;?>].openPopup();
+                  });
+	    </script>
+              <?php
+              $unitCounter++;
+            endforeach;
+          ?>
+        </div><!-- map-buttons -->
+        <div id="soldierMap" style="height: 400px;">
+        </div><!-- soldierMap -->
+      </div><!-- col-xs-10 -->
+    </div><!-- row -->
   </div>
 </div>
-
+<script>
+          var soldier = <?php print json_encode($soldier);?>;
+          var units = <?php print file_get_contents('data/units.json');?>;
+          var camps = <?php print file_get_contents('data/camps.json');?>;
+</script>
 <?php 
 require_once "footer-new.php";
 ?>
