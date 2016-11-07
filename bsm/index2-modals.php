@@ -50,6 +50,9 @@
   </div>
 </div>
 
+
+
+
 <div id="overseasStatsModal" class="modal fade" role="dialog">
   <div class="modal-dialog modal-lg">
 
@@ -172,12 +175,35 @@ var soldierLocations = <?php print json_encode($soldierLocations,JSON_PRETTY_PRI
           var heat;
         </script>
         <div id="allSoldiersJourneyMap"></div>
-        <div id="slider1"></div>
+        <div id="slider1" style="height: 30px;"></div>
         <div id="dateDisplay">1913-8</div>
         <?php 
         //print sizeof($soldierLocations['1918-4']);
         ?>
-        <h2 class="text-danger">Data here is cleaned up, but needs to be updated to display on the map.</h2>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div id="officersModal" class="modal fade" role="dialog">
+  <div class="modal-dialog modal-lg">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Officers</h4>
+      </div>
+      <div class="modal-body">
+        <div class="row" style="padding: 1em;">
+          <div class="col-xs-10 col-xs-offset-1">
+          <?php require "officers.php"; ?>
+          </div>
+        </div>  
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

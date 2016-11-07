@@ -179,7 +179,9 @@ require_once ('visualizationFunctions.php');
     </div>
     <div class="collapse row" id="exploreOfficers">
       <div class="col-xs-12">
-        <h2 class="text-danger">Here we would have information about officers. We can have it here, or have a popup with more stuff.</h2>
+      <div class="row"><div class="col-xs-12">
+        <button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#officersModal">Click here to learn more about the officers.</button>
+      </div></div>
       </div>
     </div>
   </div>
