@@ -603,7 +603,7 @@ function incrementDate($date){
  */
 function readJson($filename){
 	try{
-		 $jsonData = file_get_contents(ROOT_FOLDER.$filename);
+		 $jsonData = file_get_contents($filename);
 		 return json_decode($jsonData,true);
 	 }
 	 catch (Exception $e) {
@@ -854,6 +854,9 @@ function importUnits(){
  $counter=0;
  $units = array();
 
+ $allCamps = readJson('data/camps.json');
+ //var_dump($allCamps);
+
  try{
 	while($line = $file->fgets()){
 		//discard first 4 lines
@@ -879,6 +882,8 @@ function importUnits(){
 		//TODO: add prior check to make sure it's an array before accessing $fields[0]
 		$name = trim($fields[0]);
 		if ($name=='') continue;
+		$check = trim($fields[1]);
+		if ($check=="") continue;
 		
 		$camps = array();
 
@@ -887,15 +892,25 @@ function importUnits(){
 		$dateSecondCamp = (sizeof(explode('-',trim($fields[10])))==2)?$fields[10].'-00':$fields[10];
 
 		$initialCamp = array(
-			"id" => $fields[6],
+			"id" => trim($fields[6]),
 			"date" => $dateInitialCamp
 		);
 		$camps[] = $initialCamp;
 		$secondCamp = array(
-			"id" => $fields[9],
+			"id" => trim($fields[9]),
 			"date" => $dateSecondCamp
 		);
 		if ($secondCamp['id']!='')$camps[] = $secondCamp;
+
+		//check if camps are in camp data
+		if (!array_key_exists($initialCamp['id'],$allCamps)){
+			print "<h2 class=\"text-danger\">Invalid camp: ".$initialCamp['id']." in Unit: ".$name."</h2>";
+		}
+		if ($secondCamp['id']!=''){
+		  if (!array_key_exists($secondCamp['id'],$allCamps)){
+			print "<h2 class=\"text-danger\">Invalid camp(2): ".$secondCamp['id']." in Unit: ".$name."</h2>";
+		  }
+		}
 
 		$unit = array(
 				"id" => $name,
