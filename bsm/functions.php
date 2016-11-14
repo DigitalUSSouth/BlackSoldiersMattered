@@ -770,6 +770,7 @@ function importCamps(){
 			$field = trim($field);
 		}
 
+		$fields[0] = preg_replace('/^"/',"", trim($fields[0]));
 
 		//check if empty
 		//TODO: add prior check to make sure it's an array before accessing $fields[0]
@@ -779,12 +780,13 @@ function importCamps(){
 		$camp = array(
 				"id" => $name,
 				"place" => $fields[1],
-				"type" => $fields[2],
-				"latlng" => geocode($fields[1])
+				"type" => $fields[2]/*,
+				"latlng" => geocode($fields[1])*/
 				
 		);
 
 		$camps[$name]  = $camp;
+		flush();
 		
 		//debug:
 		//print $jsonCamp;	
@@ -888,7 +890,7 @@ function importUnits(){
 		$camps = array();
 
 		//add trailing '-00' if needed
-		$dateInitialCamp = (sizeof(explode('-',trim($fields[7])))==2)?$fields[7].'-00':$fields[7];
+		/*$dateInitialCamp = (sizeof(explode('-',trim($fields[7])))==2)?$fields[7].'-00':$fields[7];
 		$dateSecondCamp = (sizeof(explode('-',trim($fields[10])))==2)?$fields[10].'-00':$fields[10];
 
 		$initialCamp = array(
@@ -910,7 +912,56 @@ function importUnits(){
 		  if (!array_key_exists($secondCamp['id'],$allCamps)){
 			print "<h2 class=\"text-danger\">Invalid camp(2): ".$secondCamp['id']." in Unit: ".$name."</h2>";
 		  }
+		}*/
+
+		$initialCamps = explode(';',trim($fields[6]));
+		$initialDates = explode(';',trim($fields[7]));
+
+		if (sizeof($initialCamps) != sizeof($initialDates)){
+			//error
+			print "<h2 class=\"text-danger\">Incorrect number of dates/camps in Unit: ".$name."</h2>";
 		}
+
+		$campCounter = 0;
+		foreach ($initialCamps as $camp){
+			if (trim($camp)=="") continue;
+			$newCamp = array(
+				"id" => trim($camp),
+				"date" => (sizeof(explode('-',trim($initialDates[$campCounter])))==2) ?$initialDates[$campCounter].'-00':$initialCamps[$campCounter]
+			);
+			$camps[] = $newCamp;
+			$campCounter++;
+		}
+
+
+		$secondCamps = explode(';',trim($fields[9]));
+		$secondDates = explode(';',trim($fields[10]));
+
+		if (sizeof($secondCamps) != sizeof($secondDates)){
+			//error
+			print "<h2 class=\"text-danger\">Incorrect number of dates/camps in Unit: ".$name."</h2>";
+		}
+
+		$campCounter = 0;
+		foreach ($secondCamps as $camp){
+			if (trim($camp)=="") continue;
+			$newCamp = array(
+				"id" => trim($camp),
+				"date" => (sizeof(explode('-',trim($secondDates[$campCounter])))==2)?$secondDates[$campCounter].'-00':$secondCamps[$campCounter]
+			);
+			$camps[] = $newCamp;
+			$campCounter++;
+		}
+		
+		//error checking
+		foreach ($camps as $camp){
+			//var_dump($camp);
+			if ($camp['id']=="unknown")continue;
+			if (!array_key_exists($camp['id'],$allCamps)){
+			print "<h2 class=\"text-danger\">Invalid camp: ".$camp['id']." in Unit: ".$name."</h2>";
+		  }
+		}
+
 
 		$unit = array(
 				"id" => $name,
