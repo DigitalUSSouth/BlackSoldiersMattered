@@ -85,6 +85,34 @@
   </div>
 </div>
 
+<div id="campsModal" class="modal fade" role="dialog">
+  <div class="modal-dialog modal-lg">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">U.S. Army Camp - Place and Type</h4>
+      </div>
+      <div class="modal-body">
+        <script src="js/modals/campMap.js"></script>
+        <!-- TODO: Insert map here -->
+        <script>
+          var campsModalDisplayed = false;
+          var campsPlaces = <?php print file_get_contents('data/camps.json'); ?>;
+
+        </script>
+        <h1 class="text-primary">Where did BNS Soldiers Train or Serve?</h1>
+        <div id="campsMap" style="height: 400px;"></div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
 <div id="mapsChartsModal" class="modal fade" role="dialog">
   <div class="modal-dialog modal-lg">
 

@@ -115,21 +115,21 @@ require_once ('visualizationFunctions.php');
       <div class="col-sm-3 col-xs-6">
         <a href="#exploreSoldiers" class="explore-link light-link">
           <i class="fa fa-users" aria-hidden="true"></i>
-          <h4>Soldiers</h4>
+          <h4>Wartime Journey</h4>
           <p>Explore soldiers' journey</p>
         </a>
       </div>
       <div class="col-sm-3 col-xs-6">
         <a href="#exploreDomesticService" class="explore-link light-link">
           <i class="fa fa-server" aria-hidden="true"></i>
-          <h4>Explore Service</h4>
+          <h4>Individual Soldiers</h4>
           <p>Explore soldiers' domestic service.</p>
         </a>
       </div>
       <div class="col-sm-3 col-xs-6">
         <a href="#exploreOfficers" class="explore-link light-link">
           <i class="fa fa-users" aria-hidden="true"></i>
-          <h4>Explore Officers</h4>
+          <h4>Units</h4>
           <p>Explore officers</p>
         </a>
       </div>
@@ -139,8 +139,13 @@ require_once ('visualizationFunctions.php');
       <div class="col-xs-12">
         <div class="row">
           <div class="col-xs-4">
-            <button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#mapsChartsModal">View maps/charts </button>
+            <button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#mapsChartsModal">Home to Army</button>
           </div>
+
+          <div class="col-xs-4">
+            <button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#campsModal">Army Camps</button>
+          </div>
+
           <div class="col-xs-4">
             <button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#allSoldiersJourneyModal">View Collective Journey</button>
           </div>
