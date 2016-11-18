@@ -152,8 +152,6 @@
         <h1 class="text-primary">Residence</h1>
         <div id="residencePlaceMap" style="height: 400px;"></div>
 
-        <h1 class="text-primary">Camps</h1>
-        <div id="campsMap" style="height: 400px;"></div>
 
       </div>
       <div class="modal-footer">
@@ -171,7 +169,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Collective Journey</h4>
+        <h4 class="modal-title">Where and When did BNC Soldiers Journey from Induction to Discharge</h4>
       </div>
       <div class="modal-body">
         <script src="js/modals/allSoldiersJourney.js"></script>
@@ -210,6 +208,7 @@ var soldierLocations = <?php print json_encode($soldierLocations,JSON_PRETTY_PRI
         ?>
       </div>
       <div class="modal-footer">
+        <h5 class="text-primary col-xs-12">*Watch the map change as the timeline moves. This movement illustrates, with a random sample, the movement of all Black North Carolina soldiers from induction to discharge</h5>
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       </div>
     </div>

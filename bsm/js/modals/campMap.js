@@ -294,13 +294,13 @@ var redMarker = L.AwesomeMarkers.icon({
 	var campsMarkers = L.markerClusterGroup();
 //console.log('created layers')
 	$.each(campsPlaces,function (key,mkr){
-		console.log(mkr);
+		//console.log(mkr);
 	    if (key=="" || mkr.id==null || mkr.type==null) return; //if key is blank then it's an invalid marker so we just return
 		//console.log(key+' '+mkr);
 		var cat = mkr.type;
-		console.log(cat);
+		//console.log(cat);
 		var markerType = markerTypes[cat];
-		console.log(markerType);
+		//console.log(markerType);
 		var marker = L.marker(mkr.latlng,{title:key, icon:markerType}).bindPopup(key);//.addTo(campsMap);
 		campsMarkers.addLayer(marker);
 	});

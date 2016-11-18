@@ -233,7 +233,7 @@ console.log('created layers')
 
 
 // set up camps map 
-	campsMap = new L.Map('campsMap');
+	/*campsMap = new L.Map('campsMap');
 
 	// create the tile layer with correct attribution
 	var osmUrl='http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
@@ -305,7 +305,7 @@ var redMarker = L.AwesomeMarkers.icon({
 		campsMarkers.addLayer(marker);
 	});
 
-	campsMap.addLayer(campsMarkers);
+	campsMap.addLayer(campsMarkers);*/
 
 
 

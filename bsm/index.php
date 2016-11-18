@@ -93,7 +93,7 @@ require_once ('visualizationFunctions.php');
       </div>
       <div class="col-sm-6 text-left">
         <h2>Soldier's Journey</h2>
-        <p class="lead">April 6, 1917, changed the lives of 21,609 young African American men from North Carolina The participation of these Black North Carolinians in World War I has been mostly ignored. <strong><span class="text-highlight">Black Soldiers Mattered</span></strong> addresses that void with this interactive site that allows you to explore the entire journey of Black North Carolinians from induction to demobilization, the specific journey of the many different units they served, and the journey of individual soldiers. </p>
+        <p class="lead">April 6, 1917, changed the lives of 21,609 young African American men from North Carolina. The participation of these Black North Carolinians in World War I has been mostly ignored. <strong><span class="text-highlight">Black Soldiers Mattered</span></strong> addresses that void with this interactive site. Explore the journey of Black North Carolinians (BNC)—as units and individual soldiers—from induction to demobilization. </p>
       </div>
     </div>
   </div>
@@ -109,28 +109,28 @@ require_once ('visualizationFunctions.php');
         <a href="#explorePlaces" class="explore-link light-link">
           <i class="fa fa-map" aria-hidden="true"></i>
           <h4>Places</h4>
-          <p>Explore the places where these soldiers lived, were recruited, and trained.</p>
+          <p>Explore where Black North Carolinians (BNC) lived, were inducted, and trained.</p>
         </a>
       </div>
       <div class="col-sm-3 col-xs-6">
         <a href="#exploreSoldiers" class="explore-link light-link">
-          <i class="fa fa-users" aria-hidden="true"></i>
+          <i class="fa fa-globe" aria-hidden="true"></i>
           <h4>Wartime Journey</h4>
-          <p>Explore soldiers' journey</p>
+          <p>Explore when and where BNC soldiers served.</p>
         </a>
       </div>
       <div class="col-sm-3 col-xs-6">
         <a href="#exploreDomesticService" class="explore-link light-link">
-          <i class="fa fa-server" aria-hidden="true"></i>
+          <i class="fa fa-users" aria-hidden="true"></i>
           <h4>Individual Soldiers</h4>
-          <p>Explore soldiers' domestic service.</p>
+          <p>Explore who served and where he served.</p>
         </a>
       </div>
       <div class="col-sm-3 col-xs-6">
         <a href="#exploreOfficers" class="explore-link light-link">
-          <i class="fa fa-users" aria-hidden="true"></i>
+          <i class="fa fa-server" aria-hidden="true"></i>
           <h4>Units</h4>
-          <p>Explore officers</p>
+          <p>Explore domestic and overseas units that BNC soldiers served with.</p>
         </a>
       </div>
     </div>
@@ -138,55 +138,59 @@ require_once ('visualizationFunctions.php');
     <div class="collapse row" id="explorePlaces">
       <div class="col-xs-12">
         <div class="row">
-          <div class="col-xs-4">
+          <div class="col-xs-6">
             <button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#mapsChartsModal">Home to Army</button>
           </div>
 
-          <div class="col-xs-4">
+          <div class="col-xs-6">
             <button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#campsModal">Army Camps</button>
           </div>
 
-          <div class="col-xs-4">
-            <button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#allSoldiersJourneyModal">View Collective Journey</button>
-          </div>
         </div>
       </div>
     </div>
     <div class="collapse row" id="exploreSoldiers">
       <div class="col-xs-12">
         <div class="row">
-          <div class="col-xs-3">
-            <button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#timelinesModal">Entrance status</button>
+          <div class="col-xs-4">
+            <button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#timelinesModal">Journey Begins</button>
           </div>
-          <div class="col-xs-3">
-            <button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#dischargeDateModal">Discharge date</button>
+          <div class="col-xs-4">
+            <button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#dischargeDateModal">Journey Ends</button>
           </div>
-          <div class="col-xs-6">
-            <a class="btn btn-default btn-lg" href="soldiers">Explore individual soldiers</a>
+
+          <div class="col-xs-4">
+            <button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#allSoldiersJourneyModal">View Collective Journey</button>
           </div>
+
+          
         </div>
       </div>
     </div>
     <div class="collapse row" id="exploreDomesticService">
       <div class="col-xs-12">
         <div class="row">
-          <div class="col-xs-4">
-            <button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#overseasStatsModal">View statistics</button>
+          <div class="col-xs-6">
+            <a class="btn btn-default btn-lg" href="soldiers">Explore individual soldiers</a>
           </div>
-          <div class="col-xs-4">
-            <button type="button" class="btn btn-default btn-lg">Domestic journey</button>
+          <div class="col-xs-6">
+            <button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#officersModal">Explore officers</button>
           </div>
-          <div class="col-xs-4">
-            <button type="button" class="btn btn-default btn-lg">Overseas journey</button>
-          </div>
+
+
         </div>
       </div>
     </div>
     <div class="collapse row" id="exploreOfficers">
       <div class="col-xs-12">
-      <div class="row"><div class="col-xs-12">
-        <button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#officersModal">Click here to learn more about the officers.</button>
-      </div></div>
+      <div class="row">
+        <div class="col-xs-6">
+            <button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#overseasStatsModal">Unit Types</button>
+        </div>
+        <div class="col-xs-6">
+            <a class="btn btn-default btn-lg" href="units">Explore individual units</a>
+          </div>
+      </div>
       </div>
     </div>
   </div>
