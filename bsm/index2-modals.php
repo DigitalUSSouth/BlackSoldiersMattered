@@ -107,7 +107,7 @@
 
           var residencePlaces = <?php print file_get_contents('data/residencePlaces.json'); ?>;
 
-          var campsPlaces = <?php print file_get_contents('data/campsPlaces.json'); ?>;
+          var campsPlaces = <?php print file_get_contents('data/camps.json'); ?>;
 
         </script>
         <h1 class="text-primary">Birth</h1>

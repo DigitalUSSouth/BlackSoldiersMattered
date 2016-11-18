@@ -37,3 +37,18 @@ $soldierFieldNames = array (
   "death_cause"=> "Cause of death",
   "death_notified"=> "Date death notified"
 );
+
+global $unitFieldNames;
+$unitFieldNames = array (
+  "id" => "Unit",
+  "service_location" => "Service location",
+  "category" => "Broad unit type",
+  "type" => "Type",
+  "location" => "Camps",
+  "port_embarkation" => "Port of embarkation",
+  "responsibilities" => "Responsibilities",
+  "unusual_experiences" => "Unutual Experiences",
+  "demobilized_date" => "Date demobilized",
+  "demobilized_place" => "Place demobilized",
+  "companies" => "Companies"
+);

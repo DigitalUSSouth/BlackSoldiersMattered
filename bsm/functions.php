@@ -780,8 +780,8 @@ function importCamps(){
 		$camp = array(
 				"id" => $name,
 				"place" => $fields[1],
-				"type" => $fields[2]/*,
-				"latlng" => geocode($fields[1])*/
+				"type" => $fields[2],
+				"latlng" => geocode($fields[1])
 				
 		);
 

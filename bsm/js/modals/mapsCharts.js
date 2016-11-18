@@ -162,7 +162,7 @@ var pie = new d3pie("inductionPlacePie", {
 	var osm = new L.TileLayer(osmUrl, {minZoom: 2, maxZoom: 12, attribution: osmAttrib});
 	var basemapLayer = new L.TileLayer('http://{s}.tiles.mapbox.com/v3/github.map-xgq2svrz/{z}/{x}/{y}.png');
 
-	// start the map in United Sates
+	// start the map in United Sates 
 	birthPlaceMap.setView(new L.LatLng(39.57182, -97.60254),4);
 	birthPlaceMap.addLayer(osm);
 	
@@ -245,24 +245,63 @@ console.log('created layers')
 	campsMap.setView(new L.LatLng(35.131547,-63.4294789),3);
 	campsMap.addLayer(osm);
 
+var markerTypes = {
+	"National Army" : L.AwesomeMarkers.icon({
+        icon: 'map-pin',
+        markerColor: 'red'
+      }),
+	"Regular Army (National Guard)" : L.AwesomeMarkers.icon({
+        icon: 'map-pin',
+        markerColor: 'blue'
+      }),
+	"Port of Embarkation" : L.AwesomeMarkers.icon({
+        icon: 'map-pin',
+        markerColor: 'orange'
+      }),
+	"Embarkation Camp" : L.AwesomeMarkers.icon({
+        icon: 'map-pin',
+        markerColor: 'grey'
+      }),
+	"Students' Army Training Corps School" : L.AwesomeMarkers.icon({
+        icon: 'map-pin',
+        markerColor: 'purple'
+      }),
+	"Regular Army Camps" : L.AwesomeMarkers.icon({
+        icon: 'map-pin',
+        markerColor: 'green'
+      }),
+	"French Ports" : L.AwesomeMarkers.icon({
+        icon: 'map-pin',
+        markerColor: 'black'
+      }),
+	"Miscellaneous" : L.AwesomeMarkers.icon({
+        icon: 'map-pin',
+        markerColor: 'lightblue'
+      })
+  };
 
 var redMarker = L.AwesomeMarkers.icon({
-    icon: 'flag',
+    icon: 'map-pin',
     markerColor: 'red'
   });
 
   var blueMarker = L.AwesomeMarkers.icon({
-    icon: 'flag',
-    markerColor: 'red'
+    icon: 'map-pin',
+    markerColor: 'blue'
   });
 
   //L.marker([34.941196,-87.512291], {icon: redMarker}).addTo(campsMap);	
 	var campsMarkers = L.markerClusterGroup();
 //console.log('created layers')
 	$.each(campsPlaces,function (key,mkr){
-	    if (key=="" || mkr[0]==null || mkr[1]==null) return; //if key is blank then it's an invalid marker so we just return
+		console.log(mkr);
+	    if (key=="" || mkr.id==null || mkr.type==null) return; //if key is blank then it's an invalid marker so we just return
 		//console.log(key+' '+mkr);
-		var marker = L.marker(mkr,{title:key}).bindPopup(key);//.addTo(birthPlaceMap);
+		var cat = mkr.type;
+		console.log(cat);
+		var markerType = markerTypes[cat];
+		console.log(markerType);
+		var marker = L.marker(mkr.latlng,{title:key, icon:markerType}).bindPopup(key);//.addTo(campsMap);
 		campsMarkers.addLayer(marker);
 	});
 
