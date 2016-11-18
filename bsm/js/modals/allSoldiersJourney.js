@@ -30,7 +30,7 @@ $('#allSoldiersJourneyModal').on('shown.bs.modal', function() {
 	//alert ('map init done')
 	//map3.on('click', onMapClick);
 	
-	
+	 
 	
 	soldierLocations['1913-8'].forEach(function (marker){
 		markers.push(marker);
@@ -57,6 +57,7 @@ $('#allSoldiersJourneyModal').on('shown.bs.modal', function() {
     		  markers.push(marker);
     		});
     		heat.setLatLngs(markers);
+            //TODO: display full month name instead of number
             $("#dateDisplay").text(dateIndex);
 	      }
 	    });
