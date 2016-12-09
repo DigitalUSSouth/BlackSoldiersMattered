@@ -7,10 +7,10 @@ require_once "config.php";
   <div class="container">
     <div class="row">
       <div style="height:1em;"></div>
-      <div class="col-sm-3">
+      <div class="col-sm-2">
         <img src="images/logo.png" alt="" />
       </div>
-      <div class="col-sm-9 text-left">
+      <div class="col-sm-8 text-left">
         
         <?php
           if (!isset($_GET['id'])|| trim($_GET['id'])==""){
@@ -59,8 +59,8 @@ require_once "config.php";
       </div><!-- col-sm-9 -->
     </div><!-- row -->
     <div class="row">
-      <div class="col-xs-10 col-xs-offset-1"><h2 class="text-primary">Unit progression</h2></div>
-      <div class="col-xs-10 col-xs-offset-1">
+      <div class="col-xs-8 col-xs-offset-2"><h2 class="text-primary">Unit progression</h2></div>
+      <div class="col-xs-8 col-xs-offset-2">
         <script src="js/unitPage.js"></script>
         <div id="map-buttons">
           <?php
