@@ -21,9 +21,22 @@ require_once "config.php";
           $picPath = $id;
           $picPath = preg_replace('/\.tif/','.jpg',$picPath);
           $soldiers = readJson('data/soldiers.json');
+          $combinedSoldiers = readJson('data/combined-soldiers.json');
+          $collectiveSoldiers = readJson('data/collective-soldiers.json');
           $units = readJson('data/units.json');
           $camps = readJson('data/camps.json');
-          $soldier = $soldiers[$id];
+          if (array_key_exists($id,$soldiers)){
+            $soldier = $soldiers[$id];
+          }
+          else if (array_key_exists($id,$combinedSoldiers)) {
+            $soldier = $combinedSoldiers[$id];
+          }
+          else if (array_key_exists($id,$collectiveSoldiers)){
+            $soldier = $collectiveSoldiers[$id];
+          }
+          else {
+            die();
+          }
           //print '<pre>';var_dump($soldier);print '</pre>';
           print '<h1 class="text-primary">'.$soldier['last_name'].', '.$soldier['first_name'].'</h1>';
           print '<table>';?>
@@ -49,6 +62,7 @@ require_once "config.php";
           $keys[] ="death_notified";
 
           foreach ($keys as $key):
+          if (!array_key_exists($key,$soldier)) continue;
           $val = $soldier[$key];
             if (empty($val)){
                 continue;
@@ -57,7 +71,16 @@ require_once "config.php";
                 <tr><th><big><?php print $soldierFieldNames[$key];?>:&nbsp;</big></th><td>
                 <?php
                 foreach ($val as $unit):?>
-                  <strong>Unit: </strong><a href="unit?id=<?php print $unit[0];?>"><?php print $unit[0];?></a>
+                  <strong>Unit: </strong>
+                  <?php 
+                  $isUnit = true;
+                  if (array_key_exists($unit[0],$units)):?>
+                  <a href="unit?id=<?php print $unit[0];?>"><?php print $unit[0];?></a>
+                  <?php else:
+                  $isUnit = false;?>
+                  <?php print $unit[0];?>
+                  <?php endif; ?>
+                  
                   <strong>Company: </strong><?php print $unit[1];?>
                   <strong>To date: </strong><?php print $unit[2];?>
                   <br>
@@ -75,6 +98,7 @@ require_once "config.php";
         </table>
       </div><!-- col-sm-6 -->
       <div class="col-sm-3">
+        <a href="soldiers">Back to all soldiers</a>
         <div style="height:4em;"></div>
         <!-- Trigger the modal with a button -->
 <a data-toggle="modal" data-target="#cardModal">
@@ -104,6 +128,7 @@ require_once "config.php";
 </div>
       </div><!-- col-sm-3 -->
     </div><!-- row -->
+    <?php if ($isUnit):?>
     <div class="row">
       <div class="col-xs-10 col-xs-offset-1"><h2 class="text-primary">Unit progression</h2></div>
       <div class="col-xs-10 col-xs-offset-1">
@@ -145,6 +170,7 @@ require_once "config.php";
         </div><!-- soldierMap -->
       </div><!-- col-xs-10 -->
     </div><!-- row -->
+    <?php endif;?>
   </div>
 </div>
 <script>

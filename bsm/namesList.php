@@ -5,5 +5,15 @@
     foreach ($soldiers as $soldier):
     if (trim($soldier['id'])=="") continue;?>
 <option value="<?php print $soldier['id']; ?>"><?php print $soldier['last_name'].', '.$soldier['first_name'];?></option>
+    <?php endforeach;
+    $soldiers = readJson('data/combined-soldiers.json');
+    foreach ($soldiers as $soldier):
+    if (trim($soldier['id'])=="") continue;?>
+<option value="<?php print $soldier['id']; ?>"><?php print $soldier['last_name'].', '.$soldier['first_name'];?></option>
+    <?php endforeach;
+    $soldiers = readJson('data/collective-soldiers.json');
+    foreach ($soldiers as $soldier):
+    if (trim($soldier['id'])=="") continue;?>
+<option value="<?php print $soldier['id']; ?>"><?php print $soldier['last_name'].', '.$soldier['first_name'];?></option>
     <?php endforeach;?>
 </datalist>

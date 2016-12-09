@@ -124,6 +124,169 @@ $dischage_date = parseDischargeDateCell($fields[28]);
 }
 
 
+function importCollectiveTabfile(){
+	ini_set("auto_detect_line_endings", true);
+	$file = NULL;
+	
+	try {
+		$file = new SplFileObject("uploads/collective-tabfile-lg.txt");
+	}
+	catch (Exception $error){
+		echo '<div class="jumbotron"><h1 class="text-danger">Unable to open uploaded file. Please try again.</h1><p>'.$error->getMessage().'</p></div>';
+		return;
+	}
+
+ $counter=0;
+ $soldiers = array();
+ try {
+	while($line = $file->fgets()){
+		//discard first 3 lines
+		//TODO: move this outside of loop for performance
+		if ($counter++ < 3) {/*echo $line;*/continue;}
+		
+		//read every other line until the end of file
+		//excel will add double quotes around cells that contain commas
+		//remove double quotes if they are at the edge of a cell
+		//echo $line.'<br>';
+		$line = preg_replace('/\\t"/',"\t", $line);
+		//echo $line.'<br>';
+		$line = preg_replace('/"\\t/',"\t", $line);
+		//print $line.'<br>';
+		
+		$fields = explode("\t",$line);
+
+		//get rid of whitespace around all fields
+		foreach ($fields as &$field){//need to use &$ to pass by reference
+			$field = trim($field);
+		}
+		
+		$names = explode(" ",$fields[1],2);
+		print $fields[1].'<br>';
+		$lastName = trim(preg_replace('/\,/','',$names[0]));
+		$firstName = ($names[1]);
+
+		try{
+		$soldier = array(
+
+				"id"=> preg_replace('/\.txt/','.tif',$fields[0]),
+				"last_name" => $lastName,
+				"first_name" => $names[1],
+				//"residence_county" => $fields[3],
+				"residence_city" => $fields[2],
+				//"induction_status" => $fields[5],
+				//"induction_place" => $fields[6],
+				"induction_date" => $fields[3], /* TODO: test if formatting function works, add try-catch*/
+				//"birth_place" => $fields[8],
+				//"age" => $fields[11], /* TODO: check if this works*/
+				//"birth_date" => formatBirthDate($fields[10]), /* ISO 8601 date format */
+				"unit_progression" => array(
+					array($fields[4],"","")
+				),
+				"discharge_date" => $fields[7],
+				"service_date_start" => $fields[5],
+				"service_date_end" => $fields[6]
+		);
+		}
+		catch (Exception $e) {
+			print '<h1 class="text-danger text-center">Exception: '.$e->getMessage().' - '.$fields[0].'</h1>';
+			continue;
+			//die();
+		}
+		
+		$soldiers [$soldier['id']] = $soldier;	
+	  }
+    }
+	catch (Exception $e) {
+			print '<h1 class="text-danger text-center">Exception: '.$e->getMessage().' </h1>';
+			//die();
+	}
+
+	writeJson('data/collective-soldiers.json',$soldiers);
+
+}
+
+
+function importCombinedTabfile(){
+	ini_set("auto_detect_line_endings", true);
+	$file = NULL;
+	
+	try {
+		$file = new SplFileObject("uploads/combined-tabfile-sm.txt");
+	}
+	catch (Exception $error){
+		echo '<div class="jumbotron"><h1 class="text-danger">Unable to open uploaded file. Please try again.</h1><p>'.$error->getMessage().'</p></div>';
+		return;
+	}
+
+ $counter=0;
+ $soldiers = array();
+ try {
+	while($line = $file->fgets()){
+		//discard first 3 lines
+		//TODO: move this outside of loop for performance
+		if ($counter++ < 3) {/*echo $line;*/continue;}
+		
+		//read every other line until the end of file
+		//excel will add double quotes around cells that contain commas
+		//remove double quotes if they are at the edge of a cell
+		//echo $line.'<br>';
+		$line = preg_replace('/\\t"/',"\t", $line);
+		//echo $line.'<br>';
+		$line = preg_replace('/"\\t/',"\t", $line);
+		//print $line.'<br>';
+		
+		$fields = explode("\t",$line);
+
+		//get rid of whitespace around all fields
+		foreach ($fields as &$field){//need to use &$ to pass by reference
+			$field = trim($field);
+		}
+		
+
+
+		try{
+		$soldier = array(
+
+				"id"=> preg_replace('/\.txt/','.tif',$fields[0]),
+				"last_name" => $fields[1],
+				"first_name" => $fields[2],
+				//"residence_county" => $fields[3],
+				"residence_city" => $fields[3],
+				//"induction_status" => $fields[5],
+				//"induction_place" => $fields[6],
+				"induction_date" => $fields[4], /* TODO: test if formatting function works, add try-catch*/
+				//"birth_place" => $fields[8],
+				//"age" => $fields[11], /* TODO: check if this works*/
+				//"birth_date" => formatBirthDate($fields[10]), /* ISO 8601 date format */
+				"unit_progression" => array(
+					array($fields[5],"","")
+				),
+				"discharge_date" => $fields[8],
+				"service_date_start" => $fields[6],
+				"service_date_end" => $fields[7]
+		);
+		}
+		catch (Exception $e) {
+			print '<h1 class="text-danger text-center">Exception: '.$e->getMessage().' - '.$fields[0].'</h1>';
+			continue;
+			//die();
+		}
+		
+		$soldiers [$soldier['id']] = $soldier;	
+	  }
+    }
+	catch (Exception $e) {
+			print '<h1 class="text-danger text-center">Exception: '.$e->getMessage().' </h1>';
+			//die();
+	}
+
+	writeJson('data/combined-soldiers.json',$soldiers);
+
+}
+
+
+
+
 
 /**
  * computes stats for all soldiers

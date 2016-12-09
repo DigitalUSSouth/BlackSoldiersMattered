@@ -21,14 +21,24 @@ require_once "header-new.php";
       <div class="col-sm-8 text-left">
         <?php
           $soldiers = readJson('data/soldiers.json');
+          $combinedSoldiers = readJson('data/combined-soldiers.json');
+          $collectiveSoldiers = readJson('data/collective-soldiers.json');
           //reset($soldiers);
           //$key = key($soldiers);
           //$soldier = $soldiers[$key];
           //print  ($soldier);
-          usort($soldiers, function($a, $b)
+          /*usort($soldiers, function($a, $b)
 {
     return strcasecmp($a['last_name'].$a['first_name'], $b['last_name'].$b['first_name']);
 });
+          usort($combinedSoldiers, function($a, $b)
+{
+    return strcasecmp($a['last_name'].$a['first_name'], $b['last_name'].$b['first_name']);
+});
+          usort($collectiveSoldiers, function($a, $b)
+{
+    return strcasecmp($a['last_name'].$a['first_name'], $b['last_name'].$b['first_name']);
+});*/
 //var_dump($soldiers);
           $azArray = array();
           foreach ($soldiers as $soldier):
@@ -44,16 +54,46 @@ require_once "header-new.php";
             $azArray[$currentLetter][] = $soldier;
             //break;
           endforeach;
-          
-          foreach ($azArray as $key=>$value):
-            continue;
-          ?>
-            <a href="#<?php print $key?>"><?php print $key;?></a>&nbsp;
-          <?php
+          foreach ($combinedSoldiers as $soldier):
+            if (trim($soldier['last_name'])==''){
+                //empty so we skip
+                continue;
+            }
+            //print $soldier['last_name'].'<br>';
+            $currentLetter = strtoupper($soldier['last_name'][0]);
+            if (!array_key_exists($currentLetter,$azArray)){
+                //if needed we add letter to array
+                $azArray[$currentLetter] = array();
+            }
+            $azArray[$currentLetter][] = $soldier;
+            //break;
           endforeach;
+          foreach ($collectiveSoldiers as $soldier):
+            if (trim($soldier['last_name'])==''){
+                //empty so we skip
+                continue;
+            }
+            $currentLetter = strtoupper($soldier['last_name'][0]);
+            if (!array_key_exists($currentLetter,$azArray)){
+                //if needed we add letter to array
+                $azArray[$currentLetter] = array();
+            }
+            $azArray[$currentLetter][] = $soldier;
+            //break;
+          endforeach;
+          
+          
+
+          ksort($azArray);
+
 
           $counter = 0;
-          foreach($azArray as $letter => $letterSoldiers):?>
+          foreach($azArray as $letter => $letterSoldiers):
+            usort($letterSoldiers, function($a, $b)
+{
+    return strcasecmp($a['last_name'].$a['first_name'], $b['last_name'].$b['first_name']);
+});
+          ?>
             <div class="panel-group">
               <div class="panel panel-default">
                 <div class="panel-heading">
@@ -63,7 +103,10 @@ require_once "header-new.php";
                 </div>
                 <div id="collapse<?php print $counter;?>" class="panel-collapse collapse">
                   <div class="panel-body">
-                    <?php foreach ($letterSoldiers as $soldier):?>
+                    <?php 
+                    
+                    
+                    foreach ($letterSoldiers as $soldier):?>
                       <a href="soldier?id=<?php print $soldier['id']?>"><?php print $soldier['last_name'].', '.$soldier['first_name'];?></a><br>
                     <?php
                     endforeach;?>
