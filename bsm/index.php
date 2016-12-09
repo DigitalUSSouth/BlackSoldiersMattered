@@ -79,7 +79,7 @@ require_once ('visualizationFunctions.php');
       <h2><em><strong>Black North Carolinians as Soldiers in the First World War: A Microcosm of the National African American Experience</em></strong></h2>
       <h3>By Janet G. Hudson</h3>
     </div>
-    <a href="#about" class="btn btn-default btn-lg">Explore</a>
+    <div style="height:4em;"></div>
   </div>
 </div>
 <!-- /first section -->
