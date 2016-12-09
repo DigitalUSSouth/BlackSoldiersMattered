@@ -301,11 +301,11 @@ var redMarker = L.AwesomeMarkers.icon({
 		//console.log(cat);
 		var markerType = markerTypes[cat];
 		//console.log(markerType);
-		var marker = L.marker(mkr.latlng,{title:key, icon:markerType}).bindPopup(key);//.addTo(campsMap);
+		var marker = L.marker(mkr.latlng,{title:key, icon:markerType}).bindPopup(key).addTo(campsMap);
 		campsMarkers.addLayer(marker);
 	});
 
-	campsMap.addLayer(campsMarkers);
+	//campsMap.addLayer(campsMarkers);
 
 
 
