@@ -18,6 +18,8 @@ require_once "config.php";
               die();
           }
           $id = $_GET['id'];
+          $picPath = $id;
+          preg_replace('/\.tif/','/\.jpg/',$picPath);
           $soldiers = readJson('data/soldiers.json');
           $units = readJson('data/units.json');
           $camps = readJson('data/camps.json');
@@ -53,7 +55,7 @@ require_once "config.php";
       <div class="col-sm-3">
         <!-- Trigger the modal with a button -->
 <a data-toggle="modal" data-target="#cardModal">
-  <img src="<?php print ROOT_FOLDER.'data/bsm-imgs/'.$_GET['id']; ?>" class="img-responsive" />
+  <img src="<?php print ROOT_FOLDER.'data/bsm-imgs/'.$picPath; ?>" class="img-responsive" />
 </a>
 
 <!-- Modal -->
@@ -67,7 +69,7 @@ require_once "config.php";
         <h4 class="modal-title">Service card</h4>
       </div>
       <div class="modal-body">
-        <img src="<?php print ROOT_FOLDER.'data/bsm-imgs/'.$_GET['id']; ?>" class="img-responsive" />
+        <img src="<?php print ROOT_FOLDER.'data/bsm-imgs/'.$picPath; ?>" class="img-responsive" />
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
