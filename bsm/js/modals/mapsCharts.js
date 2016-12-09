@@ -162,9 +162,13 @@ var pie = new d3pie("inductionPlacePie", {
 	var osm = new L.TileLayer(osmUrl, {minZoom: 2, maxZoom: 12, attribution: osmAttrib});
 	var basemapLayer = new L.TileLayer('http://{s}.tiles.mapbox.com/v3/github.map-xgq2svrz/{z}/{x}/{y}.png');
 
+// https: also suppported.
+var Esri_WorldTopoMap = L.tileLayer('http://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}', {
+	attribution: 'Tiles &copy; Esri &mdash; Esri, DeLorme, NAVTEQ, TomTom, Intermap, iPC, USGS, FAO, NPS, NRCAN, GeoBase, Kadaster NL, Ordnance Survey, Esri Japan, METI, Esri China (Hong Kong), and the GIS User Community'
+});
 	// start the map in United Sates 
 	birthPlaceMap.setView(new L.LatLng(39.57182, -97.60254),4);
-	birthPlaceMap.addLayer(osm);
+	birthPlaceMap.addLayer(Esri_WorldTopoMap);
 	
 	var birthMarkers = L.markerClusterGroup();
 console.log('created layers')
@@ -188,9 +192,14 @@ console.log('created layers')
 	var osm = new L.TileLayer(osmUrl, {minZoom: 2, maxZoom: 12, attribution: osmAttrib});
 	var basemapLayer = new L.TileLayer('http://{s}.tiles.mapbox.com/v3/github.map-xgq2svrz/{z}/{x}/{y}.png');
 
+
+// https: also suppported.
+var Esri_WorldTopoMap = L.tileLayer('http://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}', {
+	attribution: 'Tiles &copy; Esri &mdash; Esri, DeLorme, NAVTEQ, TomTom, Intermap, iPC, USGS, FAO, NPS, NRCAN, GeoBase, Kadaster NL, Ordnance Survey, Esri Japan, METI, Esri China (Hong Kong), and the GIS User Community'
+});
 	// start the map in United Sates
 	inductionPlaceMap.setView(new L.LatLng(39.57182, -97.60254),4);
-	inductionPlaceMap.addLayer(osm);
+	inductionPlaceMap.addLayer(Esri_WorldTopoMap);
 	
 	var inductionMarkers = L.markerClusterGroup();
 console.log('created layers')
@@ -215,9 +224,14 @@ console.log('created layers')
 	var osm = new L.TileLayer(osmUrl, {minZoom: 2, maxZoom: 12, attribution: osmAttrib});
 	var basemapLayer = new L.TileLayer('http://{s}.tiles.mapbox.com/v3/github.map-xgq2svrz/{z}/{x}/{y}.png');
 
+// https: also suppported.
+var Esri_WorldTopoMap = L.tileLayer('http://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}', {
+	attribution: 'Tiles &copy; Esri &mdash; Esri, DeLorme, NAVTEQ, TomTom, Intermap, iPC, USGS, FAO, NPS, NRCAN, GeoBase, Kadaster NL, Ordnance Survey, Esri Japan, METI, Esri China (Hong Kong), and the GIS User Community'
+});
+
 	// start the map in United Sates
 	residencePlaceMap.setView(new L.LatLng(35.131547,-79.4294789),7);
-	residencePlaceMap.addLayer(osm);
+	residencePlaceMap.addLayer(Esri_WorldTopoMap);
 	
 	var residenceMarkers = L.markerClusterGroup();
 console.log('created layers')

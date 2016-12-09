@@ -7,7 +7,7 @@ require_once 'functions.php';
 <pre>
 
 <?php 
-importCollectiveTabfile();
+//importCollectiveTabfile();
 //importCombinedTabfile();
 //importRandomSample();
 //createDischargeDateCsv();
