@@ -19,7 +19,7 @@ require_once "config.php";
           }
           $id = $_GET['id'];
           $picPath = $id;
-          preg_replace('/\.tif/','/\.jpg/',$picPath);
+          $picPath = preg_replace('/\.tif/','.jpg',$picPath);
           $soldiers = readJson('data/soldiers.json');
           $units = readJson('data/units.json');
           $camps = readJson('data/camps.json');
