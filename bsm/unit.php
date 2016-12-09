@@ -30,7 +30,7 @@ require_once "config.php";
                 continue;
             }
             if ($key=='location'):?>
-                <tr><th><big><?php print $unitFieldNames[$key];?>:&nbsp;</big></th><td>
+                <tr><th><big><?php print $unitFieldNames[$key];?>:&nbsp;&nbsp;&nbsp;</big></th><td>
                 <?php
                 foreach ($val as $camp):?>
                   <strong>Camp: </strong><?php print $camp['id'];?>
@@ -50,7 +50,7 @@ require_once "config.php";
             <?php
             else:
             ?>
-            <tr><th><big><?php print $unitFieldNames[$key];?>:&nbsp;</big></th><td><?php print $val;?></td></tr>
+            <tr><th><big><?php print $unitFieldNames[$key];?>:&nbsp;&nbsp;&nbsp;</big></th><td><?php print $val;?></td></tr>
           <?php
             endif;
           endforeach;
