@@ -41,6 +41,10 @@ require_once ('functions.php');
     <link rel="stylesheet" href="leaflet-markers/leaflet.awesome-markers.css">
     <script src="leaflet-markers/leaflet.awesome-markers.js"></script>
 
+    <link rel="stylesheet" href="<?php print ROOT_FOLDER;?>css/awesomplete.css">
+    <script src="<?php print ROOT_FOLDER;?>js/awesomplete.js"></script>
+
+
 
 </head>
 <body data-spy="scroll" data-target=".navbar" data-offset="65">

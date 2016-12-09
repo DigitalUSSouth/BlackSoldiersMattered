@@ -5,6 +5,16 @@ require_once "header-new.php";
 <div class="pad-section">
   <div class="container">
     <div class="row">
+      <div style="height:1em;"></div>
+      <div class="col-xs-12">
+        <script src="js/soldiers.js"></script>
+        <div class="col-xs-3 pull-right">
+              <span></span>
+              <input id="nameInput" class="form-control awesomplete pull-right" placeholder="Type a name" list="names-list" name="contributor[]">
+              <?php require ("data/namesList.php"); ?>
+              </div>
+      </div>
+
       <div class="col-sm-4">
         <img src="images/logo.png" alt="" />
       </div>

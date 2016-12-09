@@ -26,8 +26,30 @@ require_once "config.php";
           $soldier = $soldiers[$id];
           //print '<pre>';var_dump($soldier);print '</pre>';
           print '<h1 class="text-primary">'.$soldier['last_name'].', '.$soldier['first_name'].'</h1>';
-          print '<table>';
-          foreach ($soldier as $key=>$val):
+          print '<table>';?>
+          <?php
+          $keys[] ='last_name';
+          $keys[] ='first_name';
+          $keys[] ='residence_county';
+          $keys[] ='residence_city';
+          $keys[] ='birth_place';
+          $keys[] ='age';
+          $keys[] ='induction_status';
+          $keys[] ='induction_place';
+          $keys[] ='induction_date';
+          $keys[] ='unit_progression';
+          $keys[] ='engagements';
+          $keys[] ="service_date_start";
+          $keys[] ="service_date_end";
+          $keys[] = "discharge_date";
+          $keys[] ="discharge_date_notes";
+          $keys[] ="wounded";
+          $keys[] ="death_date";
+          $keys[] ="death_cause";
+          $keys[] ="death_notified";
+
+          foreach ($keys as $key):
+          $val = $soldier[$key];
             if (empty($val)){
                 continue;
             }
@@ -35,7 +57,7 @@ require_once "config.php";
                 <tr><th><big><?php print $soldierFieldNames[$key];?>:&nbsp;</big></th><td>
                 <?php
                 foreach ($val as $unit):?>
-                  <strong>Unit: </strong><?php print $unit[0];?>
+                  <strong>Unit: </strong><a href="unit?id=<?php print $unit[0];?>"><?php print $unit[0];?></a>
                   <strong>Company: </strong><?php print $unit[1];?>
                   <strong>To date: </strong><?php print $unit[2];?>
                   <br>
@@ -53,8 +75,10 @@ require_once "config.php";
         </table>
       </div><!-- col-sm-6 -->
       <div class="col-sm-3">
+        <div style="height:4em;"></div>
         <!-- Trigger the modal with a button -->
 <a data-toggle="modal" data-target="#cardModal">
+  <h4>View soldier service card</h4>
   <img src="<?php print ROOT_FOLDER.'data/bsm-imgs/'.$picPath; ?>" class="img-responsive" />
 </a>
 
