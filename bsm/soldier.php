@@ -3,9 +3,10 @@ $pageTitle = 'Soldier';
 require_once "header-new.php";
 require_once "config.php";
 ?>
-<div id="about" class="pad-section">
+<div class="pad-section">
   <div class="container">
     <div class="row">
+      <div style="height:1em;"></div>
       <div class="col-sm-3">
         <img src="images/logo.png" alt="" />
       </div>

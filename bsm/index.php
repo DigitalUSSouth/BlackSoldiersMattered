@@ -74,9 +74,9 @@ require_once ('visualizationFunctions.php');
   <!-- first section - Home -->
 <div id="home" class="home">
   <div class="text-vcenter">
-    <div class="panel">
-      <h1>Black Soldiers Mattered</h1>
-      <h2 class="text-highlight"><em><strong>Black North Carolinians as Soldiers in the First World War: A Microcosm of the National African American Experience</em></strong></h2>
+    <div class="panel background-home-primary">
+      <h1 class="text-highlight">Black Soldiers Mattered</h1>
+      <h2><em><strong>Black North Carolinians as Soldiers in the First World War: A Microcosm of the National African American Experience</em></strong></h2>
       <h3>By Janet G. Hudson</h3>
     </div>
     <a href="#about" class="btn btn-default btn-lg">Explore</a>
@@ -92,7 +92,7 @@ require_once ('visualizationFunctions.php');
         <img src="images/logo.png" alt="" />
       </div>
       <div class="col-sm-6 text-left">
-        <h2>Soldier's Journey</h2>
+        <h2 class="text-header">Soldier's Journey</h2>
         <p class="lead">April 6, 1917, changed the lives of 21,609 young African American men from North Carolina. The participation of these Black North Carolinians in World War I has been mostly ignored. <strong><span class="text-highlight">Black Soldiers Mattered</span></strong> addresses that void with this interactive site. Explore the journey of Black North Carolinians (BNC)—as units and individual soldiers—from induction to demobilization. </p>
       </div>
     </div>
@@ -103,96 +103,92 @@ require_once ('visualizationFunctions.php');
   <!-- third section - explore -->
 <div id="explore" class="pad-section">
   <div class="container">
-    <h2 class="text-center">Explore</h2> <hr />
+    <h2 class="text-center text-highlight">Explore</h2> <hr />
     <div class="row text-center">
       <div class="col-sm-3 col-xs-6">
-        <a href="#explorePlaces" class="explore-link light-link">
-          <i class="fa fa-map" aria-hidden="true"></i>
-          <h4>Places</h4>
-          <p>Explore where Black North Carolinians (BNC) lived, were inducted, and trained.</p>
+        <a href="#explorePlaces" class="explore-link text-primary-dark">
+          <!--<i class="fa fa-map" aria-hidden="true"></i>-->
+          <img src="<?php print ROOT_FOLDER;?>images/map.jpg" class="ia">
+          <div class="background-dark">
+            <h4>Places</h4>
+            <p class="text-white">Explore where Black North Carolinians (BNC) lived, were inducted, and trained.</p>
+          </div>
         </a>
       </div>
       <div class="col-sm-3 col-xs-6">
-        <a href="#exploreSoldiers" class="explore-link light-link">
-          <i class="fa fa-globe" aria-hidden="true"></i>
+        <a href="#exploreSoldiers" class="explore-link text-primary-dark">
+          <!--<i class="fa fa-globe" aria-hidden="true"></i>-->
+          <img src="<?php print ROOT_FOLDER;?>images/world.jpg" class="ia">
+          <div class="background-dark">
           <h4>Wartime Journey</h4>
-          <p>Explore when and where BNC soldiers served.</p>
+          <p class="text-white">Explore when and where BNC soldiers served.</p>
+          </div>
         </a>
       </div>
       <div class="col-sm-3 col-xs-6">
-        <a href="#exploreDomesticService" class="explore-link light-link">
-          <i class="fa fa-users" aria-hidden="true"></i>
+        <a href="#exploreDomesticService" class="explore-link text-primary-dark">
+          <!--<i class="fa fa-users" aria-hidden="true"></i>-->
+          <img src="<?php print ROOT_FOLDER;?>images/soldier.jpg" class="ia">
+          <div class="background-dark">
           <h4>Individual Soldiers</h4>
-          <p>Explore who served and where he served.</p>
+          <p class="text-white">Explore who served and where he served.</p>
+          </div>
         </a>
       </div>
       <div class="col-sm-3 col-xs-6">
-        <a href="#exploreOfficers" class="explore-link light-link">
-          <i class="fa fa-server" aria-hidden="true"></i>
+        <a href="#exploreOfficers" class="explore-link text-primary-dark">
+          <!--<i class="fa fa-server" aria-hidden="true"></i>-->
+          <img src="<?php print ROOT_FOLDER;?>images/92nd.jpg" class="ia">
+          <div class="background-dark">
           <h4>Units</h4>
-          <p>Explore domestic and overseas units that BNC soldiers served with.</p>
+          <p class="text-white">Explore domestic and overseas units that BNC soldiers served with.</p>
+          </div>
         </a>
       </div>
     </div>
     <!-- collapsible panels -->
-    <div class="collapse row" id="explorePlaces">
-      <div class="col-xs-12">
-        <div class="row">
-          <div class="col-xs-6">
-            <button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#mapsChartsModal">Home to Army</button>
+  <div class="row">
+    <div class="collapse col-sm-3 col-xs-6" id="explorePlaces">
+          <div class="col-xs-12">
+            <button type="button" class="btn btn-default" data-toggle="modal" data-target="#mapsChartsModal">Home to Army</button>
           </div>
 
-          <div class="col-xs-6">
-            <button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#campsModal">Army Camps</button>
+          <div class="col-xs-12">
+            <button type="button" class="btn btn-default" data-toggle="modal" data-target="#campsModal">Army Camps</button>
           </div>
-
-        </div>
-      </div>
     </div>
-    <div class="collapse row" id="exploreSoldiers">
-      <div class="col-xs-12">
-        <div class="row">
-          <div class="col-xs-4">
-            <button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#timelinesModal">Journey Begins</button>
+  
+    <div class="collapse col-sm-3 col-sm-offset-3 col-xs-6 col-xs-offset-6" id="exploreSoldiers">
+          <div class="col-xs-12">
+            <button type="button" class="btn btn-default" data-toggle="modal" data-target="#timelinesModal">Journey Begins</button>
           </div>
-          <div class="col-xs-4">
-            <button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#dischargeDateModal">Journey Ends</button>
-          </div>
-
-          <div class="col-xs-4">
-            <button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#allSoldiersJourneyModal">View Collective Journey</button>
+          <div class="col-xs-12">
+            <button type="button" class="btn btn-default" data-toggle="modal" data-target="#dischargeDateModal">Journey Ends</button>
           </div>
 
-          
-        </div>
-      </div>
+          <div class="col-xs-12">
+            <button type="button" class="btn btn-default" data-toggle="modal" data-target="#allSoldiersJourneyModal">View Collective Journey</button>
+          </div>
     </div>
-    <div class="collapse row" id="exploreDomesticService">
-      <div class="col-xs-12">
-        <div class="row">
-          <div class="col-xs-6">
-            <a class="btn btn-default btn-lg" href="soldiers">Explore individual soldiers</a>
+    <div class="collapse col-sm-3 col-sm-offset-6 col-xs-6" id="exploreDomesticService">
+          <div class="col-xs-12">
+            <a class="btn btn-default" href="soldiers">Individual soldiers</a>
           </div>
-          <div class="col-xs-6">
-            <button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#officersModal">Explore officers</button>
+          <div class="col-xs-12">
+            <button type="button" class="btn btn-default" data-toggle="modal" data-target="#officersModal">Officers</button>
           </div>
-
-
-        </div>
-      </div>
     </div>
-    <div class="collapse row" id="exploreOfficers">
-      <div class="col-xs-12">
-      <div class="row">
-        <div class="col-xs-6">
-            <button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#overseasStatsModal">Unit Types</button>
+    <div class="collapse col-sm-3 col-sm-offset-9 col-xs-6 col-xs-offset-6" id="exploreOfficers">
+        <div class="col-xs-12">
+            <button type="button" class="btn btn-default" data-toggle="modal" data-target="#overseasStatsModal">Unit Types</button>
         </div>
-        <div class="col-xs-6">
-            <a class="btn btn-default btn-lg" href="units">Explore individual units</a>
+        <div class="col-xs-12">
+            <a class="btn btn-default" href="units">Explore individual units</a>
           </div>
-      </div>
-      </div>
     </div>
+
+  </div>
+
   </div>
 </div>
 <!-- /third section -->
@@ -202,18 +198,18 @@ require_once ('visualizationFunctions.php');
   <div class="container">
     <div class="row">
       <div class="col-sm-6">
-        <div class="panel panel-default">
+        <div class="panel background-home-primary">
           <div class="panel-heading">
-            <h2 class="panel-title">National Service Shaped by Racism</h2>
+            <h3 class="text-primary">National Service Shaped by Racism</h3>
           </div>
           <div class="panel-body lead">Military preparations for war conformed to the rules of segregated America, influencing all African American soldiers’ wartime experiences. Yet even within these limitations, Black North Carolinians made their mark. They were among the first American combat soldiers, black or white, to arrive in Europe, among the early stevedore volunteers, among the recipients of military awards and honors, and among the last returning soldiers who restored the killing fields of France for human habitation.
           </div>
         </div>
       </div>
       <div class="col-sm-6">
-        <div class="panel panel-default">
+        <div class="panel background-home-primary">
           <div class="panel-heading">
-            <h2 class="panel-title">Overseas v. Domestic Service</h2>
+            <h3 class="text-primary">Overseas v. Domestic Service</h3>
           </div>
           <div class="panel-body lead">
             Approximately half of Black North Carolinians experienced the war in France and the other half in the US. Of those who sailed abroad, approximately 20% served as combat soldiers in arms. North Carolinians served in both segregated combat divisions—92nd and 93rd. The other 80% in France served as laboring soldiers in five different types of units. The half assigned to domestic units met a wide variety of needs in a host of specialized labor units.

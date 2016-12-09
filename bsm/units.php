@@ -2,13 +2,15 @@
 $pageTitle = 'Soldiers';
 require_once "header-new.php";
 ?>
-<div id="about" class="pad-section">
+<div class="pad-section">
   <div class="container">
     <div class="row">
-      <div class="col-sm-1">
+      <div style="height:1em;"></div>
+      <div class="col-sm-4">
         <img src="images/logo.png" alt="" />
       </div>
-      <div class="col-sm-11 text-left">
+      <div class="col-sm-8 text-left">
+        
         <?php
           $units = readJson('data/units.json');
           //reset($units);
@@ -41,16 +43,32 @@ require_once "header-new.php";
             <a href="#<?php print $key?>"><?php print $key;?></a>&nbsp;
           <?php
           endforeach;
-
+          $counter=0;
           foreach($azArray as $letter => $letterUnits):?>
-            <div class="col-xs-3">
-              <h2 id="<?php print $letter; ?>"><?php print ($letter=="")?"Uncategorized":$letter;?></h2>
-              <?php foreach ($letterUnits as $unit):?>
-                <a href="unit?id=<?php print $unit['id']?>"><?php print $unit['id'];?></a><br>
-              <?php
-              endforeach;?>
+            <div class="panel-group">
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h4 class="panel-title">
+                    <a data-toggle="collapse" href="#collapse<?php print $counter;?>">
+  <?php print ($letter=="")?"Uncategorized":$letter;?>
+                      
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapse<?php print $counter;?>" class="panel-collapse collapse">
+                  <div class="panel-body">
+                    <?php foreach ($letterUnits as $unit):?>
+                      <a href="unit?id=<?php print $unit['id']?>"><?php print $unit['id'];?></a><br>
+                    <?php
+                    endforeach;?>
+                  </div>
+                  <!--<div class="panel-footer">Panel Footer</div>-->
+                </div>
+              </div>
             </div>
+
             <?php
+            $counter++;
           endforeach
           //print '<pre>';var_dump($azArray);print '</pre>';
         ?>
