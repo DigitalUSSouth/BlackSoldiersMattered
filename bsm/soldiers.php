@@ -11,7 +11,7 @@ require_once "header-new.php";
         <div class="col-xs-3 pull-right">
               <span></span>
               <input id="nameInput" class="form-control awesomplete pull-right" placeholder="Type a name" list="names-list" name="contributor[]">
-              <?php require ("data/namesList.php"); ?>
+              <?php require ("namesList.php"); ?>
               </div>
       </div>
 
