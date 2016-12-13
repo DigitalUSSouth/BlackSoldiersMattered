@@ -134,7 +134,7 @@ hr {
   /*line-height: 200px;*/
   text-align: center;
   vertical-align: middle;
-  width: 200px;
+  /*width: 15em;*/
 }
 
 #explore .background-dark{
@@ -142,7 +142,7 @@ hr {
   border: 2px solid #eb9e50;
   border-top: none;
   /*border-radius: .5em;*/
-  width: 200px;
+  /*width: 200px;*/
   height: 160px !important;
   margin: auto auto;
 }
@@ -158,7 +158,7 @@ hr {
 }
 
 #explore .collapse .col-xs-12 .btn{
-  width: 95%;
+  width: 100%;
   margin-bottom: .5em;
   border: 1px solid #eb9e50;
   color: #eb9e50;
@@ -199,4 +199,9 @@ footer {
 /*styles for maps*/
 #allSoldiersJourneyMap {
   height: 450px;
+}
+
+.scroll-y {
+  overflow-y:scroll;
+  height: 20em;
 }

@@ -10,7 +10,7 @@ require_once "config.php";
       <div class="col-sm-2">
         <img src="images/logo.png" alt="" />
       </div>
-      <div class="col-sm-8 text-left">
+      <div class="col-sm-6 text-left">
         
         <?php
           if (!isset($_GET['id'])|| trim($_GET['id'])==""){
@@ -18,7 +18,6 @@ require_once "config.php";
               die();
           }
           $id = $_GET['id'];
-          $units = readJson('data/units.json');
           $units = readJson('data/units.json');
           $camps = readJson('data/camps.json');
           $unit = $units[$id];
@@ -56,11 +55,35 @@ require_once "config.php";
           endforeach;
         ?>
         </table>
-      </div><!-- col-sm-9 -->
+      </div><!-- col-sm-6 -->
+      <div class="col-sm-4">
+        <h4 class="text-primary">Soldiers in this Unit:</h4>
+        <div class="col-xs-12 scroll-y">
+          <?php
+            $soldiers = readJson('data/soldiers.json');
+            $nSoldiers = array();
+            foreach ($soldiers as $soldier){
+              foreach ($soldier['unit_progression'] as $sUnit){
+                if ($sUnit[0]==$id){
+                  $nSoldiers[] = $soldier;
+                }
+              }
+            }
+            usort($nSoldiers, function($a, $b)
+{
+    return strcasecmp($a['last_name'].$a['first_name'], $b['last_name'].$b['first_name']);
+});
+            foreach ($nSoldiers as $soldier):?>  
+                  <a href="soldier?id=<?php print $soldier['id'];?>"><?php print $soldier['last_name'].', '.$soldier['first_name'];?></a><br>
+            <?php endforeach;?>
+        </div>
+        <div class="col-xs-12">...</div>
+        
+      </div><!-- col-sm-4-->
     </div><!-- row -->
     <div class="row">
-      <div class="col-xs-8 col-xs-offset-2"><h2 class="text-primary">Unit progression</h2></div>
-      <div class="col-xs-8 col-xs-offset-2">
+      <div class="col-xs-10 col-xs-offset-2"><h2 class="text-primary">Unit progression</h2></div>
+      <div class="col-xs-10 col-xs-offset-2">
         <script src="js/unitPage.js"></script>
         <div id="map-buttons">
           <?php

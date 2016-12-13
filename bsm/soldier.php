@@ -7,10 +7,10 @@ require_once "config.php";
   <div class="container">
     <div class="row">
       <div style="height:1em;"></div>
-      <div class="col-sm-3">
+      <div class="col-sm-2">
         <img src="images/logo.png" alt="" />
       </div>
-      <div class="col-sm-6 text-left">
+      <div class="col-sm-7 text-left">
         
         <?php
           if (!isset($_GET['id'])|| trim($_GET['id'])==""){
@@ -130,8 +130,8 @@ require_once "config.php";
     </div><!-- row -->
     <?php if ($isUnit):?>
     <div class="row">
-      <div class="col-xs-10 col-xs-offset-1"><h2 class="text-primary">Unit progression</h2></div>
-      <div class="col-xs-10 col-xs-offset-1">
+      <div class="col-xs-10 col-xs-offset-2"><h2 class="text-primary">Unit progression</h2></div>
+      <div class="col-xs-10 col-xs-offset-2">
         <script src="js/soldierPage.js"></script>
         <div id="map-buttons">
           <?php
