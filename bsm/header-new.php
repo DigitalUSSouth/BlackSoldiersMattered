@@ -66,10 +66,10 @@ require_once ('functions.php');
     <div class="collapse navbar-collapse" id="navbar-collapse-main">
       <ul class="nav navbar-nav navbar-right">
         <li><a href="index#home">Start</a></li>
-        <li><a href="index#about">Overview</a></li>
+        <li><a href="index#about">Intro</a></li>
         <li><a href="index#explore">Explore</a></li>
-        <li><a href="index#information">Information</a></li>
-        <li><a href="#information">About</a></li>
+        <li><a href="index#information">Overview</a></li>
+        <li><a href="about">About</a></li>
         <li><a href="index#contact">Contact</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->

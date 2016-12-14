@@ -36,6 +36,7 @@ function importRandomSample(){
  $soldiers = array();
  try {
 	while($line = $file->fgets()){
+		$isValid = true;
 		//discard first 4 lines
 		//TODO: move this outside of loop for performance
 		if ($counter++ < 4) {/*echo $line;*/continue;}
@@ -63,6 +64,7 @@ $dischage_date = parseDischargeDateCell($fields[28]);
 		}
 		catch (Exception $e) {
 			print '<h1 class="text-danger text-center">Unable to create units object: '.$e->getMessage().' - '.$fields[0].'</h1>';
+			$isValid = false;
 			//die();
 		}
 
@@ -102,7 +104,8 @@ $dischage_date = parseDischargeDateCell($fields[28]);
 				"wounded" => $fields[32],
 				"death_date" => $fields[33],
 				"death_cause" => $fields[34],
-				"death_notified" => $fields[35]
+				"death_notified" => $fields[35],
+				"isValid" => $isValid
 		);
 		}
 		catch (Exception $e) {
@@ -580,7 +583,8 @@ set_time_limit(600);
 				"Base Section 4" => [49.49437,0.107929],
 				"Base Section 5" => [48.390394,-4.486076],
 				"Base Section 6" => [43.296482,5.36978]);
-				$latlng = $franceLocations["Base Section $overseasCounter"];
+				//$latlng = $franceLocations["Base Section $overseasCounter"];
+				$latlng = $campsPlaces[$camp];
 				$overseasCounter++;
 				if($overseasCounter>6){
 					$overseasCounter=1;
@@ -816,7 +820,7 @@ function writeJson($filename,$object){
 	 //initial unit
 	 $unit[] = $unitFields[1];//unit name
 	 $unit[] = $unitFields[0];//company
-	 $unit[] = formatDate($unitFields[2]);//transfer date
+	 $unit[] = ($unitFields[2]=="unknown")? "unknown" : formatDate($unitFields[2]);//transfer date
 
 	 $units[] = $unit;
 

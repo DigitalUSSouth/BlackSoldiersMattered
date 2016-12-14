@@ -1,5 +1,5 @@
 <?php
-$pageTitle = 'Soldiers';
+$pageTitle = 'Units';
 require_once "header-new.php";
 ?>
 <div class="pad-section">

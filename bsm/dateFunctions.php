@@ -113,7 +113,7 @@ function formatDate($input){
 	}
 
     if (trim($input)=='') return '';
-
+ 
 	$parts = explode('/',$input);
 
 	if (sizeof($parts) != 3) {
