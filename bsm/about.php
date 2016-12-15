@@ -9,7 +9,7 @@ require_once "header-new.php";
       <div class="col-sm-2">
         <img src="images/logo.png" alt="" />
       </div>
-      <div class="col-sm-10">
+      <div class="col-sm-10"> 
         
       </div><!-- col-sm-10 -->
     </div>
