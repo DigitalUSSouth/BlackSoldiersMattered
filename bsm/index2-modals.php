@@ -146,7 +146,7 @@
         <iframe src="visualizations/slide-5" style="width:100%;height:1000px;"></iframe> -->
         <h1 class="text-primary">Residence of BNC Soldiers</h1>
         <div id="residencePlaceMap" style="height: 400px;"></div>
-        <h1 class="text-primary">Induction Place of BNS Soldiers</h1>
+        <h1 class="text-primary">Induction Place of BNC Soldiers</h1>
         <div id="inductionPlaceMap" style="height: 400px;"></div>
         <div id="inductionPlacePie">
         </div>
