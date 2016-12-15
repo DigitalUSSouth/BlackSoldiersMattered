@@ -57,7 +57,9 @@ require_once "config.php";
         </table>
       </div><!-- col-sm-6 -->
       <div class="col-sm-4">
-        <h4 class="text-primary">Soldiers in this Unit:</h4>
+        <a href="soldiers">Back to all units</a>
+        <br><br>
+        <h4 class="text-primary">Some Soldiers in the Unit:</h4>
         <div class="col-xs-12 scroll-y">
           <?php
             $soldiers = readJson('data/soldiers.json');
@@ -77,7 +79,7 @@ require_once "config.php";
                   <a href="soldier?id=<?php print $soldier['id'];?>"><?php print $soldier['last_name'].', '.$soldier['first_name'];?></a><br>
             <?php endforeach;?>
         </div>
-        <div class="col-xs-12">...</div>
+
         
       </div><!-- col-sm-4-->
     </div><!-- row -->
