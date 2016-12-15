@@ -109,7 +109,7 @@ require_once ('visualizationFunctions.php');
       <div class="col-sm-3 col-xs-6">
         <a href="#explorePlaces" class="explore-link text-primary-dark">
           <!--<i class="fa fa-map" aria-hidden="true"></i>-->
-          <img src="<?php print ROOT_FOLDER;?>images/map.jpg" class="ia">
+          <img src="<?php print ROOT_FOLDER;?>images/map.jpg" class="ia" alt="Places">
           <div class="background-dark">
             <h4>Places</h4>
             <p class="text-white">Explore where Black North Carolinians (BNC) lived, were inducted, and trained.</p>
@@ -119,7 +119,7 @@ require_once ('visualizationFunctions.php');
       <div class="col-sm-3 col-xs-6">
         <a href="#exploreSoldiers" class="explore-link text-primary-dark">
           <!--<i class="fa fa-globe" aria-hidden="true"></i>-->
-          <img src="<?php print ROOT_FOLDER;?>images/world.jpg" class="ia">
+          <img src="<?php print ROOT_FOLDER;?>images/world.jpg" class="ia" alt="Wartime Journey">
           <div class="background-dark">
           <h4>Wartime Journey</h4>
           <p class="text-white">Explore when and where BNC soldiers served.</p>
@@ -129,7 +129,7 @@ require_once ('visualizationFunctions.php');
       <div class="col-sm-3 col-xs-6">
         <a href="#exploreDomesticService" class="explore-link text-primary-dark">
           <!--<i class="fa fa-users" aria-hidden="true"></i>-->
-          <img src="<?php print ROOT_FOLDER;?>images/soldier.jpg" class="ia">
+          <img src="<?php print ROOT_FOLDER;?>images/soldier.jpg" class="ia" alt="Individual Soldiers">
           <div class="background-dark">
           <h4>Individual Soldiers</h4>
           <p class="text-white">Explore who served and where he served.</p>
@@ -139,7 +139,7 @@ require_once ('visualizationFunctions.php');
       <div class="col-sm-3 col-xs-6">
         <a href="#exploreOfficers" class="explore-link text-primary-dark">
           <!--<i class="fa fa-server" aria-hidden="true"></i>-->
-          <img src="<?php print ROOT_FOLDER;?>images/92nd.jpg" class="ia">
+          <img src="<?php print ROOT_FOLDER;?>images/92nd.jpg" class="ia" alt="Units">
           <div class="background-dark">
           <h4>Units</h4>
           <p class="text-white">Explore domestic and overseas units that BNC soldiers served with.</p>
@@ -173,7 +173,7 @@ require_once ('visualizationFunctions.php');
     </div>
     <div class="collapse col-sm-3 col-sm-offset-6 col-xs-6" id="exploreDomesticService">
           <div class="col-xs-12">
-            <a class="btn btn-default" href="soldiers">Individual soldiers</a>
+            <a class="btn btn-default" href="soldiers">Individual Soldiers</a>
           </div>
           <div class="col-xs-12">
             <button type="button" class="btn btn-default" data-toggle="modal" data-target="#officersModal">Officers</button>
@@ -184,7 +184,7 @@ require_once ('visualizationFunctions.php');
             <button type="button" class="btn btn-default" data-toggle="modal" data-target="#overseasStatsModal">Unit Types</button>
         </div>
         <div class="col-xs-12">
-            <a class="btn btn-default" href="units">Explore individual units</a>
+            <a class="btn btn-default" href="units">Explore Individual Units</a>
           </div>
     </div>
 
