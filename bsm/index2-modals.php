@@ -138,7 +138,7 @@
           var campsPlaces = <?php print file_get_contents('data/camps.json'); ?>;
 
         </script>
-        <h1 class="text-primary">Birth Places of BNS Soldiers</h1>
+        <h1 class="text-primary">Birth Places of BNC Soldiers</h1>
         <div id="birthPlaceMap" style="height: 400px;"></div>
         <div id="birthPlacePie">
         </div>
