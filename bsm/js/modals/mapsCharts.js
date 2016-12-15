@@ -5,9 +5,9 @@ $('#mapsChartsModal').on('shown.bs.modal', function()
     var pie = new d3pie("birthPlacePie", {
 	"header": {
 		"title": {
-			"text": "Born in NC vs Other States",
+			"text": "Compare BNC Soldiers Born in NC to Other States",
 			"fontSize": 24,
-			"font": "open sans"
+			"font": "myriad"
 		},
 		"subtitle": {
 			"color": "#999999",
@@ -67,7 +67,7 @@ $('#mapsChartsModal').on('shown.bs.modal', function()
 	"tooltips": {
 		"enabled" : true,
 		"type": "placeholder",
-		"string": "{label}, {value}"
+		"string": "{label}"
 	},
 	"misc": {
 		"gradient": {
@@ -81,9 +81,9 @@ $('#mapsChartsModal').on('shown.bs.modal', function()
 var pie = new d3pie("inductionPlacePie", {
 	"header": {
 		"title": {
-			"text": "Inducted in NC vs Other States",
+			"text": "Compare BNC Soldiers Inducted in NC to Other States",
 			"fontSize": 24,
-			"font": "open sans"
+			"font": "myriad"
 		},
 		"subtitle": {
 			"color": "#999999",
@@ -143,7 +143,7 @@ var pie = new d3pie("inductionPlacePie", {
 	"tooltips": {
 		"enabled" : true,
 		"type": "placeholder",
-		"string": "{label}, {value}"
+		"string": "{label}"
 	},
 	"misc": {
 		"gradient": {

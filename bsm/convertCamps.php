@@ -6,7 +6,7 @@ require_once 'functions.php';
 <pre>
 
 <?php 
-importCamps();
+//importCamps();
 ?></pre>
 <?php 
 require_once ('footer.php');

@@ -102,7 +102,7 @@
           var campsPlaces = <?php print file_get_contents('data/camps.json'); ?>;
 
         </script>
-        <h1 class="text-primary">Where did BNS Soldiers Train or Serve?</h1>
+        <h1 class="text-primary">Where did BNC Soldiers Train or Serve?</h1>
         <div id="campsMap" style="height: 400px;"></div>
       </div>
       <div class="modal-footer">
@@ -138,19 +138,20 @@
           var campsPlaces = <?php print file_get_contents('data/camps.json'); ?>;
 
         </script>
-        <h1 class="text-primary">Birth</h1>
+        <h1 class="text-primary">Birth Places of BNC Soldiers</h1>
         <div id="birthPlaceMap" style="height: 400px;"></div>
         <div id="birthPlacePie">
         </div>
         <!--
         <iframe src="visualizations/slide-5" style="width:100%;height:1000px;"></iframe> -->
-        <h1 class="text-primary">Induction</h1>
+        <h1 class="text-primary">Residence of BNC Soldiers</h1>
+        <div id="residencePlaceMap" style="height: 400px;"></div>
+        <h1 class="text-primary">Induction Place of BNC Soldiers</h1>
         <div id="inductionPlaceMap" style="height: 400px;"></div>
         <div id="inductionPlacePie">
         </div>
 
-        <h1 class="text-primary">Residence</h1>
-        <div id="residencePlaceMap" style="height: 400px;"></div>
+        
 
 
       </div>
