@@ -9,13 +9,8 @@ html, body {
 }
 
 .text-primary-dark {
-<<<<<<< HEAD
-  color: #d8cec0;
-} 
-=======
   color:#c5b6a0; /* #d8cec0;*/
 }
->>>>>>> 9c1c3fcdfddd1abc922fbf39157d90545c029ad8
 
 h1,h2,h3 {
   font-weight: bolder;
