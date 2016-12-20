@@ -57,7 +57,7 @@ require_once "config.php";
         </table>
       </div><!-- col-sm-6 -->
       <div class="col-sm-4">
-        <a href="soldiers">Back to all units</a>
+        <a href="units">Back to all units</a>
         <br><br>
         <h4 class="text-primary">Some Soldiers in the Unit:</h4>
         <div class="col-xs-12 scroll-y">
