@@ -121,13 +121,13 @@ hr {
 }
 
 #explore {
-  height: 700px;
+  height: 1000px;
 }
 
 #explore .ia {
   border: 2px solid #eb9e50;
   /*border-radius: 20%;*/
-  border-bottom: none;
+  border-bottom:none;
   display: inline-block;
   font-size: 60px;
   /*height: 200px;
