@@ -21,20 +21,20 @@ function bubbleChart() {
   var center = { x: width / 2, y: height / 2 };
 
   var yearCenters = {
-    1913: {x: 50, y: height / 2},
-    1914: {x: 150, y: height / 2},
-    1915: { x: 250, y: height / 2 },
-    1917: { x: 350, y: height / 2 },
-    1918: { x: 450, y: height / 2 }
+    1913: {x: 150, y: height / 2},
+    1914: {x: 250, y: height / 2},
+    1915: { x: 350, y: height / 2 },
+    1917: { x: 450, y: height / 2 },
+    1918: { x: 550, y: height / 2 }
   };
 
   // X locations of the year titles.
   var yearsTitleX = {
-    /*1913: 50,*/
-    1914: 50,
-    1915: 150,
-    1917: 250,
-    1918: 350
+    1913: 50,
+    1914: 150,
+    1915: 250,
+    1917: 350,
+    1918: 450
   };
 
   // Used when setting up force and
