@@ -10,9 +10,9 @@
  */
 function bubbleChart() {
   // Constants for sizing
-  var width = 940;
+  var width = 900;
   var height = 600;
-
+ 
   // tooltip for mouseover functionality
   var tooltip = floatingTooltip('gates_tooltip', 240);
 
@@ -21,16 +21,20 @@ function bubbleChart() {
   var center = { x: width / 2, y: height / 2 };
 
   var yearCenters = {
-    15: { x: width / 3, y: height / 2 },
-    17: { x: width / 2, y: height / 2 },
-    18: { x: 2 * width / 3, y: height / 2 }
+    1913: {x: 50, y: height / 2},
+    1914: {x: 150, y: height / 2},
+    1915: { x: 250, y: height / 2 },
+    1917: { x: 350, y: height / 2 },
+    1918: { x: 450, y: height / 2 }
   };
 
   // X locations of the year titles.
   var yearsTitleX = {
-    15: 210,
-    17: 370,
-    18: 600
+    /*1913: 50,*/
+    1914: 50,
+    1915: 150,
+    1917: 250,
+    1918: 350
   };
 
   // Used when setting up force and
@@ -106,6 +110,8 @@ function bubbleChart() {
         y: Math.random() * 800
       };
     });
+    
+    //console.log (myNodes);
 
     // sort them to prevent occlusion of smaller nodes.
     myNodes.sort(function (a, b) { return b.value - a.value; });
@@ -242,7 +248,9 @@ function bubbleChart() {
    * node's charge force to also impact final location.
    */
   function moveToYears(alpha) {
+    //console.log(d);
     return function (d) {
+      //console.log(d);
       var target = yearCenters[d.year];
       d.x = d.x + (target.x - d.x) * damper * alpha * 1.1;
       d.y = d.y + (target.y - d.y) * damper * alpha * 1.1;
@@ -283,10 +291,10 @@ function bubbleChart() {
     // change outline to indicate hover state.
     d3.select(this).attr('stroke', 'black');
 
-    var content = '<span class="name">Title: </span><span class="value">' +
+    var content = '<!--<span class="name">Title: </span><span class="value">' +
                   d.id +
-                  '</span><br/>' +
-                  '<span class="name">Amount: </span><span class="value">' +
+                  '</span><br/>-->' +
+                  '<span class="name">Entrance Status: </span><span class="value">' +
                   d.name +
                   '</span><br/>' +
                   '<span class="name">Year: </span><span class="value">' +
@@ -387,7 +395,7 @@ function addCommas(nStr) {
 }
 
 // Load the data.
-d3.csv('data/ind4.csv', display);
+d3.csv('data/ind5.csv', display);
 
 // setup the buttons.
 setupButtons();
