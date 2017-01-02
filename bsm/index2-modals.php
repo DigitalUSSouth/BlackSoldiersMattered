@@ -203,12 +203,15 @@ var soldierLocations = <?php print json_encode($soldierLocations,JSON_PRETTY_PRI
         </script>
         <div id="allSoldiersJourneyMap"></div>
         <div id="slider1" style="height: 30px;"></div>
-        <div id="dateDisplay">1913-8</div>
+        <div id="dateDisplay">August 1913</div>
         <?php 
         //print sizeof($soldierLocations['1918-4']);
         ?>
-      </div>
-      <div class="modal-footer">
+      <!--</div>
+      <div class="modal-footer">-->
+        <div class="col-xs-10">
+          <p>This is a test</p>
+        </div>
         <h5 class="text-primary col-xs-12">*Watch the map change as the timeline moves. This movement illustrates, with a random sample, the movement of all Black North Carolina soldiers from induction to discharge</h5>
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       </div>

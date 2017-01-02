@@ -62,13 +62,69 @@ var Esri_WorldTopoMap = L.tileLayer('http://server.arcgisonline.com/ArcGIS/rest/
     		soldierLocations[dateIndex].forEach(function (marker){
     		  markers.push(marker);
     		});
+        if (dateIndex=="1917-4"){
+          console.log("yay");
+        }
     		heat.setLatLngs(markers);
-            //TODO: display full month name instead of number
-            $("#dateDisplay").text(dateIndex);
+           // console.log(printFullMonth(dateIndex));
+            $("#dateDisplay").text(printFullMonth(dateIndex));
 	      }
 	    });
 	});
 });
+
+function printJourneyMessage(event){}
+
+function printFullMonth(date){
+  var matches = date.match(/[0-9]{1,4}/g);
+
+  var fullMonth = "";
+  //console.log (matches[1]);
+
+  switch (matches[1]){
+    case "1":
+      fullMonth = "January";
+      break;
+    case "2":
+      fullMonth = "February";
+      break;
+    case "3":
+      fullMonth = "March";
+      break;
+    case "4":
+      fullMonth = "April";
+      break;
+    case "5":
+      fullMonth = "May";
+      break;
+    case "6":
+      fullMonth = "June";
+      break;
+    case "7":
+      fullMonth = "July";
+      break;
+    case "8":
+      fullMonth = "August";
+      break;
+    case "9":
+      fullMonth = "September";
+      break;
+    case "10":
+      fullMonth = "October";
+      break;
+    case "11":
+      fullMonth = "November";
+      break;
+    case "12":
+      fullMonth = "December";
+      break;
+  }
+
+  //console.log(fullMonth);
+
+  return fullMonth +" " + matches[0];
+
+}
  
 
 //function to get date index from slider value

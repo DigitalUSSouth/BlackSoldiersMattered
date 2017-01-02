@@ -171,7 +171,7 @@ function importCollectiveTabfile(){
 		try{
 		$soldier = array(
 
-				"id"=> preg_replace('/\.txt/','.tif',$fields[0]),
+				"id"=> preg_replace('/\.txt/','.tif',$fields[0]),//edge cases :/
 				"last_name" => $lastName,
 				"first_name" => $names[1],
 				//"residence_county" => $fields[3],
@@ -494,23 +494,31 @@ set_time_limit(600);
 				//TODO: add conditions for when units changed location
 
 				if (!array_key_exists($unit[0],$units)){
-					print 'Error unit not found in units (from unit progression): '.$unit[0].'<br>';
-					 continue;
+					print 'Error unit not found in units (from unit progression): '.$unit[0].' - '.$soldier['id'].'<br>';
+    	    		continue;
 				}
 				$camp = $units[$unit[0]]['location'][0]['id'];
 
 				if(trim($camp)=='') {
-					print 'Error camp empty: '.$soldier['id'].'<br>';
+					print 'Error camp empty: '.$soldier['id'].' unit: '.$unit[0].' camp: '.$camp.'<br>';
+					continue;
+				}
+				if(trim($camp)=="unknown"){
+					print 'Notice camp unknown: '.$soldier['id'].' unit: '.$unit[0].' camp: '.$camp.'<br>';
 					continue;
 				}
 				if(!array_key_exists($camp,$campsPlaces)){
-					print 'Error camp not found in places: '.$camp.'<br>';
+					print 'Error camp not found in places: '.$soldier['id'].' unit: '.$unit[0].' camp: '.$camp.'<br>';
 					 continue;
 				}
 
 				$latlng = $campsPlaces[$camp];
 
 				//print '<h1>'.$camp.'-'.$latlng[0].','.$latlng[1].'</h1>';
+
+				if (trim($unit[2])=="unknown" || trim($unit[2])==""){
+					continue;
+				}
 
 				$parsedEndDate = parseDate($unit[2]);
 				//print_r($parsedBeginDate);
@@ -543,23 +551,31 @@ set_time_limit(600);
 				//TODO: add conditions for when units changed location
 
 				if (!array_key_exists($unit[0],$units)){
-					print 'Error unit not found in units (from unit progression): '.$unit[0].'<br>';
+					print 'Error unit not found in units (from unit progression): '.$unit[0].' - '.$soldier['id'].'<br>';
 					 continue;
 				}
 				$camp = $units[$unit[0]]['location'][0]['id'];
 
 				if(trim($camp)=='') {
-					print 'Error camp empty: '.$soldier['id'].'<br>';
+					print 'Error camp empty: '.$soldier['id'].' unit: '.$unit[0].' camp: '.$camp.'<br>';
+					continue;
+				}
+				if(trim($camp)=="unknown"){
+					print 'Notice camp unknown: '.$soldier['id'].' unit: '.$unit[0].' camp: '.$camp.'<br>';
 					continue;
 				}
 				if(!array_key_exists($camp,$campsPlaces)){
-					print 'Error camp not found in places: '.$camp.'<br>';
+					print 'Error camp not found in places: '.$soldier['id'].' unit: '.$unit[0].' camp: '.$camp.'<br>';
 					 continue;
 				}
 
 				$latlng = $campsPlaces[$camp];
 
 				//print '<h1>'.$camp.'-'.$latlng[0].','.$latlng[1].'</h1>';
+
+				if (trim($unit[2])=="unknown" || trim($unit[2])==""){
+					continue;
+				}
 
 				$parsedEndDate = parseDate($unit[2]);
 				//print_r($parsedBeginDate);

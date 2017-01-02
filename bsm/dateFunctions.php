@@ -95,6 +95,7 @@ function parseDate($input){
 	catch (Exception $e) {
 		//TODO: add proper exception handling
 		print '<h1 class="text-danger text-center">Exception: '.$e->getMessage().' </h1>';
+		array_walk(debug_backtrace(),create_function('$a,$b','print "{$a[\'function\']}()(".basename($a[\'file\']).":{$a[\'line\']}); ";'));
 		return array(0,0,0);
 	}
 	return $date;

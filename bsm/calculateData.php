@@ -9,7 +9,7 @@ require_once 'functions.php';
 <?php 
 
 //computeSoldierStats();
-//computeSoldierLocations();
+computeSoldierLocations();
 //createCSVRecruitedSoldiers();
 ?></pre>
 <?php 
