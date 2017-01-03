@@ -209,10 +209,11 @@ var soldierLocations = <?php print json_encode($soldierLocations,JSON_PRETTY_PRI
         ?>
       <!--</div>
       <div class="modal-footer">-->
-        <div class="col-xs-10">
-          <p>This is a test</p>
+        <div class="col-xs-8 col-xs-offset-2 text-primary" id="eventsDiv">
+          
         </div>
-        <h5 class="text-primary col-xs-12">*Watch the map change as the timeline moves. This movement illustrates, with a random sample, the movement of all Black North Carolina soldiers from induction to discharge</h5>
+        <div class="clearfix"></div>
+        <h5 class="text-primary-dark col-xs-12">*Watch the map change as the timeline moves. This movement illustrates, with a random sample, the movement of all Black North Carolina soldiers from induction to discharge</h5>
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       </div>
     </div>

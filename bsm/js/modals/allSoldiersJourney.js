@@ -62,8 +62,12 @@ var Esri_WorldTopoMap = L.tileLayer('http://server.arcgisonline.com/ArcGIS/rest/
     		soldierLocations[dateIndex].forEach(function (marker){
     		  markers.push(marker);
     		});
+        $("#eventsDiv").html("");
         if (dateIndex=="1917-4"){
-          console.log("yay");
+          printJourneyMessage(dateIndex);
+        }
+        if (dateIndex=="1918-11"){
+          printJourneyMessage(dateIndex);
         }
     		heat.setLatLngs(markers);
            // console.log(printFullMonth(dateIndex));
@@ -73,7 +77,14 @@ var Esri_WorldTopoMap = L.tileLayer('http://server.arcgisonline.com/ArcGIS/rest/
 	});
 });
 
-function printJourneyMessage(event){}
+function printJourneyMessage(event){
+  if (event =="1917-4"){
+    $("#eventsDiv").html("<p><strong>April 7, 1917 - United States Enters the War</strong></p>");
+  }
+  if (event =="1918-11"){
+    $("#eventsDiv").html("<p><strong>November 11, 1918 - Armistice Signed - Fighting Ends</strong></p>");
+  }
+}
 
 function printFullMonth(date){
   var matches = date.match(/[0-9]{1,4}/g);
