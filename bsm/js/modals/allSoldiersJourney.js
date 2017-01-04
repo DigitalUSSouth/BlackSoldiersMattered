@@ -63,6 +63,7 @@ var Esri_WorldTopoMap = L.tileLayer('http://server.arcgisonline.com/ArcGIS/rest/
     		  markers.push(marker);
     		});
         $("#eventsDiv").html("");
+        $(".ui-slider-handle").removeClass("highligh-slider");
         if (dateIndex=="1917-4"){
           printJourneyMessage(dateIndex);
         }
@@ -80,6 +81,7 @@ var Esri_WorldTopoMap = L.tileLayer('http://server.arcgisonline.com/ArcGIS/rest/
 function printJourneyMessage(event){
   if (event =="1917-4"){
     $("#eventsDiv").html("<p><strong>April 7, 1917 - United States Enters the War</strong></p>");
+    $(".ui-slider-handle").addClass("highligh-slider");
   }
   if (event =="1918-11"){
     $("#eventsDiv").html("<p><strong>November 11, 1918 - Armistice Signed - Fighting Ends</strong></p>");

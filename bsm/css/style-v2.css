@@ -201,6 +201,15 @@ footer {
   height: 450px;
 }
 
+.highligh-slider {
+  /* this doesn't work
+     we need a way to highlight the jquery slider
+     this happens when we reach a special date on the timeline
+   */
+  color: red;
+}
+
+
 .scroll-y {
   overflow-y:scroll;
   height: 20em;
