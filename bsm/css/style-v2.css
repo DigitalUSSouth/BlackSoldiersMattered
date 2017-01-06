@@ -168,6 +168,23 @@ hr {
   /*padding: 4em;*/
 }
 
+/*This paper thing doesn't work
+commenting out for now
+*/
+/*.paper {
+  box-shadow: 6px 0px 0px 0px rgba(50, 50, 90, .1);
+  transition: .1s ease;
+  background: white;
+
+}
+
+.paper:hover {
+  box-shadow: 15px 18px 35px rgba(50, 50, 90, .2), 0 18px 40px rgba(0, 0, 0, .07);
+  transform: translateY(-5px);
+  transform: translateX(-5px);
+}*/
+
+
 #information {
   /*background: url('..
   /images/N_2009_4_162 371st Infantry Band 1917.jpg') no-repeat center center fixed;*/
