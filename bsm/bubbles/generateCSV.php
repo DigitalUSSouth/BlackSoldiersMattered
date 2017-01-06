@@ -8,7 +8,7 @@ $soldierSample = array();
 $randKeys = array_rand($soldiers,500);
 
 foreach ($randKeys as $key){
-    if ($soldiers[$key]['induction_date']=="" || $soldiers[$key]['induction_status']=="") {
+    if ($soldiers[$key]['discharge_date']=="" || $soldiers[$key]['induction_status']=="") {
         continue;
     }
     $soldierSample[] = $soldiers[$key];
@@ -20,7 +20,7 @@ $counter = 1;
 $yearsArray = array();
 
 foreach ($soldierSample as $soldier){
-    $date = explode("-",$soldier['induction_date']);
+    $date = explode("-",$soldier['discharge_date']);
     $year = $date[0];
     $month = $date[1];
     $day = $date[2];
@@ -32,6 +32,8 @@ foreach ($soldierSample as $soldier){
     $output = $output.$newLine;
 }
 
-file_put_contents("data/ind5.csv",$output);
+//commenting out so we don't override previous file
+//file_put_contents("data/ind5.csv",$output);
+//file_put_contents("data/ind6.csv",$output);
 
 var_dump($yearsArray);
