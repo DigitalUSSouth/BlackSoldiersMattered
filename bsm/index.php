@@ -176,7 +176,8 @@ require_once ('visualizationFunctions.php');
             <a class="btn btn-default" href="soldiers">Individual Soldiers</a>
           </div>
           <div class="col-xs-12">
-            <button type="button" class="btn btn-default" data-toggle="modal" data-target="#officersModal">Officers</button>
+            <a class="btn btn-default" href="officers">Officers</a>
+            <!--<button type="button" class="btn btn-default" data-toggle="modal" data-target="#officersModal">Officers</button>-->
           </div>
     </div>
     <div class="collapse col-sm-3 col-sm-offset-9 col-xs-6 col-xs-offset-6" id="exploreOfficers">

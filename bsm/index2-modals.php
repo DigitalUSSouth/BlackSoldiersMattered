@@ -236,7 +236,7 @@ var soldierLocations = <?php print json_encode($soldierLocations,JSON_PRETTY_PRI
       <div class="modal-body">
         <div class="row" style="padding: 1em;">
           <div class="col-xs-10 col-xs-offset-1">
-          <?php require "officers.php"; ?>
+          <?php //require "officers.php"; ?>
           </div>
         </div>  
       </div>
