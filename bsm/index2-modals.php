@@ -14,7 +14,8 @@
         <h4 class="modal-title">Entrance status</h4>
       </div>
       <div class="modal-body">
-        <iframe src="bubbles/index.html" style="width:100%;height:800px;"></iframe>
+        <iframe src="bubbles/index.html" style="width:100%;height:700px;"></iframe>
+        
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -40,7 +41,9 @@
         <h2>Compare domestic vs. overseas soldiers' discharge dates</h2>
         <div id="graphDischargeDateCompare" style="width:100%; height:300px;"></div>
         <script src="js/modals/dischargeDateModal.js"></script>
-        <h2 class="text-danger">TODO: add comparison for labor vs combat for overseas soldiers</h2>
+        <br><br><br>
+        <iframe src="bubbles/index2.html" style="width:100%;height:800px;"></iframe>
+        <iframe src="bubbles/index3.html" style="width:100%;height:800px;"></iframe>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
