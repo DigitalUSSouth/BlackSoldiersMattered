@@ -574,7 +574,7 @@ Records, World War I Papers, 1903-1933, Military Collection, NCDAH. </p>
 <div id=edn6>
 
 <p><a href="#_ednref6" name="_edn6" title="">[vi]    </a> Egbert T. Scott Obituary,
-<i>Afro-American</i>, 16 December 1969,  <a
+<i>Afro-American</i>, 16 December 1969,  <a target="_blank"
 href="http://www.moors-delaware.com/gendat/moors.aspx?Mode=Member&amp;MemberID=S300E1884">http://www.moors-delaware.com/gendat/moors.aspx?Mode=Member&amp;MemberID=S300E1884 </a>; Max King started at
 Leonard. Geraldine Rhoades Beckford, compiler, <i>Biographical Dictionary of
 American Physicians of African Ancestry, 1800-1920</i> (Cherry Hill, NJ:
