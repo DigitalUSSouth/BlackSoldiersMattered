@@ -44,6 +44,7 @@ require_once ('functions.php');
     <link rel="stylesheet" href="<?php print ROOT_FOLDER;?>css/awesomplete.css">
     <script src="<?php print ROOT_FOLDER;?>js/awesomplete.js"></script>
 
+    <?php include "google-analytics.php" ?>
 
 
 </head>

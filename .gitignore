@@ -2,3 +2,4 @@
 bsm/leaflet/.com.apple.timemachine.supported
 .vscode
 bsm/data/*
+bsm/google-analytics.php

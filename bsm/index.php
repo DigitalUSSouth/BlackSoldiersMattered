@@ -41,6 +41,8 @@ require_once ('visualizationFunctions.php');
     <link rel="stylesheet" href="leaflet-markers/leaflet.awesome-markers.css">
     <script src="leaflet-markers/leaflet.awesome-markers.js"></script>
 
+    <?php include "google-analytics.php" ?>
+
 
 </head>
 <body data-spy="scroll" data-target=".navbar" data-offset="65">
