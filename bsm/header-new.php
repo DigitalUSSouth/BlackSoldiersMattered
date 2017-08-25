@@ -18,7 +18,7 @@ require_once ('functions.php');
 
   <!-- need to load jquery at top because of leaflet -->
   <script src="js/jquery.min.js"></script>
-  <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+  <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
   
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css">
     <script src="<?php print ROOT_FOLDER;?>leaflet/leaflet.js"></script>

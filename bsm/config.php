@@ -2,7 +2,19 @@
 
 
 // Define global constants
-define("ROOT_FOLDER", "http://" . $_SERVER["HTTP_HOST"] . "/bsm/");
+
+//determine protocol
+global $protocol;
+if (isset($_SERVER['HTTPS']) &&
+    ($_SERVER['HTTPS'] == 'on' || $_SERVER['HTTPS'] == 1) ||
+    isset($_SERVER['HTTP_X_FORWARDED_PROTO']) &&
+    $_SERVER['HTTP_X_FORWARDED_PROTO'] == 'https') {
+  $protocol = 'https://';
+}
+else {
+  $protocol = 'http://';
+}
+define("ROOT_FOLDER", $protocol . $_SERVER["HTTP_HOST"] . "/bsm/");
 
 
 /* Global MySQL Database Connection.
